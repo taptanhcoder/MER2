@@ -1,0 +1,34 @@
+experiment:
+  name: text_phobert_base_ce_stable
+
+defaults:
+  - configs/dataset/common_mer5.yaml
+  - configs/dataset/vnemos_text_train.yaml
+  - configs/text/base/text_base.yaml
+  - configs/text/models/phobert_base.yaml
+
+model:
+  classifier_hidden_dim: 128
+  classifier_dropout: 0.25
+
+finetune:
+  freeze_embeddings: true
+  train_full_encoder: false
+  unfreeze_top_k_layers: 2
+
+optimizer:
+  name: adamw
+  lr: 1.5e-5
+  weight_decay: 0.01
+
+early_stopping:
+  enabled: true
+  patience: 4
+  min_delta: 0.0
+  monitor: macro_f1
+  mode: max
+
+loss:
+  name: cross_entropy
+
+seed: 42

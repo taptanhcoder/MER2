@@ -1,0 +1,4 @@
+finetune:
+  freeze_encoder: true
+  freeze_feature_encoder: true
+  unfreeze_top_k_layers: 2

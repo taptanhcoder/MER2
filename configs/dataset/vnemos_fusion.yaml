@@ -1,0 +1,20 @@
+dataset:
+  name: vnemos_fusion
+  num_classes: 5
+  id_col: sample_id
+  label_col: label_id
+
+  text_exports:
+    train: outputs/fusion_exports/text/train.pt
+    valid: outputs/fusion_exports/text/valid.pt
+    test: outputs/fusion_exports/text/test.pt
+
+  speech_exports:
+    train: outputs/fusion_exports/speech/train.pt
+    valid: outputs/fusion_exports/speech/valid.pt
+    test: outputs/fusion_exports/speech/test.pt
+
+  fusion_artifacts:
+    train: outputs/fusion_ready/train.pt
+    valid: outputs/fusion_ready/valid.pt
+    test: outputs/fusion_ready/test.pt

@@ -1,0 +1,27 @@
+project:
+  name: mer_project
+  root: .
+
+dataset:
+  name: vnemos_paired_mer
+  transcripts_dir: data/transcripts
+  processed_audio_root: data/wavs16k
+
+  source_splits:
+    train: data/transcripts/train.jsonl
+    valid: data/transcripts/valid.jsonl
+    test: data/transcripts/test.jsonl
+
+  write_compatibility_csv: true
+  compatibility_csv_dir: data/splits
+
+  strict:
+    require_audio_exists: true
+    require_stem_matches_utterance_id: true
+    require_non_empty_transcript: true
+
+output:
+  write_master_jsonl: true
+  write_split_jsonl: true
+  write_schema: true
+  write_summary: true

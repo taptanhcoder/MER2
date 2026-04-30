@@ -1,0 +1,5 @@
+loss:
+  name: ldam
+  max_margin: 0.5
+  drw: true
+  drw_start_epoch: 3

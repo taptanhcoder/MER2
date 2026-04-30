@@ -1,0 +1,14 @@
+defaults:
+  - configs/dataset/common_mer5.yaml
+  - configs/dataset/vnemos_speech_train.yaml
+  - configs/speech/base/audio_base.yaml
+  - configs/speech/base/speech_base.yaml
+  - configs/speech/models/hubert_base.yaml
+  - configs/speech/pooling/attention.yaml
+  - configs/speech/finetune/freeze_encoder.yaml
+  - configs/speech/losses/ce.yaml
+  - configs/speech/augment/light.yaml
+  - configs/runtime/gpu_safe.yaml
+
+experiment:
+  name: speech_hubert_base_attn_freeze_ce

@@ -1,0 +1,13 @@
+defaults:
+  - configs/dataset/common_mer5.yaml
+  - configs/speech/base/speech_base.yaml
+  - configs/speech/base/audio_base.yaml
+  - configs/speech/models/hubert_base.yaml
+  - configs/speech/pooling/attention.yaml
+  - configs/speech/finetune/freeze_encoder.yaml
+  - configs/speech/augment/light.yaml
+  - configs/speech/losses/weighted_ce.yaml
+  - configs/runtime/gpu_safe.yaml
+
+experiment:
+  name: speech_hubert_base_attn_freeze_weighted_ce

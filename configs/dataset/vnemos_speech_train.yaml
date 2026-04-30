@@ -1,0 +1,16 @@
+dataset:
+  name: vnemos_speech
+  train_csv: data/splits/vnemos_train.csv
+  valid_csv: data/splits/vnemos_valid.csv
+  test_csv: data/splits/vnemos_test.csv
+
+  id_col: sample_id
+  audio_path_col: audio_path
+  duration_col: duration
+  group_id_col: group_id
+  text_col: text
+  raw_text_col: transcript_final
+
+  label_col: label
+  label_id_col: label_id
+  num_classes: 5

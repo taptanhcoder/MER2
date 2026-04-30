@@ -1,0 +1,11 @@
+defaults:
+ - configs/dataset/common_mer5.yaml
+ - configs/fusion/base.yaml
+
+fusion:
+ strategy: threshold
+ threshold:
+   quantiles: [0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]
+
+experiment:
+ name: fusion_threshold

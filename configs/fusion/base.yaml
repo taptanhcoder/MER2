@@ -1,0 +1,10 @@
+fusion:
+ strategy: confidence
+ optimize_metric: macro_f1
+ prefer_calibrated_predictions: true
+
+output:
+ save_valid_predictions: true
+ save_test_predictions: true
+ save_confusion_matrix: true
+ save_classification_report: true

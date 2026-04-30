@@ -1,0 +1,5 @@
+defaults:
+ - configs/calibration/base.yaml
+
+calibration:
+ method: temperature_scaling

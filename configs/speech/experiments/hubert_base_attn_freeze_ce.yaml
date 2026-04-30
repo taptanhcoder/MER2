@@ -1,0 +1,13 @@
+experiment:
+  name: speech_hubert_base_attn_freeze_ce
+
+defaults:
+  - configs/dataset/common_mer5.yaml
+  - configs/dataset/vnemos_speech_train.yaml
+  - configs/speech/base/speech_base.yaml
+  - configs/speech/models/hubert_base_attn_freeze.yaml
+
+loss:
+  name: cross_entropy
+
+seed: 42

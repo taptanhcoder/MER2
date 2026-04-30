@@ -1,0 +1,18 @@
+{
+  "config_path": "/home/emotalk/mer2/configs/dataset/prepare_mer5.yaml",
+  "output_dir": "/home/emotalk/mer2/data/splits",
+  "modality": "text",
+  "split": {
+    "seed": 42,
+    "train_ratio": 0.8,
+    "valid_ratio": 0.1,
+    "test_ratio": 0.1
+  },
+  "text": {
+    "prefix": "uit_vsmec7",
+    "label_space": "uit_vsmec7_raw",
+    "train_size": 5536,
+    "valid_size": 692,
+    "test_size": 693
+  }
+}

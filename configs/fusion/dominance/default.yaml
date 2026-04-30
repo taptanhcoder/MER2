@@ -1,0 +1,8 @@
+dominance:
+  use_modality_dropout: true
+  text_dropout_prob: 0.10
+  speech_dropout_prob: 0.10
+
+  use_dominance_regularizer: true
+  lambda_text: 1.0
+  lambda_speech: 1.0

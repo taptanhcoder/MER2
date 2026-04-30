@@ -1,0 +1,50 @@
+{
+  "builder_name": "csv",
+  "citation": "",
+  "config_name": "default",
+  "dataset_name": "uit-vsmec",
+  "dataset_size": 767296,
+  "description": "",
+  "download_checksums": {
+    "hf://datasets/visolex/UIT-VSMEC@57e72593e9e89c66721008fb2f74c2ec4edfb7a1/VSMEC.csv": {
+      "num_bytes": 686761,
+      "checksum": null
+    }
+  },
+  "download_size": 686761,
+  "features": {
+    "dataset": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "type": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "Sentence": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "Emotion": {
+      "dtype": "string",
+      "_type": "Value"
+    }
+  },
+  "homepage": "",
+  "license": "",
+  "size_in_bytes": 1454057,
+  "splits": {
+    "train": {
+      "name": "train",
+      "num_bytes": 767296,
+      "num_examples": 6927,
+      "dataset_name": "uit-vsmec"
+    }
+  },
+  "version": {
+    "version_str": "0.0.0",
+    "major": 0,
+    "minor": 0,
+    "patch": 0
+  }
+}

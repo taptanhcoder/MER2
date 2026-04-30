@@ -1,0 +1,16 @@
+audio:
+  sample_rate: 16000
+  mono: true
+  max_duration_sec: 8.0
+  min_duration_sec: 0.25
+
+  normalize_waveform: false
+  return_attention_mask: true
+  fail_on_load_error: true
+
+  trim_silence:
+    enabled: true
+    frame_ms: 25
+    hop_ms: 10
+    energy_threshold_ratio: 0.08
+    margin_ms: 80

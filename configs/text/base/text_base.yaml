@@ -1,0 +1,44 @@
+task: text_classification
+
+preprocessing:
+  normalize_whitespace: true
+  lowercase: false
+  word_segment: true
+
+tokenizer:
+  use_fast: false
+  padding: true
+  truncation: true
+  max_length: 128
+
+train:
+  batch_size: 8
+  epochs: 15
+  grad_clip_norm: 1.0
+  grad_accum_steps: 2
+
+optimizer:
+  name: adamw
+  lr: 2.0e-5
+  weight_decay: 0.01
+
+scheduler:
+  name: linear_warmup
+  warmup_ratio: 0.1
+
+early_stopping:
+  enabled: true
+  patience: 5
+  min_delta: 0.0
+  monitor: macro_f1
+  mode: max
+
+evaluation:
+  primary_metric: macro_f1
+  save_predictions: true
+  save_logits: true
+
+output:
+  save_classification_report: true
+  save_confusion_matrix: true
+  max_error_rows: 200

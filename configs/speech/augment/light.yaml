@@ -1,0 +1,14 @@
+augment:
+  enabled: false
+
+  gain:
+    enabled: true
+    probability: 0.5
+    min_db: -3.0
+    max_db: 3.0
+
+  noise:
+    enabled: true
+    probability: 0.3
+    min_snr_db: 20.0
+    max_snr_db: 35.0

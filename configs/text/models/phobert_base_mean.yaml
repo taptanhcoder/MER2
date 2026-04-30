@@ -1,0 +1,7 @@
+model:
+  name: phobert-base-v2
+  family: phobert
+  pretrained_name: vinai/phobert-base-v2
+  pooling: mean
+  dropout: 0.1
+  num_classes: 7

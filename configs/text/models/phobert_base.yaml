@@ -1,0 +1,17 @@
+model:
+  name: phobert-base
+  family: phobert
+  pretrained_name: vinai/phobert-base-v2
+  pooling: mean
+  dropout: 0.10
+  classifier_dropout: 0.15
+  classifier_hidden_dim: 256
+  classifier_activation: gelu
+  classifier_layer_norm: true
+  gradient_checkpointing: false
+  num_classes: 5
+
+finetune:
+  freeze_embeddings: true
+  train_full_encoder: false
+  unfreeze_top_k_layers: 4

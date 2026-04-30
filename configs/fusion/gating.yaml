@@ -1,0 +1,12 @@
+defaults:
+ - configs/dataset/common_mer5.yaml
+ - configs/fusion/base.yaml
+
+fusion:
+ strategy: gating
+ gating:
+   max_iter: 1000
+   C: 1.0
+
+experiment:
+ name: fusion_gating

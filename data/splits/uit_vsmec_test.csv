@@ -1,0 +1,529 @@
+id,text,normalized_text,orig_label,label,label_id
+uit_002042,chạy ngay đi 😱😱😱 sợ quá .,chạy ngay đi 😱😱😱 sợ quá .,fear,fear,1
+uit_001431,:))) đồng nghiệp đáng yêu,:))) đồng nghiệp đáng yêu,enjoyment,happiness,2
+uit_001083,"ảnh đẹp lắm , nhưng không có những người khổ này thì sẽ đẹp hơn 🙂","ảnh đẹp lắm , nhưng không có những người khổ này thì sẽ đẹp hơn 🙂",other,neutral,4
+uit_001700,có tiến bộ ! kkk,có tiến bộ ! kkk,enjoyment,happiness,2
+uit_000357,"con nghiệt súc này mỗi lần tao đi đá bóng là 2 vợ chồng nó dí theo cắn bầm hết chân , thứ này thù dai kinh khủng , chiều nào nó cũng khởi động cho tao trước khi đá bóng ... con mẹ nó giờ tao lớn rồi , tay nghề nấu nướng cũng không tệ gặp mà dí theo là xác định tao quay nó vàng ương luôn =]]","con nghiệt súc này mỗi lần tao đi đá bóng là 2 vợ chồng nó dí theo cắn bầm hết chân , thứ này thù dai kinh khủng , chiều nào nó cũng khởi động cho tao trước khi đá bóng ... con mẹ nó giờ tao lớn rồi , tay nghề nấu nướng cũng không tệ gặp mà dí theo là xác định tao quay nó vàng ương luôn =]]",enjoyment,happiness,2
+uit_002822,:v trời giờ mới biết thế giới có dạng hợp thể vầy đấy :v,:v trời giờ mới biết thế giới có dạng hợp thể vầy đấy :v,enjoyment,happiness,2
+uit_002309,có gì đâu bé vậy mới cool đó anh thích 😉😉😉,có gì đâu bé vậy mới cool đó anh thích 😉😉😉,enjoyment,happiness,2
+uit_002034,để con mẹ mày tiếng bình thường nghe cho dễ . lại còn làm đéo đéo,để con mẹ mày tiếng bình thường nghe cho dễ . lại còn làm đéo đéo,anger,anger,0
+uit_000823,tớ chỉ an ủi bạn í thôi mà :(,tớ chỉ an ủi bạn í thôi mà :(,sadness,sadness,3
+uit_001071,quá nguy hiểm,quá nguy hiểm,fear,fear,1
+uit_002719,chỉ cần thích cái là muốn rụng tim,chỉ cần thích cái là muốn rụng tim,enjoyment,happiness,2
+uit_001732,đó là 1 câu chuyện buồn 😤,đó là 1 câu chuyện buồn 😤,sadness,sadness,3
+uit_001387,azz :3 mặt cưng xĩu,azz :3 mặt cưng xĩu,enjoyment,happiness,2
+uit_004497,chắc ỉa ra quần chứ đéo đùa -.-,chắc ỉa ra quần chứ đéo đùa -.-,fear,fear,1
+uit_003460,người ta kê bàn ghế ra chả nhẽ lại vẫn nằm đất để nhìn mông người khác ngồi :))) pha xử lý rất cao tayyy,người ta kê bàn ghế ra chả nhẽ lại vẫn nằm đất để nhìn mông người khác ngồi :))) pha xử lý rất cao tayyy,enjoyment,happiness,2
+uit_001839,thấy hơi sợ sợ rồi đấy :(,thấy hơi sợ sợ rồi đấy :(,fear,fear,1
+uit_004599,"tao khuyên mày , bật lên mr . siro lên mà nghe , đời sẽ vui vẻ hơn =))","tao khuyên mày , bật lên mr . siro lên mà nghe , đời sẽ vui vẻ hơn =))",enjoyment,happiness,2
+uit_002434,mặt dày lại ôm cứng ngắt cho chị . 😆,mặt dày lại ôm cứng ngắt cho chị . 😆,enjoyment,happiness,2
+uit_002837,mắt còn xanh như bé không anh ??,mắt còn xanh như bé không anh ??,other,neutral,4
+uit_004890,tao học nhân sự đây còn đang lo thất nghiệp đây này,tao học nhân sự đây còn đang lo thất nghiệp đây này,fear,fear,1
+uit_000808,per hình như nhà bác có 01 chiếc thì phải ?,per hình như nhà bác có 01 chiếc thì phải ?,other,neutral,4
+uit_002550,"nên nhớ chẳng có cơn giận nào chẳng bùng nỗ , chỉ là nó đang bị nén lại .","nên nhớ chẳng có cơn giận nào chẳng bùng nỗ , chỉ là nó đang bị nén lại .",other,neutral,4
+uit_002804,đúng là không thể chấp nhận được,đúng là không thể chấp nhận được,anger,anger,0
+uit_005058,per móc lên tới não :)),per móc lên tới não :)),fear,fear,1
+uit_003058,bé giỏi toán quá nên cô giáo mất dạy luôn,bé giỏi toán quá nên cô giáo mất dạy luôn,other,neutral,4
+uit_003931,em nuôi con lợn mấy năm rồi mà vẫn trống rỗng huhu 😭😭😭,em nuôi con lợn mấy năm rồi mà vẫn trống rỗng huhu 😭😭😭,sadness,sadness,3
+uit_004701,thằng nào dám đưa 9 / 10 số tiền nó có trong tay,thằng nào dám đưa 9 / 10 số tiền nó có trong tay,other,neutral,4
+uit_000613,"thương tra ̀ o nươ ́ c mă ́ tao ... cuô ́ i cu ̀ người thi ̀ ban la ̃ nh đa ̣ o bă ́ c ninh đa ̃ lên tiê ́ người giu ́ p đơ ̃ ca ́ c be ́, du ̀ qua ́ muô ̣ n @","thương tra ̀ o nươ ́ c mă ́ tao ... cuô ́ i cu ̀ người thi ̀ ban la ̃ nh đa ̣ o bă ́ c ninh đa ̃ lên tiê ́ người giu ́ p đơ ̃ ca ́ c be ́, du ̀ qua ́ muô ̣ n @",sadness,sadness,3
+uit_004607,xem đi xem lại mà khóc sướt mướt 😭😭😭,xem đi xem lại mà khóc sướt mướt 😭😭😭,sadness,sadness,3
+uit_000719,t mới tính tới bước thất bại chưa tính tới thành công :)),t mới tính tới bước thất bại chưa tính tới thành công :)),sadness,sadness,3
+uit_003646,chợt nhận ra mình yếu đuối như một đứa con gái vậy 😢,chợt nhận ra mình yếu đuối như một đứa con gái vậy 😢,sadness,sadness,3
+uit_001745,ngại gì thế vừa nhanh vừa tiện,ngại gì thế vừa nhanh vừa tiện,other,neutral,4
+uit_002074,khi nào nha anh sẽ lắp hả per,khi nào nha anh sẽ lắp hả per,other,neutral,4
+uit_001282,phải tôi đỗ lên vỉa hè giáp cửa nhà bạn bán hàng luôn . vỉa hè rộng thế kia cơ mà .??????????,phải tôi đỗ lên vỉa hè giáp cửa nhà bạn bán hàng luôn . vỉa hè rộng thế kia cơ mà .??????????,other,neutral,4
+uit_003251,nếu là tao thì tao sẽ không ăn được miếng nào,nếu là tao thì tao sẽ không ăn được miếng nào,sadness,sadness,3
+uit_002991,yêu thế nhè 😍😍😍 có em gái chắc cũng vui lắm,yêu thế nhè 😍😍😍 có em gái chắc cũng vui lắm,enjoyment,happiness,2
+uit_003738,không biết vì sao họ vẫn cười nhưng mình thì khóc ...,không biết vì sao họ vẫn cười nhưng mình thì khóc ...,sadness,sadness,3
+uit_003410,thì đúng là sẽ không buồn vì thất tình nữa :((,thì đúng là sẽ không buồn vì thất tình nữa :((,sadness,sadness,3
+uit_000200,chắc kiếp trước gieo nghiệp kiếp này phải gánh thôi,chắc kiếp trước gieo nghiệp kiếp này phải gánh thôi,sadness,sadness,3
+uit_002380,tao thề từ giờ đến cuối năm mà tao không lấy được vợ thì tao quyết định sag năm lấy 😊,tao thề từ giờ đến cuối năm mà tao không lấy được vợ thì tao quyết định sag năm lấy 😊,enjoyment,happiness,2
+uit_002597,buồn vì mình không giúp được gì cho ai . nhìn những người khác khổ hơn mình mà thấy thương họ,buồn vì mình không giúp được gì cho ai . nhìn những người khác khổ hơn mình mà thấy thương họ,sadness,sadness,3
+uit_002562,bạn này yêu bố nhiều lắm mới vui vì bị bố mắng . chứ ai đời bị la mắng mà kể lại cho người khác nghe mà vui đến thế,bạn này yêu bố nhiều lắm mới vui vì bị bố mắng . chứ ai đời bị la mắng mà kể lại cho người khác nghe mà vui đến thế,enjoyment,happiness,2
+uit_001993,siêu phẩm để đời .,siêu phẩm để đời .,enjoyment,happiness,2
+uit_001235,"đang định đi nhổ răng khôn , nghe được tin này thấy ghê răng 😁","đang định đi nhổ răng khôn , nghe được tin này thấy ghê răng 😁",fear,fear,1
+uit_004401,bác vẽ làm tao nhớ con cá này vãi =))),bác vẽ làm tao nhớ con cá này vãi =))),enjoyment,happiness,2
+uit_002015,do cái áo . mặc giống nhau làm đíuu gì,do cái áo . mặc giống nhau làm đíuu gì,anger,anger,0
+uit_000030,phải bồi thường thiệt hại bị trầy xước thân tàu . tiền sơn lại mấy toa tàu chắc cũng bộn .,phải bồi thường thiệt hại bị trầy xước thân tàu . tiền sơn lại mấy toa tàu chắc cũng bộn .,other,neutral,4
+uit_005000,thử đụng vô tao coi dume mấy thằng lol cặn bã,thử đụng vô tao coi dume mấy thằng lol cặn bã,anger,anger,0
+uit_005198,phần này dù xem lại 100 lần vẫn bật khóc tình cha thật phi thường,phần này dù xem lại 100 lần vẫn bật khóc tình cha thật phi thường,sadness,sadness,3
+uit_003871,năm sau nữa quyết định nằm cho đỡ đau lưng 😁😁,năm sau nữa quyết định nằm cho đỡ đau lưng 😁😁,other,neutral,4
+uit_005089,chưa bao giờ nghe ngươ ̀ i ta chửi thề mà đáng êu đến vậy lun =))!,chưa bao giờ nghe ngươ ̀ i ta chửi thề mà đáng êu đến vậy lun =))!,enjoyment,happiness,2
+uit_000910,cần 1 thời gian dài thật dài nữa thì ý thức mới đi lên được,cần 1 thời gian dài thật dài nữa thì ý thức mới đi lên được,other,neutral,4
+uit_003996,😐😐 phê hơn lá chuối,😐😐 phê hơn lá chuối,enjoyment,happiness,2
+uit_000234,xem đi xem lại bao nhiêu lần cũng không chán ... vẫn cảm giác hồi hộp :),xem đi xem lại bao nhiêu lần cũng không chán ... vẫn cảm giác hồi hộp :),sadness,sadness,3
+uit_003424,per huhu nhất là mấy bài không cho chất thử á :(,per huhu nhất là mấy bài không cho chất thử á :(,sadness,sadness,3
+uit_004716,per có nên tiếp tục vì đồng nghiệp không chị nhể,per có nên tiếp tục vì đồng nghiệp không chị nhể,other,neutral,4
+uit_003569,ở đâu cũng có người tốt nè anh kkkk,ở đâu cũng có người tốt nè anh kkkk,enjoyment,happiness,2
+uit_002143,tuổi thơ với nó đấy,tuổi thơ với nó đấy,other,neutral,4
+uit_001983,"trời đụ , tội bé","trời đụ , tội bé",sadness,sadness,3
+uit_002238,nhìn em mà thương roi nói chuyện mắt,nhìn em mà thương roi nói chuyện mắt,sadness,sadness,3
+uit_004618,rất là hâm mộ chị với tài nấu ăn ngon lại có nét dịu dàng rất tự nhiên thật sự thích ❤️,rất là hâm mộ chị với tài nấu ăn ngon lại có nét dịu dàng rất tự nhiên thật sự thích ❤️,enjoyment,happiness,2
+uit_004232,ước mơ nhỏ nhoi của tao là được làm chị mà không thể nào làm được huhu,ước mơ nhỏ nhoi của tao là được làm chị mà không thể nào làm được huhu,sadness,sadness,3
+uit_001669,lần sau mua mấy con vít gỗ 2cm lém gần bánh :)) lần sau sợ ngay :)),lần sau mua mấy con vít gỗ 2cm lém gần bánh :)) lần sau sợ ngay :)),other,neutral,4
+uit_000924,t quá mệt mỏi với cuộc sống này rồi 😓,t quá mệt mỏi với cuộc sống này rồi 😓,sadness,sadness,3
+uit_003797,bạn gái trong ảnh lưu hình gửi cho công an xã chết con mẹ bọn nó đi :))),bạn gái trong ảnh lưu hình gửi cho công an xã chết con mẹ bọn nó đi :))),anger,anger,0
+uit_003633,êu khiếp chứ thế này chết cả gái lẫn zai thôi,êu khiếp chứ thế này chết cả gái lẫn zai thôi,other,neutral,4
+uit_003895,tao thấy đéo có cái gì để tao cầm được cơn cười cđcm nó ! :)),tao thấy đéo có cái gì để tao cầm được cơn cười cđcm nó ! :)),enjoyment,happiness,2
+uit_000404,per nguy hiểm quá mày ơi 😩😩,per nguy hiểm quá mày ơi 😩😩,fear,fear,1
+uit_004737,ngay thơ vô số tội đã từng bị tụi bạn chơi khăm kiểu này,ngay thơ vô số tội đã từng bị tụi bạn chơi khăm kiểu này,anger,anger,0
+uit_000396,thức ăn cho chó lúc nào cũng ngon :))))))))))),thức ăn cho chó lúc nào cũng ngon :))))))))))),enjoyment,happiness,2
+uit_000815,per kìa 3 chị em vào mà hốt hàng về đi chứ hâha,per kìa 3 chị em vào mà hốt hàng về đi chứ hâha,enjoyment,happiness,2
+uit_002001,"tao cũng vậy , mấy cái thiệp chúc noel thời cấp 2 trẻ trâu của lũ bạn vẫn còn nguyên xi","tao cũng vậy , mấy cái thiệp chúc noel thời cấp 2 trẻ trâu của lũ bạn vẫn còn nguyên xi",other,neutral,4
+uit_004778,kêu gọi thì lói thế thôi chứ dân nó vẫn dùng apple như thường,kêu gọi thì lói thế thôi chứ dân nó vẫn dùng apple như thường,other,neutral,4
+uit_001203,cho xin tí muối ạ,cho xin tí muối ạ,other,neutral,4
+uit_001199,per thật sự là có cách nào dắt bé đi theo được không ? 😭,per thật sự là có cách nào dắt bé đi theo được không ? 😭,other,neutral,4
+uit_002834,hú hồn,hú hồn,fear,fear,1
+uit_003848,tao nhìn tao thấy ghê vcd ấy 😂😂,tao nhìn tao thấy ghê vcd ấy 😂😂,fear,fear,1
+uit_002431,có đồng nghiệp đáng yêuc thì sếp có khó tánh mình vẫn cảm thấy vui rất nhiều . nhớ những ngày tháng đéo thèm tăng ca đi ăn bất chấp,có đồng nghiệp đáng yêuc thì sếp có khó tánh mình vẫn cảm thấy vui rất nhiều . nhớ những ngày tháng đéo thèm tăng ca đi ăn bất chấp,enjoyment,happiness,2
+uit_003543,buồn vương mi !!!,buồn vương mi !!!,sadness,sadness,3
+uit_003267,mình còn chưa kịp đến :((,mình còn chưa kịp đến :((,sadness,sadness,3
+uit_003664,gắp đúng lúc nhưng hình như đúng lúc người ta không muốn y ai ???? đó là 1 câu chuyện buồn,gắp đúng lúc nhưng hình như đúng lúc người ta không muốn y ai ???? đó là 1 câu chuyện buồn,sadness,sadness,3
+uit_004449,"thề , coi rồi mà xem lại vẫn buồn","thề , coi rồi mà xem lại vẫn buồn",sadness,sadness,3
+uit_005140,per =)))))))))))) tao cười không biết chỗ nín lun,per =)))))))))))) tao cười không biết chỗ nín lun,enjoyment,happiness,2
+uit_004009,cưng thế =)),cưng thế =)),enjoyment,happiness,2
+uit_001116,mỗi lần tao ăn đu đủ bằng thìa thì bố tao lại chửi tao . bố tao bảo loại mày ăn đu đủ không cần thìa đâu .,mỗi lần tao ăn đu đủ bằng thìa thì bố tao lại chửi tao . bố tao bảo loại mày ăn đu đủ không cần thìa đâu .,sadness,sadness,3
+uit_002520,qua câu chuyện vừa bịa ra tôi hi vọng các bạn sẽ có cái nhìn thoáng hơn về csgt việt nam 😂😂,qua câu chuyện vừa bịa ra tôi hi vọng các bạn sẽ có cái nhìn thoáng hơn về csgt việt nam 😂😂,enjoyment,happiness,2
+uit_000081,"đẹp , dẽ thương mà","đẹp , dẽ thương mà",enjoyment,happiness,2
+uit_003939,hay lắm em êiiii,hay lắm em êiiii,enjoyment,happiness,2
+uit_001352,dăm ba chuyện hẹn hò có gì hay ho 😌 nhưng mà thi thoảng có dăm ba cái chuyện này cũng hay 🙂 tóm lại xem để giải trí đỡ buồn cũng tốt 🙂,dăm ba chuyện hẹn hò có gì hay ho 😌 nhưng mà thi thoảng có dăm ba cái chuyện này cũng hay 🙂 tóm lại xem để giải trí đỡ buồn cũng tốt 🙂,enjoyment,happiness,2
+uit_001263,đề nghị các bạn giữ trật tự trong rạp phim !!!!!!,đề nghị các bạn giữ trật tự trong rạp phim !!!!!!,other,neutral,4
+uit_002586,ngứa mắt lắm à nhen,ngứa mắt lắm à nhen,anger,anger,0
+uit_001140,ủa rồi chân một khúc như tao nhảy kiểu gì ? 🙂,ủa rồi chân một khúc như tao nhảy kiểu gì ? 🙂,other,neutral,4
+uit_005221,hên là đụng nhầm người chứ đụng trúng cái là rụng trứng cả bày cả lũ -)),hên là đụng nhầm người chứ đụng trúng cái là rụng trứng cả bày cả lũ -)),enjoyment,happiness,2
+uit_003612,a ấy nói đúng vầy vừa nta dọn cũng khổ nta chứ . phục vụ xog lại phải dọn nữa,a ấy nói đúng vầy vừa nta dọn cũng khổ nta chứ . phục vụ xog lại phải dọn nữa,other,neutral,4
+uit_000181,thật cảm động,thật cảm động,enjoyment,happiness,2
+uit_000853,ngày xưa mỗi lần tao làm ồn là ngoại tao liền la hoặc lấy roi đánh 😅 nhưng lúc đó vui lắm 😊,ngày xưa mỗi lần tao làm ồn là ngoại tao liền la hoặc lấy roi đánh 😅 nhưng lúc đó vui lắm 😊,enjoyment,happiness,2
+uit_001524,sau khi xem ảnh này xong tôi quyết định ... mua honda :v,sau khi xem ảnh này xong tôi quyết định ... mua honda :v,enjoyment,happiness,2
+uit_003530,nồi cơm điện chứ gì .,nồi cơm điện chứ gì .,other,neutral,4
+uit_004087,tuy truong hop thôi cha me tao ra ma không thuong doi su te thi lam sao con no thuong lai thôi xua khac gio khac cu so sanh voi thôi co dai chan,tuy truong hop thôi cha me tao ra ma không thuong doi su te thi lam sao con no thuong lai thôi xua khac gio khac cu so sanh voi thôi co dai chan,other,neutral,4
+uit_000621,"cũng chuẩn , giờ khởi nghiệp vậy phá sản chỉ mấy tháng đầu","cũng chuẩn , giờ khởi nghiệp vậy phá sản chỉ mấy tháng đầu",enjoyment,happiness,2
+uit_000912,đội nào cũng xứng đáng hơi tiếc cho per,đội nào cũng xứng đáng hơi tiếc cho per,other,neutral,4
+uit_000820,thật ra đàn ông ghen nhiều hơn phụ nữ đấy chứ,thật ra đàn ông ghen nhiều hơn phụ nữ đấy chứ,other,neutral,4
+uit_004153,cười vào mặt mấy đứa không có người yêu :))),cười vào mặt mấy đứa không có người yêu :))),enjoyment,happiness,2
+uit_000149,tính đi chạy xe mà mưa cho nên ta ở nhà :),tính đi chạy xe mà mưa cho nên ta ở nhà :),other,neutral,4
+uit_002631,hồi bé bị ghiền mùi này :)))),hồi bé bị ghiền mùi này :)))),enjoyment,happiness,2
+uit_002663,nhà nước pháp luật việt nam lên tiếng hộ em nó cái,nhà nước pháp luật việt nam lên tiếng hộ em nó cái,other,neutral,4
+uit_003761,đã xem 2 lần bộ phim này 😁,đã xem 2 lần bộ phim này 😁,enjoyment,happiness,2
+uit_001763,một giây rung động con tim :))))),một giây rung động con tim :))))),enjoyment,happiness,2
+uit_001808,vl đánh đòn hic :))))),vl đánh đòn hic :))))),sadness,sadness,3
+uit_004578,"đầu mùa mà trên nhà tôi vải có 15k / 1kg , ăn tã từ đầu mùa 😊","đầu mùa mà trên nhà tôi vải có 15k / 1kg , ăn tã từ đầu mùa 😊",enjoyment,happiness,2
+uit_000418,tạm biệt ông cám ơn tất cả những gì ông đã làm cho vn,tạm biệt ông cám ơn tất cả những gì ông đã làm cho vn,enjoyment,happiness,2
+uit_001979,chắc từ giờ tao đéo giám ho nữa quá .,chắc từ giờ tao đéo giám ho nữa quá .,fear,fear,1
+uit_000116,hãy dùng một đời để minh chứng nhé !💕😍,hãy dùng một đời để minh chứng nhé !💕😍,other,neutral,4
+uit_002652,"t thề mỗi lần dọn phòng sn này thì banh kem , pháo kim tuyến . đủ các thứ . khóc mà bụt nó đéo lên","t thề mỗi lần dọn phòng sn này thì banh kem , pháo kim tuyến . đủ các thứ . khóc mà bụt nó đéo lên",sadness,sadness,3
+uit_005056,béo quá không ai yêu thì về đây em nuôi nè,béo quá không ai yêu thì về đây em nuôi nè,other,neutral,4
+uit_000625,đã năm 2000 . người ta cho mượn 200 tr rồi .. từ đó về sau nhà người ta có cần 25 tr / tháng hay không ???,đã năm 2000 . người ta cho mượn 200 tr rồi .. từ đó về sau nhà người ta có cần 25 tr / tháng hay không ???,other,neutral,4
+uit_001543,đùa ... cảnh sát việt nam tài thật . vụ gì cũng bắt trong 48 giờ,đùa ... cảnh sát việt nam tài thật . vụ gì cũng bắt trong 48 giờ,enjoyment,happiness,2
+uit_003684,có mưa cảm giác như được sống lại :))),có mưa cảm giác như được sống lại :))),enjoyment,happiness,2
+uit_004354,nhìn 2 cụ thương lạ lùng . nhìu lúc ước sao về già mình được nv thui .,nhìn 2 cụ thương lạ lùng . nhìu lúc ước sao về già mình được nv thui .,enjoyment,happiness,2
+uit_005048,trước em cũng hắt xì 1 cái lưng khụ xuống như ông già đau vãi,trước em cũng hắt xì 1 cái lưng khụ xuống như ông già đau vãi,sadness,sadness,3
+uit_000519,không phải không thích mà bản thân chưa đủ tốt để sánh vai . phải chi anh có thể đợi em khôn lớn !,không phải không thích mà bản thân chưa đủ tốt để sánh vai . phải chi anh có thể đợi em khôn lớn !,sadness,sadness,3
+uit_002417,"mưa rồi , chỗ tao đang mưa","mưa rồi , chỗ tao đang mưa",other,neutral,4
+uit_000041,"mỗi ngày mình ôm nhau 1 cái như này hén , hí hí","mỗi ngày mình ôm nhau 1 cái như này hén , hí hí",enjoyment,happiness,2
+uit_003088,"nhìn 1 cái , cười 1 cái rồi về thôi","nhìn 1 cái , cười 1 cái rồi về thôi",enjoyment,happiness,2
+uit_000055,ôi bé xinh gái vãi :)),ôi bé xinh gái vãi :)),enjoyment,happiness,2
+uit_004419,những người có tài như này công nhận giỏi,những người có tài như này công nhận giỏi,enjoyment,happiness,2
+uit_003598,chỉ cần sống thật với cảm xúc .. với chính con người bạn là hạnh phúc nhất,chỉ cần sống thật với cảm xúc .. với chính con người bạn là hạnh phúc nhất,enjoyment,happiness,2
+uit_000940,nơi ấy giữ lại những kí ức tuyệt vời,nơi ấy giữ lại những kí ức tuyệt vời,enjoyment,happiness,2
+uit_003702,😑 sao cái kết gì mà buồn vậy,😑 sao cái kết gì mà buồn vậy,sadness,sadness,3
+uit_001658,1 chút vị cay pha thêm 1 chút vị đắng nhưng đôi khi cũng có chút ngọt ngào,1 chút vị cay pha thêm 1 chút vị đắng nhưng đôi khi cũng có chút ngọt ngào,other,neutral,4
+uit_000713,bé có năng khiếu làm cô giáo dạy văn ... nghe thì nghĩ tục nhưng đời thường là có thật ... bác nghe thấy đồng cảm với các cháu,bé có năng khiếu làm cô giáo dạy văn ... nghe thì nghĩ tục nhưng đời thường là có thật ... bác nghe thấy đồng cảm với các cháu,sadness,sadness,3
+uit_004262,"tao rợn hết người luôn , ghi công mày 😑😑","tao rợn hết người luôn , ghi công mày 😑😑",fear,fear,1
+uit_003600,mày lấy sỏi xếp thành tên dume khôn như tao này .,mày lấy sỏi xếp thành tên dume khôn như tao này .,enjoyment,happiness,2
+uit_003471,nhìn hói mà thấy thương gê ??,nhìn hói mà thấy thương gê ??,sadness,sadness,3
+uit_001949,đáng nhẽ nên làm việc này từ sớm . chứ hàn quốc họ làm từ lâu rồi ạ,đáng nhẽ nên làm việc này từ sớm . chứ hàn quốc họ làm từ lâu rồi ạ,other,neutral,4
+uit_000075,đm thực tế như này còn hay . tiếc là đéo ở gần mình =)),đm thực tế như này còn hay . tiếc là đéo ở gần mình =)),sadness,sadness,3
+uit_004204,moẹ s tuổi thơ của tôi toàn găp phải thằng mất dạy . toàn đánh với bắt nạt các b nữ . đm thằng per với thằng per lơn . tau vẫn nhớ,moẹ s tuổi thơ của tôi toàn găp phải thằng mất dạy . toàn đánh với bắt nạt các b nữ . đm thằng per với thằng per lơn . tau vẫn nhớ,anger,anger,0
+uit_002236,per tìm được đối tượng nào để cầu hôn chưa :))),per tìm được đối tượng nào để cầu hôn chưa :))),enjoyment,happiness,2
+uit_003220,nói thật :)) tao chỉ buồn cười khi chúng nó chia tay thôi :)),nói thật :)) tao chỉ buồn cười khi chúng nó chia tay thôi :)),enjoyment,happiness,2
+uit_001805,rồi rủi gặp phải thằng người yêu con kia cục súc nó lại xiên cả đám :),rồi rủi gặp phải thằng người yêu con kia cục súc nó lại xiên cả đám :),other,neutral,4
+uit_004657,làm cái đéo gì mà lại lâm vào tình huống như thế này,làm cái đéo gì mà lại lâm vào tình huống như thế này,other,neutral,4
+uit_002381,"per chị mày đánh lộn từ đầu làng đến cuối xóm thì cần chi bọn con trai , nhưng nhìn bọn nó dễ thương hén","per chị mày đánh lộn từ đầu làng đến cuối xóm thì cần chi bọn con trai , nhưng nhìn bọn nó dễ thương hén",enjoyment,happiness,2
+uit_005234,t đang thắc mắc là 2 thằng kia đéo hỏi thằng per à 🤔,t đang thắc mắc là 2 thằng kia đéo hỏi thằng per à 🤔,other,neutral,4
+uit_001879,"giáo viên tiếng anh ở cấp thcs cực kì chán , phát âm sai bét , giao tiếp tiếng anh thì cứ ừ à .","giáo viên tiếng anh ở cấp thcs cực kì chán , phát âm sai bét , giao tiếp tiếng anh thì cứ ừ à .",other,neutral,4
+uit_000641,"nhớ hồi euro 2012 rực sáng trong màu áo tuyển ý , ghi mấy bàn mà bàn nào cũng thấy phê .","nhớ hồi euro 2012 rực sáng trong màu áo tuyển ý , ghi mấy bàn mà bàn nào cũng thấy phê .",enjoyment,happiness,2
+uit_003416,chửi thì chửi . mà cái giọng của anh dọn phòng nghe trổi tai thật .,chửi thì chửi . mà cái giọng của anh dọn phòng nghe trổi tai thật .,anger,anger,0
+uit_000543,thanh niên leo lên cao để theo dõi thời tiết để thông báo cho người dân đi cấy thật cảm động,thanh niên leo lên cao để theo dõi thời tiết để thông báo cho người dân đi cấy thật cảm động,enjoyment,happiness,2
+uit_000314,crush tao mất rồi .,crush tao mất rồi .,sadness,sadness,3
+uit_000466,nó lại làm tao nhớ tới cái mấy con chó ăn hạt dưa ở quán cf đụ đỉ mẹ ăn thì có cái bịch bên cạnh đó cắn bỏ vào bịch thì chết à d . mày cắn xong cứ phun phun xuống đất đã vậy mỗi lần phun là mỗi chỗ khác nhau làm dọn bắt lòi dái nhìn nó phun chỉ muốn đấm cho nó một cái,nó lại làm tao nhớ tới cái mấy con chó ăn hạt dưa ở quán cf đụ đỉ mẹ ăn thì có cái bịch bên cạnh đó cắn bỏ vào bịch thì chết à d . mày cắn xong cứ phun phun xuống đất đã vậy mỗi lần phun là mỗi chỗ khác nhau làm dọn bắt lòi dái nhìn nó phun chỉ muốn đấm cho nó một cái,anger,anger,0
+uit_004979,dễ thương ha,dễ thương ha,enjoyment,happiness,2
+uit_005162,tao tát cho bây giờ đấy,tao tát cho bây giờ đấy,anger,anger,0
+uit_000293,:))) 1 phần của bài quyền là phải gẫy gậy và té sấp mặt luôn để đỡ bị đối phương đâm lòi phèo,:))) 1 phần của bài quyền là phải gẫy gậy và té sấp mặt luôn để đỡ bị đối phương đâm lòi phèo,sadness,sadness,3
+uit_001767,"tự nhiên chơi với con trai cái bị kêu không đàng quàng , con gái gì kỳ vậy , lại còn nhiều bồ , đi với ai cũng nghĩ là bồ . mệt thiệt chứ","tự nhiên chơi với con trai cái bị kêu không đàng quàng , con gái gì kỳ vậy , lại còn nhiều bồ , đi với ai cũng nghĩ là bồ . mệt thiệt chứ",anger,anger,0
+uit_001415,cảm ơn những người thả 😡 nên mình biết là đéo hay nên mình đéo xem . may vãi,cảm ơn những người thả 😡 nên mình biết là đéo hay nên mình đéo xem . may vãi,enjoyment,happiness,2
+uit_000870,"có rồi mà , nghén rồi nè hihi","có rồi mà , nghén rồi nè hihi",enjoyment,happiness,2
+uit_005138,"nhìn một cái rồi thôi , chuyện của những năm trước","nhìn một cái rồi thôi , chuyện của những năm trước",sadness,sadness,3
+uit_004338,per mày cứ kén chọn đi chúng nó yêuc nhaooo hết rồi kia kìa ahuhu .. không tin vào mấy thằng ông nội cơ bắpppp nữaaa,per mày cứ kén chọn đi chúng nó yêuc nhaooo hết rồi kia kìa ahuhu .. không tin vào mấy thằng ông nội cơ bắpppp nữaaa,fear,fear,1
+uit_001038,cuộc sống đổi thay làm lòng người thay đổi . hiểu vậy cho nó vuông,cuộc sống đổi thay làm lòng người thay đổi . hiểu vậy cho nó vuông,other,neutral,4
+uit_004284,"kết mỗi câu ru con ngủ để vợ đắp mặt nạ làm đẹp , 10đ chồng tốt =))))","kết mỗi câu ru con ngủ để vợ đắp mặt nạ làm đẹp , 10đ chồng tốt =))))",enjoyment,happiness,2
+uit_002622,đúng cát bà rồiii ~,đúng cát bà rồiii ~,enjoyment,happiness,2
+uit_002385,không hiểu sao xem đi xem lại bao nhiêu lần vẫn khóc được,không hiểu sao xem đi xem lại bao nhiêu lần vẫn khóc được,sadness,sadness,3
+uit_004693,"bồ tao cũng đang đi cái này , từ nhà nó lên đây cỡ 2 tiếng mấy và dume nó bảo tao ngủ đi vì nó đi đến sáng :)))))","bồ tao cũng đang đi cái này , từ nhà nó lên đây cỡ 2 tiếng mấy và dume nó bảo tao ngủ đi vì nó đi đến sáng :)))))",enjoyment,happiness,2
+uit_000763,đôi khi công việc không áp lực .... nhưng chính môi trường làm mọi thứ trở nên áp lực,đôi khi công việc không áp lực .... nhưng chính môi trường làm mọi thứ trở nên áp lực,other,neutral,4
+uit_003008,tao xem mà cứ sợ nó ngã vãi 🙂,tao xem mà cứ sợ nó ngã vãi 🙂,fear,fear,1
+uit_002078,tội em vợ thế :(,tội em vợ thế :(,sadness,sadness,3
+uit_004160,t chỉ sợ cảnh đấu kiếm :((,t chỉ sợ cảnh đấu kiếm :((,fear,fear,1
+uit_002240,"con bé xinh nhờ , khốn nạn là cái thằng edit video ý :)))","con bé xinh nhờ , khốn nạn là cái thằng edit video ý :)))",enjoyment,happiness,2
+uit_004620,nhìn mặt ông thầy cay lắm :)),nhìn mặt ông thầy cay lắm :)),enjoyment,happiness,2
+uit_003696,per haha bữa 3 đứa mới phong trào xong,per haha bữa 3 đứa mới phong trào xong,other,neutral,4
+uit_002903,sợ xanh mắt mèo,sợ xanh mắt mèo,fear,fear,1
+uit_001599,tuổi gì so với anh ! :) haha,tuổi gì so với anh ! :) haha,enjoyment,happiness,2
+uit_000952,"chơi game :v cấp 2 trộm tiền bố mẹ đốt gần 10tr vào game , cuối áy náy không chơi nữa nên ngồi bán nick được khoảng 2tr cũng gọi là thu nhập đầu tiên :v","chơi game :v cấp 2 trộm tiền bố mẹ đốt gần 10tr vào game , cuối áy náy không chơi nữa nên ngồi bán nick được khoảng 2tr cũng gọi là thu nhập đầu tiên :v",enjoyment,happiness,2
+uit_000903,lâu lắm rồi mà gio mới xử phạt,lâu lắm rồi mà gio mới xử phạt,anger,anger,0
+uit_004245,làm chó khổ lắm chứ bộ :((,làm chó khổ lắm chứ bộ :((,sadness,sadness,3
+uit_003686,haha biết ngây mà,haha biết ngây mà,enjoyment,happiness,2
+uit_001659,má 2 thằng áo vàng lầy ghê 😂,má 2 thằng áo vàng lầy ghê 😂,other,neutral,4
+uit_001039,chung quy là hình thức quảng cáo !!!,chung quy là hình thức quảng cáo !!!,other,neutral,4
+uit_003112,"hết cấp 3 , hết đại học và chỉ mới bắt đầu 1 cuộc chơi khác .","hết cấp 3 , hết đại học và chỉ mới bắt đầu 1 cuộc chơi khác .",other,neutral,4
+uit_004546,nó không cắn đâu đó là chó thường còn chủng tộc ngáo này thì không biết,nó không cắn đâu đó là chó thường còn chủng tộc ngáo này thì không biết,other,neutral,4
+uit_004482,nách kẹp cái gì ấy nhỉ các bác,nách kẹp cái gì ấy nhỉ các bác,other,neutral,4
+uit_002258,đồng cảnh ngộ :(,đồng cảnh ngộ :(,sadness,sadness,3
+uit_004912,đám người lớn văn hóa lùn đẻ ra một đám trẻ vô học . bọn mất dạy này là nhà dột từ nóc ấy mà . nên đuổi học cho lũ ngu học ấy về để nhà tiếp nối sự vô học của gia đình chúng nó,đám người lớn văn hóa lùn đẻ ra một đám trẻ vô học . bọn mất dạy này là nhà dột từ nóc ấy mà . nên đuổi học cho lũ ngu học ấy về để nhà tiếp nối sự vô học của gia đình chúng nó,anger,anger,0
+uit_001546,"gia đình và tình yêu , để thay đổi mọi thứ","gia đình và tình yêu , để thay đổi mọi thứ",other,neutral,4
+uit_001292,"anh biết em có nhiều chuyện , nhưng việc trước mắt là em nộp phạt đã , nếu không xe em sẽ bị thu vào đồn","anh biết em có nhiều chuyện , nhưng việc trước mắt là em nộp phạt đã , nếu không xe em sẽ bị thu vào đồn",other,neutral,4
+uit_002232,ơ tao cũng học ông này hướng dẫn hay sao ấy :))))),ơ tao cũng học ông này hướng dẫn hay sao ấy :))))),enjoyment,happiness,2
+uit_000605,đau bụng quá ự ự,đau bụng quá ự ự,sadness,sadness,3
+uit_001121,"ai ở gần đó xin hãy giúp chú , thương chú","ai ở gần đó xin hãy giúp chú , thương chú",sadness,sadness,3
+uit_004594,may thằng đó không nghe lời vợ,may thằng đó không nghe lời vợ,other,neutral,4
+uit_001474,1 bạt tai 2 đạp chứ ở đó bướng,1 bạt tai 2 đạp chứ ở đó bướng,anger,anger,0
+uit_000816,"ngày xưa có đĩa phim này . bố đi công tác về thấy cái đĩa tên là "" cô dâu 15 tuổi "" . má ăn chửi sấp mặt ...","ngày xưa có đĩa phim này . bố đi công tác về thấy cái đĩa tên là "" cô dâu 15 tuổi "" . má ăn chửi sấp mặt ...",sadness,sadness,3
+uit_000757,"đúng rồi , tưởng vậy nhưng hóa ra không phải ...","đúng rồi , tưởng vậy nhưng hóa ra không phải ...",other,neutral,4
+uit_000847,per người đừng hành hạ tuôi như thế nào nữa,per người đừng hành hạ tuôi như thế nào nữa,sadness,sadness,3
+uit_005181,"cười đấy , sau lưng nó đâm con mẹ nó dao vô hình cho chết mà vẫn sống nhăn răng luôn .","cười đấy , sau lưng nó đâm con mẹ nó dao vô hình cho chết mà vẫn sống nhăn răng luôn .",fear,fear,1
+uit_001257,per đứa nào nghĩ ra được cái qcao hay vãi ...,per đứa nào nghĩ ra được cái qcao hay vãi ...,enjoyment,happiness,2
+uit_001499,mới mua p30 luôn,mới mua p30 luôn,other,neutral,4
+uit_001984,nốt hôm nay thui . thui không ngĩ đến và bắt đầu từ bỏ 1 thói quen,nốt hôm nay thui . thui không ngĩ đến và bắt đầu từ bỏ 1 thói quen,sadness,sadness,3
+uit_001672,nhìn ông với bà chất hơn thanh niên bây giờ,nhìn ông với bà chất hơn thanh niên bây giờ,enjoyment,happiness,2
+uit_004866,"thích cái câu "" em không yêu anh nữa ""😊😊","thích cái câu "" em không yêu anh nữa ""😊😊",enjoyment,happiness,2
+uit_000428,"bị đánh 1 lần thì hơi sốc , nhưng nhiều lần thì tâm hồn sẽ trở nên mạnh mẽ , cảm xúc nó mới đàn hồi","bị đánh 1 lần thì hơi sốc , nhưng nhiều lần thì tâm hồn sẽ trở nên mạnh mẽ , cảm xúc nó mới đàn hồi",other,neutral,4
+uit_003253,nghe nói dạo này bạn dưỡng da để kiếm người yêu per,nghe nói dạo này bạn dưỡng da để kiếm người yêu per,enjoyment,happiness,2
+uit_003841,sớm muộn củng chết đuối à ;))),sớm muộn củng chết đuối à ;))),other,neutral,4
+uit_000150,nhìn nó cưng quá,nhìn nó cưng quá,enjoyment,happiness,2
+uit_002176,"ôi mệt quá , một ngày buồn tẻ","ôi mệt quá , một ngày buồn tẻ",sadness,sadness,3
+uit_003476,mẹ mày đã đánh mày tan xác chưa . phải tao thì mẹ tao cho nhừ tử luôn rồi ??,mẹ mày đã đánh mày tan xác chưa . phải tao thì mẹ tao cho nhừ tử luôn rồi ??,anger,anger,0
+uit_004551,per bếp thần thánh thời sanh viên 😂😂😂,per bếp thần thánh thời sanh viên 😂😂😂,enjoyment,happiness,2
+uit_002778,đi chơi lụm được tờ 2k rách mua băng keo 5k dán lại tờ 2k 🤔,đi chơi lụm được tờ 2k rách mua băng keo 5k dán lại tờ 2k 🤔,enjoyment,happiness,2
+uit_003656,per xem cái này đi tao coi phần 1 rồi này phần 2 tiếp nè,per xem cái này đi tao coi phần 1 rồi này phần 2 tiếp nè,other,neutral,4
+uit_002967,t chỉ ngồi nhà và ngắm cảnh tắc đường thôi,t chỉ ngồi nhà và ngắm cảnh tắc đường thôi,other,neutral,4
+uit_000258,mạng lag chưa xem được nhưng vẫn vào bình luận 😍😍,mạng lag chưa xem được nhưng vẫn vào bình luận 😍😍,other,neutral,4
+uit_001668,sao không thây lên báo nhỉ,sao không thây lên báo nhỉ,other,neutral,4
+uit_000651,sao lại bất công thế,sao lại bất công thế,sadness,sadness,3
+uit_002018,còn chả có ai nói chuyện thân thiết quan tâm đến tôi :<,còn chả có ai nói chuyện thân thiết quan tâm đến tôi :<,sadness,sadness,3
+uit_002535,cho em xin tên facebook của c trong video để khi buồn em có thứ mua vui ạ . cám ơn mọi người,cho em xin tên facebook của c trong video để khi buồn em có thứ mua vui ạ . cám ơn mọi người,enjoyment,happiness,2
+uit_002002,per haha . đặt bánh thì đặt thành cặp nhé . haha .😂😂,per haha . đặt bánh thì đặt thành cặp nhé . haha .😂😂,enjoyment,happiness,2
+uit_000292,"per ăn tết xong , cần cây cầu này để giảm cân 😆😆","per ăn tết xong , cần cây cầu này để giảm cân 😆😆",enjoyment,happiness,2
+uit_003273,hú hồn hà,hú hồn hà,fear,fear,1
+uit_002595,moá hồi hợp chờ main thắng ai dè thua bởi cái mông huhu,moá hồi hợp chờ main thắng ai dè thua bởi cái mông huhu,sadness,sadness,3
+uit_004025,per kết truyện chất ghê :)))))),per kết truyện chất ghê :)))))),enjoyment,happiness,2
+uit_001483,"per đâ ́ y , hiê ̉ u vi ̀ sao nên cha ̀ o mo ̣ i ngươ ̀ i chưa","per đâ ́ y , hiê ̉ u vi ̀ sao nên cha ̀ o mo ̣ i ngươ ̀ i chưa",enjoyment,happiness,2
+uit_003613,per mày cũng cắt tóc giống thế đi cho đẹp =)))),per mày cũng cắt tóc giống thế đi cho đẹp =)))),enjoyment,happiness,2
+uit_001773,thằng hack game nó gặp trùm cuối rồi 😭😭 truyện đến đây là kết thúc sao 😭,thằng hack game nó gặp trùm cuối rồi 😭😭 truyện đến đây là kết thúc sao 😭,sadness,sadness,3
+uit_002670,thương thương con =)) yêu ghê cơ ý cái mẹt hờn dỗi,thương thương con =)) yêu ghê cơ ý cái mẹt hờn dỗi,enjoyment,happiness,2
+uit_001250,tuy hơi fail 1 chút nhưng rất có năng khiếu lớn lên không chừng làm ca sĩ ấy chứ đừng đùa,tuy hơi fail 1 chút nhưng rất có năng khiếu lớn lên không chừng làm ca sĩ ấy chứ đừng đùa,other,neutral,4
+uit_003338,"t nghe nói : đi tập gym sẽ có người yêu ...! awwww . điều đó không sai , điều đó là có thật 😂😂😂","t nghe nói : đi tập gym sẽ có người yêu ...! awwww . điều đó không sai , điều đó là có thật 😂😂😂",enjoyment,happiness,2
+uit_004486,tao cũng co con gái nhưng nó không như loại mày đẻ ra chỉ đau lol phí cả công nuôi nuôi con chó còn hơn nuôi loại con như mày,tao cũng co con gái nhưng nó không như loại mày đẻ ra chỉ đau lol phí cả công nuôi nuôi con chó còn hơn nuôi loại con như mày,anger,anger,0
+uit_003522,:))) mặt ngáo vậy mà còn lạ lẫm gì,:))) mặt ngáo vậy mà còn lạ lẫm gì,other,neutral,4
+uit_000897,dễ thương . cứ yêu đi ngại gì .,dễ thương . cứ yêu đi ngại gì .,enjoyment,happiness,2
+uit_003960,mới thấy bài này trên phòng trọ đn nữa này . bạn ơi mình cùng thành phố này :v,mới thấy bài này trên phòng trọ đn nữa này . bạn ơi mình cùng thành phố này :v,enjoyment,happiness,2
+uit_002735,có móng tay dài cũng khổ,có móng tay dài cũng khổ,sadness,sadness,3
+uit_000539,"nói chung thánh này không ai ghét được , trừ hlv kkk , dễ thương gắp trăm thằng pogba ,,, mong cho thằng đó nhanh biến khỏi mu","nói chung thánh này không ai ghét được , trừ hlv kkk , dễ thương gắp trăm thằng pogba ,,, mong cho thằng đó nhanh biến khỏi mu",enjoyment,happiness,2
+uit_002610,rồi chưng ngắn như tao sao nhảy qua 😿,rồi chưng ngắn như tao sao nhảy qua 😿,sadness,sadness,3
+uit_000488,"là thằng đàn ông phải có bản lĩnh từ khi còn bé , thay vì hay bắt nạt , quát tháo đàn bà thì hãy là người che chở , yêu thương !!!! mong con zai của mẹ sau này cũng như mấy anh này .!!!","là thằng đàn ông phải có bản lĩnh từ khi còn bé , thay vì hay bắt nạt , quát tháo đàn bà thì hãy là người che chở , yêu thương !!!! mong con zai của mẹ sau này cũng như mấy anh này .!!!",enjoyment,happiness,2
+uit_001657,khoảng gần chục năm về trước thì còn vàng trắng .... giờ thì bán còn không đủ không đủ để trả công nữa là,khoảng gần chục năm về trước thì còn vàng trắng .... giờ thì bán còn không đủ không đủ để trả công nữa là,sadness,sadness,3
+uit_004915,nhiệt tình + ngu dốt là phải trả giá bằng tiền mặt 😂😂,nhiệt tình + ngu dốt là phải trả giá bằng tiền mặt 😂😂,enjoyment,happiness,2
+uit_002186,giống y con bạn tao :))) mặc dù nó không phải gvien hay gì cả nhưng nó khá trẻ trâu,giống y con bạn tao :))) mặc dù nó không phải gvien hay gì cả nhưng nó khá trẻ trâu,enjoyment,happiness,2
+uit_003644,cái ngành tài chính của mình có chỗ dụng võ tốt rồi đây :)))),cái ngành tài chính của mình có chỗ dụng võ tốt rồi đây :)))),enjoyment,happiness,2
+uit_005150,rụng cả răng khi xem không nhặt được mồm kkk,rụng cả răng khi xem không nhặt được mồm kkk,enjoyment,happiness,2
+uit_002392,vâng em gặp anh rồi mà giờ đây em vẫn cô đơn đi lang thang tìm những thứ vô nghĩa lấp vào nỗi cô đơn ấy,vâng em gặp anh rồi mà giờ đây em vẫn cô đơn đi lang thang tìm những thứ vô nghĩa lấp vào nỗi cô đơn ấy,sadness,sadness,3
+uit_001986,vì đồng tiền mà chúng mày giết bao nhiêu gia đình . chúng mày ăn những đồng tiền đấy mà chúng mày cũng nuốt trôi được à . bọn khốn nạn,vì đồng tiền mà chúng mày giết bao nhiêu gia đình . chúng mày ăn những đồng tiền đấy mà chúng mày cũng nuốt trôi được à . bọn khốn nạn,anger,anger,0
+uit_003963,"hồi nhỏ đi ngang nhà hàng xóm con quỷ này dí tao từ ngoài đường vô tới trong nhà tao nó vẫn không tha , ba mẹ tao nghe tao la chạy ra chụp cổ nó quăng ra sân nó mới chịu đi . ám ảnh tuổi thơ 😅😅😅","hồi nhỏ đi ngang nhà hàng xóm con quỷ này dí tao từ ngoài đường vô tới trong nhà tao nó vẫn không tha , ba mẹ tao nghe tao la chạy ra chụp cổ nó quăng ra sân nó mới chịu đi . ám ảnh tuổi thơ 😅😅😅",fear,fear,1
+uit_004655,per mốt đừg có thiết kế hay xây mấy cái kiểu như dị nhé hem ><,per mốt đừg có thiết kế hay xây mấy cái kiểu như dị nhé hem ><,other,neutral,4
+uit_002659,tụi nhỏ dễ thương quá,tụi nhỏ dễ thương quá,enjoyment,happiness,2
+uit_002791,tao thề . nhìn bạn ấy xong tao muốn rụng mấy quả trứng luôn 😓,tao thề . nhìn bạn ấy xong tao muốn rụng mấy quả trứng luôn 😓,fear,fear,1
+uit_003607,ngày bé tao bị nó dí thế là tao cho nó 1 gậy 🙂 hôm đó tao được ăn thịt ngỗng,ngày bé tao bị nó dí thế là tao cho nó 1 gậy 🙂 hôm đó tao được ăn thịt ngỗng,enjoyment,happiness,2
+uit_000476,cặp nay dth ghê luôn 😍,cặp nay dth ghê luôn 😍,enjoyment,happiness,2
+uit_002820,hahahaha . thâm nữa . mà thiệt chỉ có trong cổ tích nhé,hahahaha . thâm nữa . mà thiệt chỉ có trong cổ tích nhé,enjoyment,happiness,2
+uit_003572,hello đồng nghiệp ;)))) không biết nghiệp gì thôi haha,hello đồng nghiệp ;)))) không biết nghiệp gì thôi haha,enjoyment,happiness,2
+uit_001037,"có tài nhưng đôi lúc muốn làm diễn viên hài 🤣🤣🤣, khoái thanh niên này buồn cười vkl","có tài nhưng đôi lúc muốn làm diễn viên hài 🤣🤣🤣, khoái thanh niên này buồn cười vkl",enjoyment,happiness,2
+uit_001392,"per huyền thoại , kkkk","per huyền thoại , kkkk",enjoyment,happiness,2
+uit_000759,ukm . nguy hiểm thật :'<,ukm . nguy hiểm thật :'<,fear,fear,1
+uit_002413,"thôi không níu giữ kí ức xa vời , và chẳng bao giờ thuộc về nơi em","thôi không níu giữ kí ức xa vời , và chẳng bao giờ thuộc về nơi em",sadness,sadness,3
+uit_003706,per xinh nhỉ :)) ngày xưa cũng xem phim này mà không để ý có cả bả,per xinh nhỉ :)) ngày xưa cũng xem phim này mà không để ý có cả bả,enjoyment,happiness,2
+uit_000227,per nhện kìa haha,per nhện kìa haha,enjoyment,happiness,2
+uit_001696,thế này lại thành xây nhà cho nhà hàng xóm rồi 😰,thế này lại thành xây nhà cho nhà hàng xóm rồi 😰,sadness,sadness,3
+uit_002268,"chỉ có bọn nông dân mới nghĩ ra mấy trò này , phải con cháu nhà tao thì tao đến từng nhà 1 bắt từng thằng ăn cứt","chỉ có bọn nông dân mới nghĩ ra mấy trò này , phải con cháu nhà tao thì tao đến từng nhà 1 bắt từng thằng ăn cứt",anger,anger,0
+uit_004495,dễ thương quá trời hà ..😂,dễ thương quá trời hà ..😂,enjoyment,happiness,2
+uit_002094,giỏi thật chứ đùa . biểu cảm gần như 90 % chuẩn mẹ rồi . thằng quay và edit cũng ghê luôn . nhảy cũng tốt ra phét chứ -.- ác thật,giỏi thật chứ đùa . biểu cảm gần như 90 % chuẩn mẹ rồi . thằng quay và edit cũng ghê luôn . nhảy cũng tốt ra phét chứ -.- ác thật,enjoyment,happiness,2
+uit_003232,hơn cả bộ phim kinh dị !,hơn cả bộ phim kinh dị !,fear,fear,1
+uit_002112,tớ cũng muốn có mối tình như vậy ??,tớ cũng muốn có mối tình như vậy ??,sadness,sadness,3
+uit_000949,dume mệt mỏi thật sự,dume mệt mỏi thật sự,anger,anger,0
+uit_002357,"không được uống đã đành , ngồi dọn sấp mặt luôn , như con cáo và chùm nho xanh per","không được uống đã đành , ngồi dọn sấp mặt luôn , như con cáo và chùm nho xanh per",sadness,sadness,3
+uit_003463,1967 mà cụ ông đẹp trai phong độ ăn mặc thời trang quá :)),1967 mà cụ ông đẹp trai phong độ ăn mặc thời trang quá :)),enjoyment,happiness,2
+uit_002145,"đúng rồi còn quay quay , lớ nga lớ ngớ xuống trách người ta . có phải bãi xe tự phát đâu mà người ta dám làm láo .","đúng rồi còn quay quay , lớ nga lớ ngớ xuống trách người ta . có phải bãi xe tự phát đâu mà người ta dám làm láo .",anger,anger,0
+uit_002896,66 năm trời luôn đấy,66 năm trời luôn đấy,other,neutral,4
+uit_001450,đau lòng lắm khi tối nay chồng tương lai của tao lại cống hiến sức lực để chăm sóc vợ thằng khác ..,đau lòng lắm khi tối nay chồng tương lai của tao lại cống hiến sức lực để chăm sóc vợ thằng khác ..,sadness,sadness,3
+uit_003268,"per tìm tao con nhện này , con này lãng mạn coá","per tìm tao con nhện này , con này lãng mạn coá",other,neutral,4
+uit_004867,cho tao hỏi lúa nó dính mưa vầy ròi thì làm được gì không .,cho tao hỏi lúa nó dính mưa vầy ròi thì làm được gì không .,other,neutral,4
+uit_001817,2 câu giống nhau,2 câu giống nhau,other,neutral,4
+uit_000987,"hahaa , đợi em ngủ chút tí ròii buôn :))","hahaa , đợi em ngủ chút tí ròii buôn :))",enjoyment,happiness,2
+uit_001245,cùng câu hỏi .. vụ thang máy thì sao nhỉ,cùng câu hỏi .. vụ thang máy thì sao nhỉ,other,neutral,4
+uit_005123,"per , nhơ cai thời sv ở tro , :)","per , nhơ cai thời sv ở tro , :)",enjoyment,happiness,2
+uit_002658,buổi tối vui vẻ và ấm áp nhé đại kỷ nguyên ! tương tác cho hằng khỏi trôi bài nhé !,buổi tối vui vẻ và ấm áp nhé đại kỷ nguyên ! tương tác cho hằng khỏi trôi bài nhé !,enjoyment,happiness,2
+uit_003934,lúc buồn là đi phựt thì thôi rồi như kiểu cuộc đời đáng sống ý,lúc buồn là đi phựt thì thôi rồi như kiểu cuộc đời đáng sống ý,other,neutral,4
+uit_002322,sg chưa mưa đâu,sg chưa mưa đâu,other,neutral,4
+uit_001920,ơ thế hoá ra tao không bị ngu một mình ?,ơ thế hoá ra tao không bị ngu một mình ?,sadness,sadness,3
+uit_002243,cái này ghê vãi mày sẽ hiểu cảm giác khi nó lún xuống 😅😅,cái này ghê vãi mày sẽ hiểu cảm giác khi nó lún xuống 😅😅,fear,fear,1
+uit_001816,"hết hôi nhưng cống vẫn xả xuống sông thì nó lại thành "" hòa vốn "" 🤔🤔","hết hôi nhưng cống vẫn xả xuống sông thì nó lại thành "" hòa vốn "" 🤔🤔",other,neutral,4
+uit_000388,"cái công ty thực phẩm cung cấp cho các trường mầm non thật quá độc ác . vì lợi ích cá nhân mà ảnh hưởng khủng khiếp tới các em . quá dã man . các người gây nên hoạ thì mai này đời con đời cháu sẽ phải gánh nghiệp đó thôi . gieo nhân nào gặt quả ấy , đừng tưởng bây giờ sống nhé nhỉ thế là không sao . đời còn dài lắm","cái công ty thực phẩm cung cấp cho các trường mầm non thật quá độc ác . vì lợi ích cá nhân mà ảnh hưởng khủng khiếp tới các em . quá dã man . các người gây nên hoạ thì mai này đời con đời cháu sẽ phải gánh nghiệp đó thôi . gieo nhân nào gặt quả ấy , đừng tưởng bây giờ sống nhé nhỉ thế là không sao . đời còn dài lắm",other,neutral,4
+uit_004178,"per nghe rv thấy cũng hay nè , liên quan đến bùa ngải các kiểu có vẻ hấp dẫn :v","per nghe rv thấy cũng hay nè , liên quan đến bùa ngải các kiểu có vẻ hấp dẫn :v",enjoyment,happiness,2
+uit_004010,ui nghe ấm thế,ui nghe ấm thế,enjoyment,happiness,2
+uit_001828,lấy ghế ra ngồi thật tuyệt,lấy ghế ra ngồi thật tuyệt,enjoyment,happiness,2
+uit_000290,"ok hay quá , dùng điện này thôi","ok hay quá , dùng điện này thôi",enjoyment,happiness,2
+uit_000971,bếp dầu chủ cái gì nữa,bếp dầu chủ cái gì nữa,other,neutral,4
+uit_005073,"ngày đẹp trời là ngày được nghỉ làm , đi những nơi mình thích , với người mình thương , ăn những món ăn ngon . xong về ôm nhau ngủ :)))","ngày đẹp trời là ngày được nghỉ làm , đi những nơi mình thích , với người mình thương , ăn những món ăn ngon . xong về ôm nhau ngủ :)))",enjoyment,happiness,2
+uit_004263,tôi nghĩ nên tăng tiền phạt lên,tôi nghĩ nên tăng tiền phạt lên,other,neutral,4
+uit_001502,"thằng nào vẽ đẹp , vẽ giúp tao tấm ảnh per phòng hờ cúp điện không có tài liệu quay tay :(","thằng nào vẽ đẹp , vẽ giúp tao tấm ảnh per phòng hờ cúp điện không có tài liệu quay tay :(",enjoyment,happiness,2
+uit_001162,chỉ ước về sau mình được vay,chỉ ước về sau mình được vay,enjoyment,happiness,2
+uit_004937,t thấy tội nghiệp thằng cải,t thấy tội nghiệp thằng cải,enjoyment,happiness,2
+uit_004764,góp vui cho chủ thớt 😂😂,góp vui cho chủ thớt 😂😂,enjoyment,happiness,2
+uit_004774,per khi ế nhưng vẫn phải giương mắt nhìn bọn nó ân ái,per khi ế nhưng vẫn phải giương mắt nhìn bọn nó ân ái,sadness,sadness,3
+uit_000430,sao bao nhiêu năm kể từ ngày đó em đã không còn nghe lại nữa :((,sao bao nhiêu năm kể từ ngày đó em đã không còn nghe lại nữa :((,sadness,sadness,3
+uit_002337,per đợt này tao đi học full . nên để mấy hnua rảnh tao alo nha 😂😂,per đợt này tao đi học full . nên để mấy hnua rảnh tao alo nha 😂😂,other,neutral,4
+uit_002126,bé gái đáng yêuc quá :))). dth nữa,bé gái đáng yêuc quá :))). dth nữa,enjoyment,happiness,2
+uit_003215,per tao tán sấp mặt,per tao tán sấp mặt,anger,anger,0
+uit_003693,bạn đã hiểu nổi khổ của mario khi mua vui cho bạn chưa :)),bạn đã hiểu nổi khổ của mario khi mua vui cho bạn chưa :)),sadness,sadness,3
+uit_003771,cô quét đi cô cho cháu hốt về với =))),cô quét đi cô cho cháu hốt về với =))),enjoyment,happiness,2
+uit_002191,là khi lạc giữa 1 biển người hôm khai giảng nhưng vẫn nhìn thấy người đó rõ nhất,là khi lạc giữa 1 biển người hôm khai giảng nhưng vẫn nhìn thấy người đó rõ nhất,enjoyment,happiness,2
+uit_004678,sao có thể từ chối lời tỏ tình dễ thương thế này ❤️❤️,sao có thể từ chối lời tỏ tình dễ thương thế này ❤️❤️,enjoyment,happiness,2
+uit_000327,"mày vã quá rồi đấy , sang lên chứ 🙄","mày vã quá rồi đấy , sang lên chứ 🙄",other,neutral,4
+uit_000268,t thề hồi nhỏ qua nhà ông hàng xóm vá xe tao bị con ngỗng dí chạy xúc quần quanh nhà ổng vừa chạy vừa la làng tới giờ nhớ lại vẫn còn hãi 😧😧😧,t thề hồi nhỏ qua nhà ông hàng xóm vá xe tao bị con ngỗng dí chạy xúc quần quanh nhà ổng vừa chạy vừa la làng tới giờ nhớ lại vẫn còn hãi 😧😧😧,fear,fear,1
+uit_003213,sợ vãi =))),sợ vãi =))),fear,fear,1
+uit_003514,2 thế kỷ mới xây được vậy mà chỉ trong 63 phút tiêu tan hết :(,2 thế kỷ mới xây được vậy mà chỉ trong 63 phút tiêu tan hết :(,sadness,sadness,3
+uit_001051,thôi tốt nhất là chịu thua đi . thắng hay thua cũng đâu có được gì .,thôi tốt nhất là chịu thua đi . thắng hay thua cũng đâu có được gì .,other,neutral,4
+uit_001138,lo cho thang bé lỡ rớt điện thoại xuống nước thì ....,lo cho thang bé lỡ rớt điện thoại xuống nước thì ....,fear,fear,1
+uit_003429,ăn cút mẹ mày ra chỗ khác ăn nhé .,ăn cút mẹ mày ra chỗ khác ăn nhé .,anger,anger,0
+uit_002885,đm hú hồn,đm hú hồn,fear,fear,1
+uit_004474,có đứa con gái như vậy kêu làm việc nhà hằng ngày tôi cũng làm nữa 😘,có đứa con gái như vậy kêu làm việc nhà hằng ngày tôi cũng làm nữa 😘,enjoyment,happiness,2
+uit_004802,tôi cũng muốn được cảm thấy như vậy ??,tôi cũng muốn được cảm thấy như vậy ??,sadness,sadness,3
+uit_002113,một bộ phim quá suất sắc,một bộ phim quá suất sắc,enjoyment,happiness,2
+uit_001664,per kinh nghiệm nha,per kinh nghiệm nha,enjoyment,happiness,2
+uit_005169,14 / 2 năm sau tau sẽ là ông già cô đơn ....,14 / 2 năm sau tau sẽ là ông già cô đơn ....,sadness,sadness,3
+uit_000930,em nó đây nha các bác . kkkkk :))))),em nó đây nha các bác . kkkkk :))))),enjoyment,happiness,2
+uit_003207,xui thôi chứ quyền đang hay mà 😢,xui thôi chứ quyền đang hay mà 😢,sadness,sadness,3
+uit_003973,"ủa tại sao không nghỉ việc luôn đi , hay lương tâm không còn chữ đức nữa","ủa tại sao không nghỉ việc luôn đi , hay lương tâm không còn chữ đức nữa",anger,anger,0
+uit_000747,"trung thu là tết thiếu nhi , yêu đường gì liên quan ở đây .. gấu với chả bò","trung thu là tết thiếu nhi , yêu đường gì liên quan ở đây .. gấu với chả bò",anger,anger,0
+uit_000947,địt mẹ vừa đi ép lại kính xong giờ tan con mẹ nó cái kính rồi 200k của bà mày đấyyyyy !!!!!,địt mẹ vừa đi ép lại kính xong giờ tan con mẹ nó cái kính rồi 200k của bà mày đấyyyyy !!!!!,sadness,sadness,3
+uit_002697,crush của tao đi làm rồi . hihee . sáng mai mới về cơ 🤣🤣,crush của tao đi làm rồi . hihee . sáng mai mới về cơ 🤣🤣,enjoyment,happiness,2
+uit_000299,bếp dầu thời bao cấp,bếp dầu thời bao cấp,other,neutral,4
+uit_000001,uớc gì sau này về già vẫn có thể như cụ này :)),uớc gì sau này về già vẫn có thể như cụ này :)),enjoyment,happiness,2
+uit_004117,mặt tao như này ai mê cho nổiiiii,mặt tao như này ai mê cho nổiiiii,sadness,sadness,3
+uit_000609,bạn trai tao đéo biết giận dai nên không phải dỗ,bạn trai tao đéo biết giận dai nên không phải dỗ,enjoyment,happiness,2
+uit_004161,:v buồn cười ghê .,:v buồn cười ghê .,enjoyment,happiness,2
+uit_000437,thề dume c còn hết hồn nói chi đến khách =)))) sáng sớm ra mở cửa với tối đóng cửa thôi độ gan dạ cũng phải tăng lên mấy chân kính =)))),thề dume c còn hết hồn nói chi đến khách =)))) sáng sớm ra mở cửa với tối đóng cửa thôi độ gan dạ cũng phải tăng lên mấy chân kính =)))),fear,fear,1
+uit_002567,gần có tiền để mua,gần có tiền để mua,other,neutral,4
+uit_001666,người ta thật thà phết,người ta thật thà phết,enjoyment,happiness,2
+uit_005260,haha :))) nãy giờ mấy tiếng rồi mà các bác vẫn còn căng :))),haha :))) nãy giờ mấy tiếng rồi mà các bác vẫn còn căng :))),enjoyment,happiness,2
+uit_001691,mình cũng có con mèo đực nuôi được 1 năm thì nó biệt tích 1 năm sau nó về rồi 1 năm sau thì nó mất .... buồn,mình cũng có con mèo đực nuôi được 1 năm thì nó biệt tích 1 năm sau nó về rồi 1 năm sau thì nó mất .... buồn,sadness,sadness,3
+uit_004646,xây 1 được 2 nhà :)) chủ nhà ấm vãi :)),xây 1 được 2 nhà :)) chủ nhà ấm vãi :)),enjoyment,happiness,2
+uit_003638,đm thằng nào đổi gậy như ý của tao rồi,đm thằng nào đổi gậy như ý của tao rồi,anger,anger,0
+uit_004623,số hưởng rồi tránh sao nổi :d,số hưởng rồi tránh sao nổi :d,enjoyment,happiness,2
+uit_001089,"t không tiếc mấy ly trà sữa , chỉ thấy tội cho mấy cô lao công dọn dẹp mà thôi 😔","t không tiếc mấy ly trà sữa , chỉ thấy tội cho mấy cô lao công dọn dẹp mà thôi 😔",sadness,sadness,3
+uit_002516,dễ thương vãi =))),dễ thương vãi =))),enjoyment,happiness,2
+uit_002254,tớ có thấy con ngáo đấy nhưng không dám lại sờ huhu tt,tớ có thấy con ngáo đấy nhưng không dám lại sờ huhu tt,sadness,sadness,3
+uit_005045,tội cho mấy thằng đang xoay tiền mua bánh trung thu cho vợ thằng khác ăn,tội cho mấy thằng đang xoay tiền mua bánh trung thu cho vợ thằng khác ăn,sadness,sadness,3
+uit_001490,mẹ thấy đơn giản không ? đấy giờ chỉ việc lên số cái .... lên ...☝️☝️,mẹ thấy đơn giản không ? đấy giờ chỉ việc lên số cái .... lên ...☝️☝️,enjoyment,happiness,2
+uit_003922,m vừa tuột quần xuống nó sẽ hôn con họa mi của mày,m vừa tuột quần xuống nó sẽ hôn con họa mi của mày,other,neutral,4
+uit_004530,"trước tao cũng tin vào tình yêu chân thành lắm , niềm tin chết rồi","trước tao cũng tin vào tình yêu chân thành lắm , niềm tin chết rồi",sadness,sadness,3
+uit_001370,khổ nhân viên,khổ nhân viên,sadness,sadness,3
+uit_000279,bà mẹ tháng cô hồn nghèo rớt mồng tơi mà cứ chiếu phim tiền đâu mà coi trời oi là troi,bà mẹ tháng cô hồn nghèo rớt mồng tơi mà cứ chiếu phim tiền đâu mà coi trời oi là troi,anger,anger,0
+uit_003353,cũng tên quỳnh nhưng 2 số phận thật khác nhau 😢( chỉ mong được 1 góc nhỏ xiu xíu của b ),cũng tên quỳnh nhưng 2 số phận thật khác nhau 😢( chỉ mong được 1 góc nhỏ xiu xíu của b ),sadness,sadness,3
+uit_000475,vâng chú ah haha,vâng chú ah haha,enjoyment,happiness,2
+uit_001252,khi đã đổ vỡ hàn gắn lại chắc gì đã được như lúc đầu :'<,khi đã đổ vỡ hàn gắn lại chắc gì đã được như lúc đầu :'<,fear,fear,1
+uit_000051,dù sao thì con trai vẫn nên là người mở lời trước à 🤣🤣🤣🤣🤣🤣,dù sao thì con trai vẫn nên là người mở lời trước à 🤣🤣🤣🤣🤣🤣,enjoyment,happiness,2
+uit_002736,"cậu ấy tán tôi , tôi từ chối . thế là từ đó chúng tôi đéo làm bạn được nữa !!!","cậu ấy tán tôi , tôi từ chối . thế là từ đó chúng tôi đéo làm bạn được nữa !!!",sadness,sadness,3
+uit_003961,"bọn nó nhỏ mà đã có người yêu , còn tao thì ế :((","bọn nó nhỏ mà đã có người yêu , còn tao thì ế :((",sadness,sadness,3
+uit_003534,nên cho người xử sai ngồi tù như người ta xem sao ....,nên cho người xử sai ngồi tù như người ta xem sao ....,anger,anger,0
+uit_004593,cảm thấy nhột đít,cảm thấy nhột đít,other,neutral,4
+uit_005141,"dễ thương ghê =)) nói y như mấy ông ngồi nhậu trong bàn v "" đúng không "" "" đúng chưa "" "" vui rầu "" =)))","dễ thương ghê =)) nói y như mấy ông ngồi nhậu trong bàn v "" đúng không "" "" đúng chưa "" "" vui rầu "" =)))",enjoyment,happiness,2
+uit_002234,hahaa ngọt vãiii :)),hahaa ngọt vãiii :)),enjoyment,happiness,2
+uit_004347,nỗi đau ấy ai thấy giúp tôi,nỗi đau ấy ai thấy giúp tôi,sadness,sadness,3
+uit_003283,nhìn mà nổi hết da gà,nhìn mà nổi hết da gà,fear,fear,1
+uit_002790,thích cái đầm nào mua cho bận ngủ cho mát nè :))) per,thích cái đầm nào mua cho bận ngủ cho mát nè :))) per,other,neutral,4
+uit_004069,tao bướng nhưng mặt đéo đến nỗi như con bé kia 🤣,tao bướng nhưng mặt đéo đến nỗi như con bé kia 🤣,enjoyment,happiness,2
+uit_004562,per mẹ mà có cái này thì ngồi nói chuyện cả ngày,per mẹ mà có cái này thì ngồi nói chuyện cả ngày,other,neutral,4
+uit_004955,đợi chúng nó đang ăn lấy xe cứu hỏa phun nước ôi tao hình dung ra cảnh đó thật tuyệt,đợi chúng nó đang ăn lấy xe cứu hỏa phun nước ôi tao hình dung ra cảnh đó thật tuyệt,enjoyment,happiness,2
+uit_003531,những người em thích đều đi nơi đâu rồi còn con ml bên cạnh song hành,những người em thích đều đi nơi đâu rồi còn con ml bên cạnh song hành,sadness,sadness,3
+uit_001815,người gì đâu mà đẹp trai hết sức !,người gì đâu mà đẹp trai hết sức !,enjoyment,happiness,2
+uit_003370,chỉ 1 vãi nhỏ th mà niềm vui quá lớn < 3 ^^,chỉ 1 vãi nhỏ th mà niềm vui quá lớn < 3 ^^,enjoyment,happiness,2
+uit_002387,đợi chắc sang kiếp sau luôn quá 😂,đợi chắc sang kiếp sau luôn quá 😂,other,neutral,4
+uit_003007,cả người nhà người yêu cũng không đồng ý :((,cả người nhà người yêu cũng không đồng ý :((,sadness,sadness,3
+uit_001827,hoan hô anh 😂😄,hoan hô anh 😂😄,enjoyment,happiness,2
+uit_002948,tao sẽ lấy hết tất cả các nick clone tao có phẫn nộ cái vid này 🙂,tao sẽ lấy hết tất cả các nick clone tao có phẫn nộ cái vid này 🙂,anger,anger,0
+uit_003827,sáng kiến hay đỡ bao nhiều tiền để tiêu hủy,sáng kiến hay đỡ bao nhiều tiền để tiêu hủy,other,neutral,4
+uit_003392,cám ơn mấy chế nhiều nhiều nhé 😗,cám ơn mấy chế nhiều nhiều nhé 😗,enjoyment,happiness,2
+uit_000221,lúc rài không gặp được mặt cờ rút nữa 😪,lúc rài không gặp được mặt cờ rút nữa 😪,sadness,sadness,3
+uit_003249,nó bỏ mình đi rồi mỗi lần nghĩ tới nó ôi sao mà xót tim gan hơn mất người yêu,nó bỏ mình đi rồi mỗi lần nghĩ tới nó ôi sao mà xót tim gan hơn mất người yêu,sadness,sadness,3
+uit_004804,sang năm quyêt định đi ngủ cho đỡ mỏi mắt,sang năm quyêt định đi ngủ cho đỡ mỏi mắt,other,neutral,4
+uit_005107,chỉ có bọn óc chó . đú đởn mới phàn nàn .,chỉ có bọn óc chó . đú đởn mới phàn nàn .,other,neutral,4
+uit_003849,cậu nhỏ có tăng lên không 🧐,cậu nhỏ có tăng lên không 🧐,other,neutral,4
+uit_003750,"phải em thì dume nó chửi thé thì đéo cần nói nhiều nữa . gọi c . an xuống kéo mẹ nó xe đi , kiểu gì cũng mệt thôi bác .","phải em thì dume nó chửi thé thì đéo cần nói nhiều nữa . gọi c . an xuống kéo mẹ nó xe đi , kiểu gì cũng mệt thôi bác .",anger,anger,0
+uit_001699,"tàn nhẫn thế nào , là khi mình trao họ hết hy vọng rồi họ lại dập tắt đi nó","tàn nhẫn thế nào , là khi mình trao họ hết hy vọng rồi họ lại dập tắt đi nó",sadness,sadness,3
+uit_002480,"năm nào bố tao cũng đi , năm nào cũng về kể là đông quá cả tiếng mới nhích được 10m mà năm sau vẫn cứ đúng ngày bố tao lại đi vậy đó =))","năm nào bố tao cũng đi , năm nào cũng về kể là đông quá cả tiếng mới nhích được 10m mà năm sau vẫn cứ đúng ngày bố tao lại đi vậy đó =))",enjoyment,happiness,2
+uit_001631,biết đâu mưa xuống ổng ấy lại hết ngáo ??????,biết đâu mưa xuống ổng ấy lại hết ngáo ??????,other,neutral,4
+uit_001174,tuyệt thật,tuyệt thật,enjoyment,happiness,2
+uit_005021,"chưa tỏ tình với ai bao giờ , nhưng tao bức xúc với những người không tôn trọng quyền riêng tư như vậy","chưa tỏ tình với ai bao giờ , nhưng tao bức xúc với những người không tôn trọng quyền riêng tư như vậy",anger,anger,0
+uit_005231,bếp dầu thời bao cấp cùng thời đôt đèn dầu,bếp dầu thời bao cấp cùng thời đôt đèn dầu,other,neutral,4
+uit_003808,"tao cưới rồi , cưới nữa cho vợ tao chém tao chết à","tao cưới rồi , cưới nữa cho vợ tao chém tao chết à",fear,fear,1
+uit_004692,hôm nay ol đến đây thôi dume 😑,hôm nay ol đến đây thôi dume 😑,other,neutral,4
+uit_001002,có thằng nào mắc cười không hay là do tao đéo có cảm xúc vậy vkl,có thằng nào mắc cười không hay là do tao đéo có cảm xúc vậy vkl,enjoyment,happiness,2
+uit_001972,chắc chắn là vị mặn của mồ hôi,chắc chắn là vị mặn của mồ hôi,other,neutral,4
+uit_003695,phố mày co ́ đô ̀ người nghiê ̣ p tô ́ tao ghê :))),phố mày co ́ đô ̀ người nghiê ̣ p tô ́ tao ghê :))),other,neutral,4
+uit_003333,"mong là bố mẹ mình không đọc được tin này , sợ vãi","mong là bố mẹ mình không đọc được tin này , sợ vãi",fear,fear,1
+uit_001557,đầu mùa chua chua ăn ngon vãi_chưởng . thích vải lắm luôn . trong khi nhà toàn nhãn .,đầu mùa chua chua ăn ngon vãi_chưởng . thích vải lắm luôn . trong khi nhà toàn nhãn .,enjoyment,happiness,2
+uit_001902,per hồi lớp 1 tao quên nhãn vở mỹ thuật sợ đánh quá ngồi khóc tè le,per hồi lớp 1 tao quên nhãn vở mỹ thuật sợ đánh quá ngồi khóc tè le,other,neutral,4
+uit_004532,để cưa cái bàn chớ làm gì,để cưa cái bàn chớ làm gì,other,neutral,4
+uit_004213,đáng yêu =)),đáng yêu =)),enjoyment,happiness,2
+uit_000187,"bất cứ lúc nào nghĩ về đời tao chỉ thấy vị cay , nồng nơi khóe mắt :))","bất cứ lúc nào nghĩ về đời tao chỉ thấy vị cay , nồng nơi khóe mắt :))",sadness,sadness,3
+uit_000100,cần gì những thứ xa hoa lộng lẫy đâu . dù chỉ 1 bông hoa nhưng đong đầy yêu thương nhắn tin đã cảm thấy đủ hạnh phúc rồi 😊😊😊,cần gì những thứ xa hoa lộng lẫy đâu . dù chỉ 1 bông hoa nhưng đong đầy yêu thương nhắn tin đã cảm thấy đủ hạnh phúc rồi 😊😊😊,enjoyment,happiness,2
+uit_000682,coi mà lộn ruột .,coi mà lộn ruột .,anger,anger,0
+uit_003011,hôm nay thật tệ :((,hôm nay thật tệ :((,sadness,sadness,3
+uit_004682,"mọa , mình nhà thanh hóa mà đéo biết gì luôn @@ :((((","mọa , mình nhà thanh hóa mà đéo biết gì luôn @@ :((((",sadness,sadness,3
+uit_001717,lại cái trò đéo cho đỗ ???,lại cái trò đéo cho đỗ ???,anger,anger,0
+uit_003527,dm ông cầm cam cho cẩn thận vào tôi cũng muốn ngã mẹ nó rồi này,dm ông cầm cam cho cẩn thận vào tôi cũng muốn ngã mẹ nó rồi này,fear,fear,1
+uit_001097,nó mà cắn ai 1 phát thì ... nghĩ thôi đã rùng mình,nó mà cắn ai 1 phát thì ... nghĩ thôi đã rùng mình,fear,fear,1
+uit_005019,mày nhớ đặt bạn ý cho những lần gọi sau nhé !,mày nhớ đặt bạn ý cho những lần gọi sau nhé !,other,neutral,4
+uit_005177,và từ đó bà cụ sống trong hạnh phúc :)),và từ đó bà cụ sống trong hạnh phúc :)),enjoyment,happiness,2
+uit_001301,mẹ . trung thu là tết thiếu nhi . có phải mùa động dục đâu mà phải có người yêu nhỉ . vớ va vớ vẩn 😒,mẹ . trung thu là tết thiếu nhi . có phải mùa động dục đâu mà phải có người yêu nhỉ . vớ va vớ vẩn 😒,anger,anger,0
+uit_000760,per tao đã làm cho mày đau lòng nhiều lắm ư 🤔,per tao đã làm cho mày đau lòng nhiều lắm ư 🤔,sadness,sadness,3
+uit_004186,"dm tao thấy người ta không sợ vì rắn mà sợ vì thằng chả la làm hết hồn , toàn núp lén rồi la lên thằng đéo nào mà không sợ chứ","dm tao thấy người ta không sợ vì rắn mà sợ vì thằng chả la làm hết hồn , toàn núp lén rồi la lên thằng đéo nào mà không sợ chứ",anger,anger,0
+uit_004860,đúng là tốt quá lai thành lạm dụng 😶,đúng là tốt quá lai thành lạm dụng 😶,sadness,sadness,3
+uit_004638,per lý do nhà tao dùng năng lượng mặt trời .. 😌,per lý do nhà tao dùng năng lượng mặt trời .. 😌,other,neutral,4
+uit_001270,"năm nào cả sinh nhật âm hay dương mẹ cũng gọi điện cho mình , bà ngoại trên 80 , bác ruột mình đều nhớ hết 😂😂😂","năm nào cả sinh nhật âm hay dương mẹ cũng gọi điện cho mình , bà ngoại trên 80 , bác ruột mình đều nhớ hết 😂😂😂",enjoyment,happiness,2
+uit_000053,giận ngược lại rồi giận luôn chứ có huề đéo đâu :(((,giận ngược lại rồi giận luôn chứ có huề đéo đâu :(((,sadness,sadness,3
+uit_004769,mệt vãi .. mà cừời cũng vãi ??????,mệt vãi .. mà cừời cũng vãi ??????,enjoyment,happiness,2
+uit_005194,ký ức 1 thời . nhớ,ký ức 1 thời . nhớ,enjoyment,happiness,2
+uit_004430,các bạn làm bố đi rồi sẽ hiểu được bố mẹ mình yêu mình nhiều thế nào,các bạn làm bố đi rồi sẽ hiểu được bố mẹ mình yêu mình nhiều thế nào,other,neutral,4
+uit_002506,mai tao cũng đi ship mới được . có bài này áp dụng luôn .,mai tao cũng đi ship mới được . có bài này áp dụng luôn .,enjoyment,happiness,2
+uit_001606,thấy tội em thỏ bị ăn đòn tới tấp,thấy tội em thỏ bị ăn đòn tới tấp,sadness,sadness,3
+uit_000296,chuẩn luôn khi ở công tình yêu toàn là các anh chị em đồng nghiệp tốt he he,chuẩn luôn khi ở công tình yêu toàn là các anh chị em đồng nghiệp tốt he he,enjoyment,happiness,2
+uit_002349,per chịu khó đọc trong này cũng được phết,per chịu khó đọc trong này cũng được phết,other,neutral,4
+uit_004165,"lúc nhỏ nấu bằng này không , nấu hơi bị ngon , tạo cơm cháy ăn bao riềng","lúc nhỏ nấu bằng này không , nấu hơi bị ngon , tạo cơm cháy ăn bao riềng",enjoyment,happiness,2
+uit_005043,hiếu nghĩa . nhìn cái này nhớ mắc cười má đào chúc quá 😀😀😀,hiếu nghĩa . nhìn cái này nhớ mắc cười má đào chúc quá 😀😀😀,enjoyment,happiness,2
+uit_005075,"t dọn quán hát mà muốn diệt sạch mấy con ngu :))) đuỵt ăn sinh nhật mà cỡ nát hết cốc , bôi bánh hết lên ghế bàn thì ks , đây bôi cả lên loa , ti vi , trần nhà .... dume cái :))) đồ điện bôi lên để tao dọn tao bị giật chết à :))","t dọn quán hát mà muốn diệt sạch mấy con ngu :))) đuỵt ăn sinh nhật mà cỡ nát hết cốc , bôi bánh hết lên ghế bàn thì ks , đây bôi cả lên loa , ti vi , trần nhà .... dume cái :))) đồ điện bôi lên để tao dọn tao bị giật chết à :))",anger,anger,0
+uit_003882,dễ thương vậy,dễ thương vậy,enjoyment,happiness,2
+uit_003838,sao mày không ngủ chung với cả mẹ mày và em mày ?,sao mày không ngủ chung với cả mẹ mày và em mày ?,other,neutral,4
+uit_002981,thiếu hình ăn gà rán rồi,thiếu hình ăn gà rán rồi,sadness,sadness,3
+uit_001033,hồi năm lớp 8 lớp tao bị quỳ trước sân trường đây nguyên lớp luôn,hồi năm lớp 8 lớp tao bị quỳ trước sân trường đây nguyên lớp luôn,other,neutral,4
+uit_000710,đắt quá thôi không ly hôn nữa,đắt quá thôi không ly hôn nữa,other,neutral,4
+uit_001898,làm bộ mặt ngầu cho thằng thỏ để ý mà thằng này láo ăn thiệt đéo cho mình ăn ké quê thiệt là quê luôn,làm bộ mặt ngầu cho thằng thỏ để ý mà thằng này láo ăn thiệt đéo cho mình ăn ké quê thiệt là quê luôn,sadness,sadness,3
+uit_002305,tao hiểu rất rõ cảm giác của em ấy ....,tao hiểu rất rõ cảm giác của em ấy ....,sadness,sadness,3
+uit_002242,ngồi nhìn nó ngủ cũng thấy dth vler đừng nói cười 😌,ngồi nhìn nó ngủ cũng thấy dth vler đừng nói cười 😌,enjoyment,happiness,2
+uit_001610,uầy . ngọt thế ??????,uầy . ngọt thế ??????,enjoyment,happiness,2
+uit_003705,"1 vị đắng của mưu sinh , 1 vị ngọt của hạnh phúc gia đình","1 vị đắng của mưu sinh , 1 vị ngọt của hạnh phúc gia đình",other,neutral,4
+uit_001479,như kiểu người yêu luôn ấy =))) nhẹ nhàng,như kiểu người yêu luôn ấy =))) nhẹ nhàng,enjoyment,happiness,2
+uit_000249,động lực để phụ nữ chiến đấu chính là gia đình và bản thân họ :),động lực để phụ nữ chiến đấu chính là gia đình và bản thân họ :),other,neutral,4
+uit_000714,nhìn 2 đôi giày đó mà nói 1967 .... thôi thôi !!!!,nhìn 2 đôi giày đó mà nói 1967 .... thôi thôi !!!!,other,neutral,4
+uit_004853,dễ thương 😂,dễ thương 😂,enjoyment,happiness,2
+uit_000861,ly hôn kiểu này thì không cần tới bước cuối cùng . chỉ cần tới bước tính xem trả lại tiền mừng là tao bỏ ngay ý định ly hôn luôn rồi ... kkkk,ly hôn kiểu này thì không cần tới bước cuối cùng . chỉ cần tới bước tính xem trả lại tiền mừng là tao bỏ ngay ý định ly hôn luôn rồi ... kkkk,enjoyment,happiness,2
+uit_002756,xem xong thấy buồn quá,xem xong thấy buồn quá,sadness,sadness,3
+uit_004436,có cả túi vứt vỏ kẹo . văn minh vãiiii,có cả túi vứt vỏ kẹo . văn minh vãiiii,enjoyment,happiness,2
+uit_001268,sớm bình phục nhé,sớm bình phục nhé,other,neutral,4
+uit_002825,per đồng nghiệp không tốt ta có thể bị chửi và ăn đòn từ sáng đến tối 🙄,per đồng nghiệp không tốt ta có thể bị chửi và ăn đòn từ sáng đến tối 🙄,fear,fear,1
+uit_000962,ai mua thì bán không mua thì thâu 😂,ai mua thì bán không mua thì thâu 😂,other,neutral,4
+uit_001381,per hôm nay c cũng bị giống thằng này này,per hôm nay c cũng bị giống thằng này này,other,neutral,4
+uit_004711,"cải tạo được , có tái tạo được 100 % nguyên trạng rồi sao ? giá trị lịch sử văn hoá gần nghìn năm đã mất đi rồi :((","cải tạo được , có tái tạo được 100 % nguyên trạng rồi sao ? giá trị lịch sử văn hoá gần nghìn năm đã mất đi rồi :((",sadness,sadness,3
+uit_004820,rất tiếc em vẫn chưa gặp được anh :((((,rất tiếc em vẫn chưa gặp được anh :((((,sadness,sadness,3
+uit_003671,per coi phim này chắc chết luôn trong rạp,per coi phim này chắc chết luôn trong rạp,fear,fear,1
+uit_004061,còn tệ hơn năm ngoái,còn tệ hơn năm ngoái,sadness,sadness,3
+uit_004095,mình nghĩ không nên công khai đâu dù gì họ đã biết sai giờ công khai ra chẳng khác nào khiến tâm lý của họ suy sụp hơn,mình nghĩ không nên công khai đâu dù gì họ đã biết sai giờ công khai ra chẳng khác nào khiến tâm lý của họ suy sụp hơn,other,neutral,4
+uit_002182,sau khi có vợ anh per đã có đồ giả gái xinh và tinh tế hơn 😆,sau khi có vợ anh per đã có đồ giả gái xinh và tinh tế hơn 😆,enjoyment,happiness,2
+uit_002376,con nhà người ta kbh làm bố mẹ mình thất vọng 😪,con nhà người ta kbh làm bố mẹ mình thất vọng 😪,other,neutral,4
+uit_004462,"theo bác thế nào là tránh cửa ra 1 tý , cả cái vỉa hè nhắn tin kia bạn còn muốn tránh đi đâu","theo bác thế nào là tránh cửa ra 1 tý , cả cái vỉa hè nhắn tin kia bạn còn muốn tránh đi đâu",other,neutral,4
+uit_001317,móng của bố tao . hồi trước và bây giờ đã cắt vì lý do . sức khoẻ .,móng của bố tao . hồi trước và bây giờ đã cắt vì lý do . sức khoẻ .,sadness,sadness,3
+uit_004779,nhưng tao đéo có crush,nhưng tao đéo có crush,sadness,sadness,3
+uit_003373,tin vui cho bà con nông dân chuân bi vào ngày gặt lúa sắp tới,tin vui cho bà con nông dân chuân bi vào ngày gặt lúa sắp tới,enjoyment,happiness,2
+uit_000349,nhưng sạn quá . ma mà sao lúc đầu có bóng của cánh tay vậy .???,nhưng sạn quá . ma mà sao lúc đầu có bóng của cánh tay vậy .???,other,neutral,4
+uit_001788,bọn công ty nào vậy mọi người cùng nhau lên xiên cho bọn nó mỗi đứa vài phát,bọn công ty nào vậy mọi người cùng nhau lên xiên cho bọn nó mỗi đứa vài phát,anger,anger,0
+uit_003767,mình bình luận chủ yếu muốn khoe mình là fan cứng thôi :)) các bạn không cần để ý,mình bình luận chủ yếu muốn khoe mình là fan cứng thôi :)) các bạn không cần để ý,enjoyment,happiness,2
+uit_003227,tao thích con bé nuốt chuối,tao thích con bé nuốt chuối,enjoyment,happiness,2
+uit_005201,buồn nhỉ 😴😴😴,buồn nhỉ 😴😴😴,sadness,sadness,3
+uit_003766,"gym thì liên quan cặc gì đến bede , tuy gym nhưng người ta còn siêng tập nặng hơn mấy tụi bây nhé","gym thì liên quan cặc gì đến bede , tuy gym nhưng người ta còn siêng tập nặng hơn mấy tụi bây nhé",anger,anger,0
+uit_002945,có cái ảnh tỉ năm trước cứ đăng đăng con cặc . đéo thấy nhàm à . nghĩ thôi thấy bất hạnh vãi .,có cái ảnh tỉ năm trước cứ đăng đăng con cặc . đéo thấy nhàm à . nghĩ thôi thấy bất hạnh vãi .,anger,anger,0
+uit_005095,không có bạn trai ... thì giận ai 😑😑,không có bạn trai ... thì giận ai 😑😑,sadness,sadness,3
+uit_001259,đã từng . và bị phũ như 1 con chó 🐶😂😂😂😂,đã từng . và bị phũ như 1 con chó 🐶😂😂😂😂,sadness,sadness,3
+uit_002576,đang tìm ra 1 điểm sai nào đó nhưng có lẽ không có :),đang tìm ra 1 điểm sai nào đó nhưng có lẽ không có :),other,neutral,4
+uit_000411,ngu thì chết ...,ngu thì chết ...,anger,anger,0
+uit_000541,haha mắc cười quá ... nhưng thật chúng mày là tao rất sợ rắn ...,haha mắc cười quá ... nhưng thật chúng mày là tao rất sợ rắn ...,fear,fear,1
+uit_000016,chả mong gì nhiều chỉ mong về già được như hai ông bà ! 😊😊😊,chả mong gì nhiều chỉ mong về già được như hai ông bà ! 😊😊😊,enjoyment,happiness,2
+uit_004714,đôi khi hạnh phúc chỉ là những điều giản dị nhất mà chả ai nghĩ tới 😊,đôi khi hạnh phúc chỉ là những điều giản dị nhất mà chả ai nghĩ tới 😊,enjoyment,happiness,2
+uit_005148,"tội nghiệp , có rất nhiều em ở nông thôn bị như vậy 😢.","tội nghiệp , có rất nhiều em ở nông thôn bị như vậy 😢.",sadness,sadness,3
+uit_004821,đái mẹ ra quần ??,đái mẹ ra quần ??,fear,fear,1
+uit_005205,bà về nơi phương xa mất rồi . nhưng với tớ bà là người dễ thương nhất trên đời . chỉ muốn ngả vào lòng ngoại nghe kể về những câu chuyện cổ 😘,bà về nơi phương xa mất rồi . nhưng với tớ bà là người dễ thương nhất trên đời . chỉ muốn ngả vào lòng ngoại nghe kể về những câu chuyện cổ 😘,sadness,sadness,3
+uit_004792,"dưới nước không nhìn được , kiểu gì chả có đứa sờ mông sờ .... dcm súc vật :)","dưới nước không nhìn được , kiểu gì chả có đứa sờ mông sờ .... dcm súc vật :)",anger,anger,0
+uit_004092,sắp có thực đơn món mới 😍,sắp có thực đơn món mới 😍,enjoyment,happiness,2
+uit_004959,"em cũng như con chó thôi , nếu anh đủ kiên nhẫn thì mọi chuyện đã khác rồi 😪","em cũng như con chó thôi , nếu anh đủ kiên nhẫn thì mọi chuyện đã khác rồi 😪",sadness,sadness,3
+uit_000586,thật là một câu chuyện buồn 😌,thật là một câu chuyện buồn 😌,sadness,sadness,3
+uit_000009,minh biết nữa ne,minh biết nữa ne,enjoyment,happiness,2
+uit_005093,chuẩn rồi per dù mệt mỏi nhưng vẫn vui :))),chuẩn rồi per dù mệt mỏi nhưng vẫn vui :))),other,neutral,4
+uit_000277,tao dễ thương nhưng vẫn ế đây này mơ mộng ít thôi,tao dễ thương nhưng vẫn ế đây này mơ mộng ít thôi,sadness,sadness,3
+uit_003391,thằng khốn nạn,thằng khốn nạn,anger,anger,0
+uit_000777,gặp tao tao thuê giang hồ tới chém hết cả nhà nó luôn,gặp tao tao thuê giang hồ tới chém hết cả nhà nó luôn,anger,anger,0
+uit_000320,cái chứng minh hình kia dễ vãi . cứ vẽ hình lên bài xong người chấm điểm người ta thấy là biết chứ sao :)),cái chứng minh hình kia dễ vãi . cứ vẽ hình lên bài xong người chấm điểm người ta thấy là biết chứ sao :)),enjoyment,happiness,2
+uit_004621,mình đang bận việc mà có đứa nhây vậy là có đứa toè mỏ 😚,mình đang bận việc mà có đứa nhây vậy là có đứa toè mỏ 😚,other,neutral,4
+uit_003884,"từ nay sẽ không cap màn hình ib nưa , thật tội lỗi tội lỗi","từ nay sẽ không cap màn hình ib nưa , thật tội lỗi tội lỗi",sadness,sadness,3
+uit_000442,ốm mà xinh thế :3,ốm mà xinh thế :3,enjoyment,happiness,2
+uit_004082,rất vui mừng khi ông ấy rời việt nam an toàn tuyệt đối ....,rất vui mừng khi ông ấy rời việt nam an toàn tuyệt đối ....,enjoyment,happiness,2
+uit_002861,chồng tao mà nói thế tao lại vả vỡ con mẹ nó mồm :)),chồng tao mà nói thế tao lại vả vỡ con mẹ nó mồm :)),anger,anger,0
+uit_001064,"đấy , chỉ có sale như tao mới tốt thôi , tao không bao giờ hỏi về nỗi đau của khách hàng : x","đấy , chỉ có sale như tao mới tốt thôi , tao không bao giờ hỏi về nỗi đau của khách hàng : x",enjoyment,happiness,2
+uit_000417,ngày trước nấu cơm . đun rơm . đốt được hơn 10p mới nhớ ra chưa cho nước . hỏng cả nổi cơm huhu,ngày trước nấu cơm . đun rơm . đốt được hơn 10p mới nhớ ra chưa cho nước . hỏng cả nổi cơm huhu,sadness,sadness,3
+uit_002311,tính giải trí cao vãi 🤣🤣,tính giải trí cao vãi 🤣🤣,enjoyment,happiness,2
+uit_005050,cuteeeeeee 😊😊😊😊😊,cuteeeeeee 😊😊😊😊😊,enjoyment,happiness,2
+uit_002637,dĩa bay . trả lại để tôi về,dĩa bay . trả lại để tôi về,other,neutral,4
+uit_002605,ý nghĩa và đáng suy ngẫm thật,ý nghĩa và đáng suy ngẫm thật,enjoyment,happiness,2
+uit_000355,ra xong bảo anh ý ship em về nhà luôn được không . xe em bị hỏng mất tiêu rồi =)),ra xong bảo anh ý ship em về nhà luôn được không . xe em bị hỏng mất tiêu rồi =)),enjoyment,happiness,2
+uit_001068,per tự nhiên thấy mình hơi thất đức,per tự nhiên thấy mình hơi thất đức,other,neutral,4
+uit_002023,con đĩ mất dại . trời đánh tránh bữa ăn nha con ml,con đĩ mất dại . trời đánh tránh bữa ăn nha con ml,anger,anger,0
+uit_002119,ước gì tao thất tình cũng được giống như mày,ước gì tao thất tình cũng được giống như mày,other,neutral,4
+uit_002432,thế thì nó lại tốt quá,thế thì nó lại tốt quá,enjoyment,happiness,2
+uit_000129,"mặt đúng kiểu , em hiểu cảm giác phê của anh không kkk","mặt đúng kiểu , em hiểu cảm giác phê của anh không kkk",enjoyment,happiness,2
+uit_004435,may không đi,may không đi,other,neutral,4
+uit_002572,1 thời gắn bó với nó . nhớ lại ngày xưa cực khổ,1 thời gắn bó với nó . nhớ lại ngày xưa cực khổ,sadness,sadness,3
+uit_003064,"per này , thích thì xem cho đã con mắt đi 🙁 đáng sợ quá mà","per này , thích thì xem cho đã con mắt đi 🙁 đáng sợ quá mà",fear,fear,1
+uit_002096,"không có sức hút thì tao vẫn cắt , mùa hè để tóc dài nóng thấy mẹ","không có sức hút thì tao vẫn cắt , mùa hè để tóc dài nóng thấy mẹ",other,neutral,4
+uit_005276,các bác dẫn crush qua cây sữa nay mà hứng nước đái ve nha haha,các bác dẫn crush qua cây sữa nay mà hứng nước đái ve nha haha,enjoyment,happiness,2
+uit_001888,chỉ để nhìn cái thôi :)),chỉ để nhìn cái thôi :)),enjoyment,happiness,2
+uit_002530,"có hay không là ở nơi ta , đời không thú vị nhưng ta lại thấy thú vị khi được sống ở đời","có hay không là ở nơi ta , đời không thú vị nhưng ta lại thấy thú vị khi được sống ở đời",other,neutral,4
+uit_001900,cách người ta phản ứng cũng văn minh ghê ❤️,cách người ta phản ứng cũng văn minh ghê ❤️,enjoyment,happiness,2
+uit_003388,cảm ơn mày đã khai phá cho tao thêm một nét văn hoá đẹp :)),cảm ơn mày đã khai phá cho tao thêm một nét văn hoá đẹp :)),enjoyment,happiness,2
+uit_002796,cười ỉa phút 1 : 11,cười ỉa phút 1 : 11,enjoyment,happiness,2
+uit_003475,liệu nó có bay nổi hay không ?.,liệu nó có bay nổi hay không ?.,other,neutral,4
+uit_003103,hoá nhện tỏ tình đấy :)))),hoá nhện tỏ tình đấy :)))),enjoyment,happiness,2
+uit_003402,"tuổi thơ tao gặp toàn trai bánh bều , mít ướt . toàn là tao galang , dỗ dành . ôi cái cuộc đời này per","tuổi thơ tao gặp toàn trai bánh bều , mít ướt . toàn là tao galang , dỗ dành . ôi cái cuộc đời này per",sadness,sadness,3
+uit_000178,anh cũng bướng làm !,anh cũng bướng làm !,other,neutral,4
+uit_000481,"tụi mày có hiểu được cảm giác , muốn bắt chuyện mà không dám bắt không ?? tụi mày có hiểu được cảm giác vờ ngủ gục để nhìn nó không ?? tụi mày đã từng nhìn nó thật kỉ , thật tỉ mỉ chưa ?","tụi mày có hiểu được cảm giác , muốn bắt chuyện mà không dám bắt không ?? tụi mày có hiểu được cảm giác vờ ngủ gục để nhìn nó không ?? tụi mày đã từng nhìn nó thật kỉ , thật tỉ mỉ chưa ?",sadness,sadness,3
+uit_003508,loài dê phải gọi ông này bằng cụ,loài dê phải gọi ông này bằng cụ,other,neutral,4
+uit_000875,"per bất hạnh vãi , mà tao với mày đéo tạo được niềm vui :v","per bất hạnh vãi , mà tao với mày đéo tạo được niềm vui :v",sadness,sadness,3
+uit_000124,kinh dị v,kinh dị v,fear,fear,1
+uit_001222,"lúc sinh ra rồi , con gái không nói , là con trai thì ổng sẽ phải ước mình chưa đẻ ra nó , có thêm đứa tranh vợ với mình mà 😂😂","lúc sinh ra rồi , con gái không nói , là con trai thì ổng sẽ phải ước mình chưa đẻ ra nó , có thêm đứa tranh vợ với mình mà 😂😂",other,neutral,4
+uit_002055,được . đỡ tốn 5 nghìn,được . đỡ tốn 5 nghìn,enjoyment,happiness,2
+uit_000162,không phải crush :v nhưng mà nhìn ổng cười mỉm nhìn cute vãi -.-😑😆❤,không phải crush :v nhưng mà nhìn ổng cười mỉm nhìn cute vãi -.-😑😆❤,enjoyment,happiness,2
+uit_002438,đang họp nhớ gì không nhớ nhớ cái bếp,đang họp nhớ gì không nhớ nhớ cái bếp,other,neutral,4
+uit_002257,đứa nào bắt cóc nhỏ này thấy khổ vãi,đứa nào bắt cóc nhỏ này thấy khổ vãi,other,neutral,4
+uit_004005,"nói chứ uống đi , 1 ly thì giảm ăn một bữa sẽ không khiến mày phì đâu .","nói chứ uống đi , 1 ly thì giảm ăn một bữa sẽ không khiến mày phì đâu .",enjoyment,happiness,2
+uit_002711,tao đang thă ́ c mă ́ c ta ̣ i sao thă ̀ người da đen no ́ quen được con nho ̉ da tră ́ người ngon va ̃ i thê ́ nhy ̃. 😑😑😑,tao đang thă ́ c mă ́ c ta ̣ i sao thă ̀ người da đen no ́ quen được con nho ̉ da tră ́ người ngon va ̃ i thê ́ nhy ̃. 😑😑😑,other,neutral,4
+uit_003118,per 😢😢 miss you .. chính xác luôn ak hậu,per 😢😢 miss you .. chính xác luôn ak hậu,sadness,sadness,3
+uit_003477,t mong nó té quá chời :v,t mong nó té quá chời :v,enjoyment,happiness,2
+uit_003399,em nó phượt theo gái cả đêm,em nó phượt theo gái cả đêm,other,neutral,4
+uit_000452,"cô giáo như cái lìn , mà dume đánh con cháu tao ntnay thù từ thằng đánh lẫn đẻ ra đứa đánh bố cũng đập cmm chúng mày hết","cô giáo như cái lìn , mà dume đánh con cháu tao ntnay thù từ thằng đánh lẫn đẻ ra đứa đánh bố cũng đập cmm chúng mày hết",anger,anger,0
+uit_004058,ụa cho fa đọc chi rựa huhu,ụa cho fa đọc chi rựa huhu,sadness,sadness,3
+uit_005128,thích mấy đứa này,thích mấy đứa này,enjoyment,happiness,2
+uit_005113,cứ tưởng là người yêu =)),cứ tưởng là người yêu =)),enjoyment,happiness,2
+uit_002367,người ta chỉ hỏi hàng tháng bạn kiếm được bao nhiêu tiền chứ không hỏi công việc của bạn có làm cho bạn mệt nhiều không,người ta chỉ hỏi hàng tháng bạn kiếm được bao nhiêu tiền chứ không hỏi công việc của bạn có làm cho bạn mệt nhiều không,other,neutral,4
+uit_004168,t cho mẹ tao xem và đã bị ăn vả . đéo hiểu vì sao,t cho mẹ tao xem và đã bị ăn vả . đéo hiểu vì sao,anger,anger,0
+uit_005157,hên crush nay ăn chơi lành mạnh,hên crush nay ăn chơi lành mạnh,enjoyment,happiness,2
+uit_004492,từ diễn viên đến ekip đỉnh vãi coi không sót giây nào,từ diễn viên đến ekip đỉnh vãi coi không sót giây nào,enjoyment,happiness,2
+uit_000948,"trừ khi đường có biển cấm dừng đỗ thì mới không được đỗ , còn có phải phố nào cũng kẻ ô cho ô tô đỗ đâu","trừ khi đường có biển cấm dừng đỗ thì mới không được đỗ , còn có phải phố nào cũng kẻ ô cho ô tô đỗ đâu",other,neutral,4
+uit_000226,con nào cũng là con nhé . con trai tao tập từ nhỏ đã biết tự lo và phụ mẹ rồi :)),con nào cũng là con nhé . con trai tao tập từ nhỏ đã biết tự lo và phụ mẹ rồi :)),enjoyment,happiness,2
+uit_001212,bọn óc vật 🙂 đụng vào con cháu nhà tao thử,bọn óc vật 🙂 đụng vào con cháu nhà tao thử,anger,anger,0

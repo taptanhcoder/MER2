@@ -1,0 +1,21 @@
+experiment:
+  name: text_phobert_base_ce_top3_do02
+
+defaults:
+  - configs/dataset/common_mer5.yaml
+  - configs/dataset/vnemos_text_train.yaml
+  - configs/text/base/text_base.yaml
+  - configs/text/models/phobert_base.yaml
+
+model:
+  classifier_dropout: 0.20
+
+finetune:
+  freeze_embeddings: true
+  train_full_encoder: false
+  unfreeze_top_k_layers: 3
+
+loss:
+  name: cross_entropy
+
+seed: 42

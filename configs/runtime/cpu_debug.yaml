@@ -1,0 +1,21 @@
+runtime:
+  device: cpu
+  mixed_precision: none
+  num_workers: 0
+  pin_memory: false
+  debug: true
+
+seed: 42
+
+train:
+  epochs: 1
+  batch_size: 2
+
+logging:
+  level: DEBUG
+  log_every_n_steps: 1
+
+checkpoint:
+  save_best_only: true
+  monitor: macro_f1
+  mode: max

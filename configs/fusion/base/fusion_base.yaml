@@ -1,0 +1,20 @@
+task: fusion_classification
+
+runtime:
+  device: auto
+  mixed_precision: none
+  num_workers: 0
+  pin_memory: false
+
+reliability:
+  use_confidence: true
+  use_entropy: true
+  use_margin: true
+  use_variance: false
+
+evaluation:
+  primary_metric: macro_f1
+
+output:
+  save_confusion_matrix: true
+  save_classification_report: true

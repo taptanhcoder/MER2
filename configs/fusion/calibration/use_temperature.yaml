@@ -1,0 +1,4 @@
+calibration:
+  use_calibrated: true
+  text_state_path: outputs/calibration/text_temperature.json
+  speech_state_path: outputs/calibration/speech_temperature.json

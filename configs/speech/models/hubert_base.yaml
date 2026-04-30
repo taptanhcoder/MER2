@@ -1,0 +1,7 @@
+model:
+  name: hubert-base
+  family: hubert
+  pretrained_name: facebook/hubert-base-ls960
+  dropout: 0.1
+  gradient_checkpointing: false
+  num_classes: 5

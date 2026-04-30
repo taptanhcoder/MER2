@@ -1,0 +1,9 @@
+label_space:
+  name: mer5
+  labels: [anger, fear, happiness, sadness, neutral]
+  label2id:
+    anger: 0
+    fear: 1
+    happiness: 2
+    sadness: 3
+    neutral: 4

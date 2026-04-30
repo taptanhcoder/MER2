@@ -1,0 +1,17 @@
+defaults:
+  - configs/dataset/common_mer5.yaml
+  - configs/dataset/vnemos_fusion.yaml
+  - configs/fusion/base/fusion_base.yaml
+  - configs/fusion/model/late_logit_avg.yaml
+  - configs/fusion/calibration/use_temperature.yaml
+  - configs/fusion/reliability/default.yaml
+  - configs/runtime/gpu_safe.yaml
+
+dominance:
+  use_modality_dropout: false
+  use_dominance_regularizer: false
+  lambda_text: 0.0
+  lambda_speech: 0.0
+
+experiment:
+  name: fusion_late_logit_avg

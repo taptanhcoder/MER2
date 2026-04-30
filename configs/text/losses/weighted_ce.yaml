@@ -1,0 +1,3 @@
+loss:
+  name: weighted_cross_entropy
+  class_weights: balanced

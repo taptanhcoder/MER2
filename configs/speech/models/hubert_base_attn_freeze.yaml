@@ -1,0 +1,20 @@
+model:
+  name: hubert-base
+  family: hubert
+  pretrained_name: facebook/hubert-base-ls960
+  pooling: attn
+  pooling_dropout: 0.10
+  dropout: 0.10
+  classifier_dropout: 0.15
+  classifier_hidden_dim: 256
+  classifier_activation: gelu
+  classifier_layer_norm: true
+  gradient_checkpointing: false
+  num_classes: 5
+
+finetune:
+  freeze_feature_extractor: true
+  train_full_encoder: false
+  unfreeze_top_k_layers: 4
+  unfreeze_feature_projection: true
+  unfreeze_positional_conv: true

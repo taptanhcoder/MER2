@@ -1,0 +1,42 @@
+project:
+  name: mer_project
+label_space:
+  text: uit_vsmec7_raw
+  speech: mer5
+split:
+  seed: 42
+  train_ratio: 0.8
+  valid_ratio: 0.1
+  test_ratio: 0.1
+text_dataset:
+  name: uit_vsmec
+  root: data/UIT-VSMEC
+  output_prefix: uit_vsmec7
+  text_column: null
+  label_column: null
+  text_column_candidates:
+  - text
+  - sentence
+  - content
+  - comment
+  - post
+  - transcript
+  label_column_candidates:
+  - label
+  - emotion
+  - orig_label
+  - category
+  - sentiment
+  dedup:
+    enabled: true
+    true: normalized_text
+speech_dataset:
+  name: vnemos
+  root: data/VNEMOS
+  output_prefix: vnemos
+  allowed_extensions:
+  - .wav
+output:
+  dir: data/splits
+  write_label_map: true
+  write_stats: true

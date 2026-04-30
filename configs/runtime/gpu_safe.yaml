@@ -1,0 +1,17 @@
+runtime:
+  device: cuda
+  mixed_precision: none
+  num_workers: 2
+  pin_memory: true
+  compile_model: false
+
+seed: 42
+
+logging:
+  level: INFO
+  log_every_n_steps: 20
+
+checkpoint:
+  save_best_only: true
+  monitor: macro_f1
+  mode: max

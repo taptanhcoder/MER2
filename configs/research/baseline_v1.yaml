@@ -1,0 +1,78 @@
+baseline:
+  name: baseline_v1
+  description: >
+    Freeze the current stable text/speech/fusion baselines before any further
+    tuning. This snapshot is the single comparison anchor for subsequent
+    experiments.
+
+  output_root: outputs/baselines/baseline_v1
+
+  text:
+    run_dir: outputs/runs/text/text_phobert_base_ce/seed_42
+    expected_test_metrics:
+      accuracy: 0.6216216216216216
+      macro_f1: 0.6182216476334124
+      uar: 0.6214285714285714
+    include:
+      - resolved_config.yaml
+      - metrics.json
+      - best.ckpt
+      - classification_report.json
+      - confusion_matrix.json
+      - valid_predictions.csv
+      - test_predictions.csv
+      - train_dataset_stats.json
+      - tokenizer
+      - error_analysis
+      - calibration_metrics.json
+      - resolved_calibration_config.yaml
+      - temperature.json
+      - valid_predictions_calibrated.csv
+      - test_predictions_calibrated.csv
+
+  speech:
+    run_dir: outputs/runs/speech/speech_hubert_base_attn_freeze_ce/seed_42
+    expected_test_metrics:
+      accuracy: 0.6486486486486487
+      macro_f1: 0.6200575894693543
+      uar: 0.6357142857142857
+    include:
+      - resolved_config.yaml
+      - metrics.json
+      - best.ckpt
+      - classification_report.json
+      - confusion_matrix.json
+      - valid_predictions.csv
+      - test_predictions.csv
+      - train_dataset_stats.json
+      - error_analysis
+      - calibration_metrics.json
+      - resolved_calibration_config.yaml
+      - temperature.json
+      - valid_predictions_calibrated.csv
+      - test_predictions_calibrated.csv
+
+  fusion:
+    run_dir: outputs/runs/fusion/fusion_light_bica_gate_v2/seed_42
+    expected_test_metrics:
+      accuracy: 0.7027027027027027
+      macro_f1: 0.7047662141779789
+      uar: 0.6964285714285714
+    include:
+      - resolved_config.yaml
+      - metrics.json
+      - best.ckpt
+      - classification_report.json
+      - confusion_matrix.json
+      - valid_predictions.csv
+      - test_predictions.csv
+      - branch_metrics.json
+      - dominance_priors.json
+
+  shared_artifacts:
+    text_export_dir: outputs/fusion_exports/text
+    speech_export_dir: outputs/fusion_exports/speech
+    fusion_artifact_dir: outputs/fusion_artifacts
+
+  verification:
+    metric_tolerance: 1.0e-8

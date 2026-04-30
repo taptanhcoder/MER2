@@ -1,0 +1,9 @@
+defaults:
+ - configs/dataset/common_mer5.yaml
+ - configs/fusion/base.yaml
+
+fusion:
+ strategy: confidence
+
+experiment:
+ name: fusion_confidence

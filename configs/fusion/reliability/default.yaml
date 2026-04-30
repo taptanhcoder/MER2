@@ -1,0 +1,6 @@
+reliability:
+  use_confidence: true
+  use_entropy: true
+  use_margin: true
+  use_variance: false
+  use_asr_features: false

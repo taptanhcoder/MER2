@@ -1,0 +1,12 @@
+defaults:
+  - configs/dataset/common_mer5.yaml
+  - configs/dataset/vnemos_fusion.yaml
+  - configs/fusion/base/fusion_base.yaml
+  - configs/fusion/model/calibrated_two_way_gate.yaml
+  - configs/fusion/calibration/use_temperature.yaml
+  - configs/fusion/reliability/default.yaml
+  - configs/fusion/dominance/default.yaml
+  - configs/runtime/gpu_safe.yaml
+
+experiment:
+  name: fusion_calibrated_two_way_gate
