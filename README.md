@@ -172,37 +172,6 @@ This project demonstrates practical research and engineering skills in:
 
 ---
 
-## Project Status
-
-<p align="center">
-  <img src="https://img.shields.io/badge/Core%20Framework-Completed-success?style=for-the-badge" alt="Core Framework">
-  <img src="https://img.shields.io/badge/Research%20Paper-Completed-success?style=for-the-badge" alt="Research Paper">
-  <img src="https://img.shields.io/badge/Repository-Finalized-blue?style=for-the-badge" alt="Repository">
-</p>
-
-The research pipeline is finalized around the proposed **Length-aware Calibrated Light-BiCA-Gate** framework.
-
-Current status:
-
-- Core framework completed
-- Final fusion architecture selected
-- Main Vietnamese evaluation completed
-- Supplementary MELD evaluation completed
-- Gate behavior analysis completed
-- IEEE-style research paper completed
-- Repository finalized as a research snapshot
-
----
-
-## Paper
-
-This repository accompanies the research paper:
-
-> **Reliability-Aware Multimodal Fusion for Vietnamese Emotion Recognition from Speech and Text**
-
-The paper presents the motivation, related work, dataset construction, proposed method, experimental setup, results, discussion, limitations, and future directions of the framework.
-
----
 
 ## Notes
 
