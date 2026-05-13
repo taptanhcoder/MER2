@@ -28,7 +28,11 @@ The proposed framework, **Length-aware Calibrated Light-BiCA-Gate**, combines a 
 The project is designed for five-class utterance-level emotion recognition:
 
 <p align="center">
-  <code>anger</code> · <code>fear</code> · <code>happiness</code> · <code>sadness</code> · <code>neutral</code>
+  <img src="https://img.shields.io/badge/Anger-😠-red?style=flat-square" alt="Anger">
+  <img src="https://img.shields.io/badge/Fear-😨-purple?style=flat-square" alt="Fear">
+  <img src="https://img.shields.io/badge/Happiness-😊-yellow?style=flat-square" alt="Happiness">
+  <img src="https://img.shields.io/badge/Sadness-😢-blue?style=flat-square" alt="Sadness">
+  <img src="https://img.shields.io/badge/Neutral-😐-lightgrey?style=flat-square" alt="Neutral">
 </p>
 
 ---
