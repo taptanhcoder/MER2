@@ -7,4 +7,14 @@ defaults:
   - configs/runtime/gpu_safe.yaml
 
 experiment:
-  name: text_vnemos_phobert_base_ce
+  name: text_phobert_base_ce_randomspan128_dropout020
+
+tokenizer:
+  max_length: 128
+  truncation_strategy: random_span_train_headtail_eval
+
+model:
+  classifier_dropout: 0.20
+
+loss:
+  name: cross_entropy

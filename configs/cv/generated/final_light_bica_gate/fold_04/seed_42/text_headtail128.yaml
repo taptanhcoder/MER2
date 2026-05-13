@@ -1,0 +1,126 @@
+label_space:
+  name: mer5
+  labels:
+  - anger
+  - fear
+  - happiness
+  - sadness
+  - neutral
+  label2id:
+    anger: 0
+    fear: 1
+    happiness: 2
+    sadness: 3
+    neutral: 4
+dataset:
+  name: vnemos_text
+  train_csv: /home/emotalk/mer2/data/processed/vnemos/kfold_mer5/fold_04/train.csv
+  valid_csv: /home/emotalk/mer2/data/processed/vnemos/kfold_mer5/fold_04/valid.csv
+  test_csv: /home/emotalk/mer2/data/processed/vnemos/kfold_mer5/fold_04/test.csv
+  id_col: sample_id
+  text_col: text
+  raw_text_col: transcript_final
+  normalized_text_col: normalized_text
+  audio_path_col: audio_path
+  group_id_col: group_id
+  label_col: label
+  label_id_col: label_id
+  num_classes: 5
+  use_normalized_text: false
+task: text_classification
+preprocessing:
+  normalize_whitespace: true
+  lowercase: false
+  word_segment: true
+tokenizer:
+  use_fast: false
+  padding: true
+  truncation: true
+  max_length: 128
+  truncation_strategy: head_tail
+train:
+  batch_size: 8
+  epochs: 15
+  grad_clip_norm: 1.0
+  grad_accum_steps: 2
+  seed: 42
+optimizer:
+  name: adamw
+  lr: 2.0e-05
+  weight_decay: 0.01
+scheduler:
+  name: linear_warmup
+  warmup_ratio: 0.1
+early_stopping:
+  enabled: true
+  patience: 5
+  min_delta: 0.0
+  monitor: macro_f1
+  mode: max
+evaluation:
+  primary_metric: macro_f1
+  save_predictions: true
+  save_logits: true
+output:
+  save_classification_report: true
+  save_confusion_matrix: true
+  max_error_rows: 200
+model:
+  name: phobert-base
+  family: phobert
+  pretrained_name: vinai/phobert-base-v2
+  pooling: mean
+  dropout: 0.1
+  classifier_dropout: 0.15
+  classifier_hidden_dim: 256
+  classifier_activation: gelu
+  classifier_layer_norm: true
+  gradient_checkpointing: false
+  num_classes: 5
+finetune:
+  freeze_embeddings: true
+  train_full_encoder: false
+  unfreeze_top_k_layers: 4
+loss:
+  name: cross_entropy
+runtime:
+  device: cuda
+  mixed_precision: none
+  num_workers: 2
+  pin_memory: true
+  compile_model: false
+  seed: 42
+seed: 42
+logging:
+  level: INFO
+  log_every_n_steps: 20
+checkpoint:
+  save_best_only: true
+  monitor: macro_f1
+  mode: max
+experiment:
+  name: text_phobert_base_ce_headtail128_fold_04_seed_42
+  seed: 42
+train_dataset_stats:
+  class_counts:
+  - 35
+  - 35
+  - 35
+  - 35
+  - 35
+  class_weights:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+training:
+  seed: 42
+experiment_name: text_phobert_base_ce_headtail128_fold_04_seed_42
+cv:
+  enabled: true
+  fold: fold_04
+  seed: 42
+  role: text
+  source_config_name: resolved_config.yaml
+  actual_run_dir: outputs/runs/text/text_phobert_base_ce_headtail128_fold_04_seed_42/seed_42

@@ -3,8 +3,15 @@ defaults:
   - configs/dataset/vnemos_text_train.yaml
   - configs/text/base/text_base.yaml
   - configs/text/models/phobert_base.yaml
-  - configs/text/losses/weighted_ce.yaml
+  - configs/text/losses/ce.yaml
   - configs/runtime/gpu_safe.yaml
 
 experiment:
-  name: text_phobert_base_weighted_ce
+  name: text_phobert_base_ce_ls005
+
+tokenizer:
+  max_length: 128
+
+loss:
+  name: cross_entropy
+  label_smoothing: 0.05

@@ -1,0 +1,103 @@
+device: cuda
+seeds: [42, 52, 62, 72, 82]
+
+output_dir: outputs/reports/extensions/moe_gate/headtail128_export_fixed
+
+dataset:
+  fusion_artifacts:
+    train: outputs/fusion_artifacts_text_headtail128/train.pt
+    valid: outputs/fusion_artifacts_text_headtail128/valid.pt
+    test: outputs/fusion_artifacts_text_headtail128/test.pt
+
+methods:
+  - name: moe_classwise_full
+    gate_type: classwise
+    num_classes: 5
+    seeds: [42, 52, 62, 72, 82]
+    features:
+      prefer_calibrated: true
+      use_logits: true
+      use_probs: true
+      use_reliability: true
+      use_derived: true
+      use_agreement: true
+      use_pred_onehot: false
+    model:
+      hidden_dim: 64
+      dropout: 0.10
+      lr: 1.0e-3
+      weight_decay: 1.0e-3
+      epochs: 250
+      patience: 30
+      batch_size: 16
+      gate_entropy_lambda: 0.0
+      gate_balance_lambda: 0.0
+
+  - name: moe_scalar_full
+    gate_type: scalar
+    num_classes: 5
+    seeds: [42, 52, 62, 72, 82]
+    features:
+      prefer_calibrated: true
+      use_logits: true
+      use_probs: true
+      use_reliability: true
+      use_derived: true
+      use_agreement: true
+      use_pred_onehot: false
+    model:
+      hidden_dim: 64
+      dropout: 0.10
+      lr: 1.0e-3
+      weight_decay: 1.0e-3
+      epochs: 250
+      patience: 30
+      batch_size: 16
+      gate_entropy_lambda: 0.0
+      gate_balance_lambda: 0.0
+
+  - name: moe_classwise_reliability_only
+    gate_type: classwise
+    num_classes: 5
+    seeds: [42, 52, 62, 72, 82]
+    features:
+      prefer_calibrated: true
+      use_logits: false
+      use_probs: false
+      use_reliability: true
+      use_derived: true
+      use_agreement: true
+      use_pred_onehot: false
+    model:
+      hidden_dim: 32
+      dropout: 0.10
+      lr: 1.0e-3
+      weight_decay: 1.0e-3
+      epochs: 250
+      patience: 30
+      batch_size: 16
+      gate_entropy_lambda: 0.0
+      gate_balance_lambda: 0.0
+
+  - name: moe_classwise_probs_reliability
+    gate_type: classwise
+    num_classes: 5
+    seeds: [42, 52, 62, 72, 82]
+    features:
+      prefer_calibrated: true
+      use_logits: false
+      use_probs: true
+      use_reliability: true
+      use_derived: true
+      use_agreement: true
+      use_pred_onehot: false
+    model:
+      hidden_dim: 64
+      dropout: 0.10
+      lr: 1.0e-3
+      weight_decay: 1.0e-3
+      epochs: 250
+      patience: 30
+      batch_size: 16
+      gate_entropy_lambda: 0.0
+      gate_balance_lambda: 0.0

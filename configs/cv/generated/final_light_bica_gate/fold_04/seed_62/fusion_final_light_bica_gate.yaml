@@ -1,0 +1,102 @@
+experiment:
+  name: fusion_light_bica_gate_text_headtail128_cal_gateprob_v1_fold_04_seed_62
+  seed: 62
+defaults:
+- configs/dataset/common_mer5.yaml
+- configs/fusion/base/fusion_base.yaml
+- configs/fusion/model/light_bica_gate.yaml
+dataset:
+  speech_export_dir: outputs/fusion_exports/speech
+  calibration:
+    required: true
+  fusion_artifacts:
+    train: /home/emotalk/mer2/outputs/cv/fusion_artifacts/final_light_bica_gate/fold_04/seed_62/train.pt
+    valid: /home/emotalk/mer2/outputs/cv/fusion_artifacts/final_light_bica_gate/fold_04/seed_62/valid.pt
+    test: /home/emotalk/mer2/outputs/cv/fusion_artifacts/final_light_bica_gate/fold_04/seed_62/test.pt
+  train_artifact: /home/emotalk/mer2/outputs/cv/fusion_artifacts/final_light_bica_gate/fold_04/seed_62/train.pt
+  valid_artifact: /home/emotalk/mer2/outputs/cv/fusion_artifacts/final_light_bica_gate/fold_04/seed_62/valid.pt
+  test_artifact: /home/emotalk/mer2/outputs/cv/fusion_artifacts/final_light_bica_gate/fold_04/seed_62/test.pt
+  train: /home/emotalk/mer2/outputs/cv/fusion_artifacts/final_light_bica_gate/fold_04/seed_62/train.pt
+  valid: /home/emotalk/mer2/outputs/cv/fusion_artifacts/final_light_bica_gate/fold_04/seed_62/valid.pt
+  test: /home/emotalk/mer2/outputs/cv/fusion_artifacts/final_light_bica_gate/fold_04/seed_62/test.pt
+model:
+  use_calibrated_expert_logits: true
+  gate_interaction_input: probs
+train:
+  batch_size: 16
+  epochs: 40
+  grad_clip_norm: 1.0
+  grad_accum_steps: 1
+  seed: 62
+  output_dir: /home/emotalk/mer2/outputs/cv/runs/fusion/fusion_light_bica_gate_text_headtail128_cal_gateprob_v1/fold_04/seed_62
+optimizer:
+  name: adamw
+  lr: 0.0002
+  weight_decay: 0.01
+scheduler:
+  name: linear_warmup
+  warmup_ratio: 0.1
+early_stopping:
+  enabled: true
+  patience: 6
+  min_delta: 0.0
+  monitor: macro_f1
+  mode: max
+checkpoint:
+  monitor: macro_f1
+  mode: max
+evaluation:
+  primary_metric: macro_f1
+dominance:
+  use_modality_dropout: true
+  text_dropout_prob: 0.1
+  speech_dropout_prob: 0.05
+  use_dominance_regularizer: true
+  lambda_text: 0.1
+  lambda_speech: 0.1
+output:
+  save_confusion_matrix: true
+  save_classification_report: true
+  run_dir: /home/emotalk/mer2/outputs/cv/runs/fusion/fusion_light_bica_gate_text_headtail128_cal_gateprob_v1/fold_04/seed_62
+  root: /home/emotalk/mer2/outputs/cv/runs/fusion
+seed: 62
+runtime:
+  seed: 62
+  output_dir: /home/emotalk/mer2/outputs/cv/runs/fusion/fusion_light_bica_gate_text_headtail128_cal_gateprob_v1/fold_04/seed_62
+  output_root: /home/emotalk/mer2/outputs/cv/runs/fusion
+training:
+  seed: 62
+experiment_name: fusion_light_bica_gate_text_headtail128_cal_gateprob_v1_fold_04_seed_62
+output_dir: /home/emotalk/mer2/outputs/cv/runs/fusion/fusion_light_bica_gate_text_headtail128_cal_gateprob_v1/fold_04/seed_62
+run_dir: /home/emotalk/mer2/outputs/cv/runs/fusion/fusion_light_bica_gate_text_headtail128_cal_gateprob_v1/fold_04/seed_62
+outputs:
+  run_dir: /home/emotalk/mer2/outputs/cv/runs/fusion/fusion_light_bica_gate_text_headtail128_cal_gateprob_v1/fold_04/seed_62
+  root: /home/emotalk/mer2/outputs/cv/runs/fusion
+output_root: /home/emotalk/mer2/outputs/cv/runs/fusion
+artifacts:
+  train_artifact: /home/emotalk/mer2/outputs/cv/fusion_artifacts/final_light_bica_gate/fold_04/seed_62/train.pt
+  valid_artifact: /home/emotalk/mer2/outputs/cv/fusion_artifacts/final_light_bica_gate/fold_04/seed_62/valid.pt
+  test_artifact: /home/emotalk/mer2/outputs/cv/fusion_artifacts/final_light_bica_gate/fold_04/seed_62/test.pt
+  train: /home/emotalk/mer2/outputs/cv/fusion_artifacts/final_light_bica_gate/fold_04/seed_62/train.pt
+  valid: /home/emotalk/mer2/outputs/cv/fusion_artifacts/final_light_bica_gate/fold_04/seed_62/valid.pt
+  test: /home/emotalk/mer2/outputs/cv/fusion_artifacts/final_light_bica_gate/fold_04/seed_62/test.pt
+fusion_artifacts:
+  train_artifact: /home/emotalk/mer2/outputs/cv/fusion_artifacts/final_light_bica_gate/fold_04/seed_62/train.pt
+  valid_artifact: /home/emotalk/mer2/outputs/cv/fusion_artifacts/final_light_bica_gate/fold_04/seed_62/valid.pt
+  test_artifact: /home/emotalk/mer2/outputs/cv/fusion_artifacts/final_light_bica_gate/fold_04/seed_62/test.pt
+  train: /home/emotalk/mer2/outputs/cv/fusion_artifacts/final_light_bica_gate/fold_04/seed_62/train.pt
+  valid: /home/emotalk/mer2/outputs/cv/fusion_artifacts/final_light_bica_gate/fold_04/seed_62/valid.pt
+  test: /home/emotalk/mer2/outputs/cv/fusion_artifacts/final_light_bica_gate/fold_04/seed_62/test.pt
+paths:
+  train_artifact: /home/emotalk/mer2/outputs/cv/fusion_artifacts/final_light_bica_gate/fold_04/seed_62/train.pt
+  valid_artifact: /home/emotalk/mer2/outputs/cv/fusion_artifacts/final_light_bica_gate/fold_04/seed_62/valid.pt
+  test_artifact: /home/emotalk/mer2/outputs/cv/fusion_artifacts/final_light_bica_gate/fold_04/seed_62/test.pt
+  train: /home/emotalk/mer2/outputs/cv/fusion_artifacts/final_light_bica_gate/fold_04/seed_62/train.pt
+  valid: /home/emotalk/mer2/outputs/cv/fusion_artifacts/final_light_bica_gate/fold_04/seed_62/valid.pt
+  test: /home/emotalk/mer2/outputs/cv/fusion_artifacts/final_light_bica_gate/fold_04/seed_62/test.pt
+cv:
+  enabled: true
+  fold: fold_04
+  seed: 62
+  role: fusion
+  source_config_name: light_bica_gate_text_headtail128_cal_gateprob_v1.yaml

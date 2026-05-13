@@ -1,0 +1,74 @@
+cv:
+  name: vnemos_mer5_5fold
+  seed: 42
+  n_splits: 5
+  use_group: true
+  group_col: group_id
+  id_col: sample_id
+  label_col: label
+  label_id_col: label_id
+  valid_ratio: 0.2
+  input_csvs:
+  - data/splits/vnemos_train.csv
+  - data/splits/vnemos_valid.csv
+  - data/splits/vnemos_test.csv
+  output_dir: data/processed/vnemos/kfold_mer5
+  leakage_check_cols:
+  - sample_id
+  - audio_path
+  - group_id
+  duration_col: duration_sec
+  text_col: text
+# K-fold cross-validation setup for VNEMOS MER5.
+#
+# This config is isolated from the fixed-split baseline/final pipeline.
+# It only prepares/audits CV splits and provides safe metadata for later CV runs.
+
+cv:
+  name: vnemos_mer5_5fold
+  seed: 42
+  n_splits: 5
+
+  # Use group-aware splitting when group_id is available and meaningful.
+  # If this later causes fold imbalance due to too few groups, set false.
+  use_group: true
+  group_col: group_id
+
+  id_col: sample_id
+  label_col: label
+  label_id_col: label_id
+
+  valid_ratio: 0.20
+
+  # Current fixed split CSVs used by the stable text/speech/fusion pipeline.
+  # These are read-only inputs for CV split generation.
+  input_csvs:
+    - data/splits/vnemos_train.csv
+    - data/splits/vnemos_valid.csv
+    - data/splits/vnemos_test.csv
+
+  # CV outputs are isolated from baseline/final outputs.
+  output_dir: data/processed/vnemos/kfold_mer5
+
+  leakage_check_cols:
+    - sample_id
+    - audio_path
+    - group_id
+
+  # Optional columns. If missing, the audit script will skip them safely.
+  duration_col: duration_sec
+  text_col: text
+
+audit:
+  # Current observed total from the actual fixed split CSVs is 249.
+  # Do not force 250 unless the missing sample is restored.
+  expected_total_samples: 249
+
+  expected_label_counts:
+    anger: 50
+    fear: 50
+    happiness: 50
+    neutral: 50
+    sadness: 49
+
+  output_dir: outputs/cv/reports/kfold_audit

@@ -48,6 +48,18 @@ class FusionClassifier(nn.Module):
             model_cfg.get("use_residual_logit_correction", False)
         )
 
+        self.use_calibrated_expert_logits = bool(
+            model_cfg.get("use_calibrated_expert_logits", False)
+        )
+        self.gate_interaction_input = str(
+            model_cfg.get("gate_interaction_input", "logits")
+        ).lower()
+        if self.gate_interaction_input not in {"logits", "probs"}:
+            raise ValueError(
+                "model.gate_interaction_input must be either 'logits' or 'probs'. "
+                f"Got: {self.gate_interaction_input}"
+            )
+
         self.use_modality_dropout = bool(dominance_cfg.get("use_modality_dropout", False))
         self.text_dropout_prob = float(dominance_cfg.get("text_dropout_prob", 0.0))
         self.speech_dropout_prob = float(dominance_cfg.get("speech_dropout_prob", 0.0))
@@ -96,6 +108,8 @@ class FusionClassifier(nn.Module):
         speech_token_mask: torch.Tensor,
         text_logits_raw: torch.Tensor,
         speech_logits_raw: torch.Tensor,
+        text_logits_cal: torch.Tensor,
+        speech_logits_cal: torch.Tensor,
         text_probs_cal: torch.Tensor,
         speech_probs_cal: torch.Tensor,
         reliability: torch.Tensor,
@@ -118,6 +132,8 @@ class FusionClassifier(nn.Module):
             "speech_embedding": int(speech_embedding.shape[0]),
             "text_logits_raw": int(text_logits_raw.shape[0]),
             "speech_logits_raw": int(speech_logits_raw.shape[0]),
+            "text_logits_cal": int(text_logits_cal.shape[0]),
+            "speech_logits_cal": int(speech_logits_cal.shape[0]),
             "text_probs_cal": int(text_probs_cal.shape[0]),
             "speech_probs_cal": int(speech_probs_cal.shape[0]),
             "reliability": int(reliability.shape[0]),
@@ -149,6 +165,8 @@ class FusionClassifier(nn.Module):
             "speech_tokens": speech_tokens,
             "text_logits_raw": text_logits_raw,
             "speech_logits_raw": speech_logits_raw,
+            "text_logits_cal": text_logits_cal,
+            "speech_logits_cal": speech_logits_cal,
             "text_probs_cal": text_probs_cal,
             "speech_probs_cal": speech_probs_cal,
             "reliability": reliability,
@@ -161,20 +179,15 @@ class FusionClassifier(nn.Module):
         if (speech_token_mask.sum(dim=1) <= 0).any():
             raise ValueError("Fusion input speech_token_mask has sample(s) with zero valid tokens.")
 
-    def _apply_modality_dropout(
+    def _sample_keep_masks(
         self,
-        text_tokens: torch.Tensor,
-        speech_tokens: torch.Tensor,
-        text_logits: torch.Tensor,
-        speech_logits: torch.Tensor,
-        text_probs: torch.Tensor,
-        speech_probs: torch.Tensor,
-    ) -> tuple[torch.Tensor, torch.Tensor, torch.Tensor, torch.Tensor, torch.Tensor, torch.Tensor]:
+        batch_size: int,
+        device: torch.device,
+    ) -> tuple[torch.Tensor, torch.Tensor]:
         if not self.training or not self.use_modality_dropout:
-            return text_tokens, speech_tokens, text_logits, speech_logits, text_probs, speech_probs
-
-        batch_size = int(text_logits.shape[0])
-        device = text_logits.device
+            keep_text = torch.ones(batch_size, 1, device=device)
+            keep_speech = torch.ones(batch_size, 1, device=device)
+            return keep_text, keep_speech
 
         drop_text = torch.rand(batch_size, device=device) < self.text_dropout_prob
         drop_speech = torch.rand(batch_size, device=device) < self.speech_dropout_prob
@@ -184,15 +197,7 @@ class FusionClassifier(nn.Module):
 
         keep_text = (~drop_text).float().unsqueeze(-1)
         keep_speech = (~drop_speech).float().unsqueeze(-1)
-
-        text_tokens = text_tokens * keep_text.unsqueeze(-1)
-        speech_tokens = speech_tokens * keep_speech.unsqueeze(-1)
-
-        text_logits = text_logits * keep_text
-        speech_logits = speech_logits * keep_speech
-        text_probs = text_probs * keep_text
-        speech_probs = speech_probs * keep_speech
-        return text_tokens, speech_tokens, text_logits, speech_logits, text_probs, speech_probs
+        return keep_text, keep_speech
 
     def forward(
         self,
@@ -207,10 +212,17 @@ class FusionClassifier(nn.Module):
         text_probs_cal: torch.Tensor,
         speech_probs_cal: torch.Tensor,
         reliability: torch.Tensor,
+        text_logits_cal: torch.Tensor | None = None,
+        speech_logits_cal: torch.Tensor | None = None,
         labels: torch.Tensor | None = None,
         return_aux: bool = False,
         **kwargs,
     ) -> ClassifierOutput | tuple[ClassifierOutput, dict[str, torch.Tensor]]:
+        if text_logits_cal is None:
+            text_logits_cal = text_logits_raw
+        if speech_logits_cal is None:
+            speech_logits_cal = speech_logits_raw
+
         self._validate_fusion_contract(
             text_embedding=text_embedding,
             speech_embedding=speech_embedding,
@@ -220,31 +232,38 @@ class FusionClassifier(nn.Module):
             speech_token_mask=speech_token_mask,
             text_logits_raw=text_logits_raw,
             speech_logits_raw=speech_logits_raw,
+            text_logits_cal=text_logits_cal,
+            speech_logits_cal=speech_logits_cal,
             text_probs_cal=text_probs_cal,
             speech_probs_cal=speech_probs_cal,
             reliability=reliability,
         )
 
-        (
-            text_tokens,
-            speech_tokens,
-            text_logits_raw,
-            speech_logits_raw,
-            text_probs_cal,
-            speech_probs_cal,
-        ) = self._apply_modality_dropout(
-            text_tokens=text_tokens,
-            speech_tokens=speech_tokens,
-            text_logits=text_logits_raw,
-            speech_logits=speech_logits_raw,
-            text_probs=text_probs_cal,
-            speech_probs=speech_probs_cal,
-        )
+        batch_size = int(text_logits_raw.shape[0])
+        keep_text, keep_speech = self._sample_keep_masks(batch_size, text_logits_raw.device)
+
+        text_tokens = text_tokens * keep_text.unsqueeze(-1)
+        speech_tokens = speech_tokens * keep_speech.unsqueeze(-1)
+
+        text_logits_raw = text_logits_raw * keep_text
+        speech_logits_raw = speech_logits_raw * keep_speech
+        text_logits_cal = text_logits_cal * keep_text
+        speech_logits_cal = speech_logits_cal * keep_speech
+        text_probs_cal = text_probs_cal * keep_text
+        speech_probs_cal = speech_probs_cal * keep_speech
 
         text_probs_raw = torch.softmax(text_logits_raw, dim=-1)
         speech_probs_raw = torch.softmax(speech_logits_raw, dim=-1)
         text_preds_raw = torch.argmax(text_probs_raw, dim=-1)
         speech_preds_raw = torch.argmax(speech_probs_raw, dim=-1)
+
+        text_logits_evidence = text_logits_cal if self.use_calibrated_expert_logits else text_logits_raw
+        speech_logits_evidence = speech_logits_cal if self.use_calibrated_expert_logits else speech_logits_raw
+
+        text_probs_evidence = torch.softmax(text_logits_evidence, dim=-1)
+        speech_probs_evidence = torch.softmax(speech_logits_evidence, dim=-1)
+        text_preds_evidence = torch.argmax(text_probs_evidence, dim=-1)
+        speech_preds_evidence = torch.argmax(speech_probs_evidence, dim=-1)
 
         if self.use_interaction:
             interaction_embedding, _ = self.interaction_block(
@@ -271,11 +290,15 @@ class FusionClassifier(nn.Module):
         interaction_probs = torch.softmax(interaction_logits, dim=-1)
         interaction_preds = torch.argmax(interaction_probs, dim=-1)
 
+        interaction_gate_evidence = (
+            interaction_probs if self.gate_interaction_input == "probs" else interaction_logits
+        )
+
         gate_input = torch.cat(
             [
                 text_probs_cal,
                 speech_probs_cal,
-                interaction_logits,
+                interaction_gate_evidence,
                 reliability,
             ],
             dim=-1,
@@ -284,8 +307,8 @@ class FusionClassifier(nn.Module):
         alpha_text, alpha_speech, alpha_interaction = self.gate(gate_input)
 
         fused_logits = (
-            alpha_text * text_logits_raw
-            + alpha_speech * speech_logits_raw
+            alpha_text * text_logits_evidence
+            + alpha_speech * speech_logits_evidence
             + alpha_interaction * interaction_logits
         )
 
@@ -313,12 +336,20 @@ class FusionClassifier(nn.Module):
             "alpha_interaction": alpha_interaction,
             "text_logits_raw": text_logits_raw,
             "speech_logits_raw": speech_logits_raw,
+            "text_logits_cal": text_logits_cal,
+            "speech_logits_cal": speech_logits_cal,
+            "text_logits_evidence": text_logits_evidence,
+            "speech_logits_evidence": speech_logits_evidence,
             "interaction_logits": interaction_logits,
             "text_probs_raw": text_probs_raw,
             "speech_probs_raw": speech_probs_raw,
+            "text_probs_evidence": text_probs_evidence,
+            "speech_probs_evidence": speech_probs_evidence,
             "interaction_probs": interaction_probs,
             "text_preds_raw": text_preds_raw,
             "speech_preds_raw": speech_preds_raw,
+            "text_preds_evidence": text_preds_evidence,
+            "speech_preds_evidence": speech_preds_evidence,
             "interaction_preds": interaction_preds,
         }
         return output, aux

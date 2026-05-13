@@ -1,0 +1,13 @@
+benchmark:
+  task: speech
+
+  experiments:
+    - configs/speech/experiments/hubert_base_attn_freeze_ce.yaml
+
+  seeds: [42, 52, 62, 72, 82]
+  device: cuda
+
+  output_root: outputs/runs/speech_stability
+  report_dir: outputs/reports/stability/speech
+
+  skip_existing: true

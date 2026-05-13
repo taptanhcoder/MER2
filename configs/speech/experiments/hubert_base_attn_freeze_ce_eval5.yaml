@@ -1,0 +1,18 @@
+defaults:
+  - configs/dataset/common_mer5.yaml
+  - configs/dataset/vnemos_speech_train.yaml
+  - configs/speech/base/speech_base.yaml
+  - configs/speech/models/hubert_base.yaml
+  - configs/speech/losses/ce.yaml
+  - configs/runtime/gpu_safe.yaml
+
+experiment:
+  name: speech_hubert_base_attn_freeze_ce_eval5
+
+audio:
+  max_duration_sec: 8.0
+  num_train_views: 2
+  num_eval_views: 5
+
+loss:
+  name: cross_entropy

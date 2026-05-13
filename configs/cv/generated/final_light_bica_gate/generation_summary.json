@@ -1,0 +1,8 @@
+[
+  {
+    "fold": "fold_04",
+    "seed": 62,
+    "run_plan": "/home/emotalk/mer2/configs/cv/generated/final_light_bica_gate/fold_04/seed_62/run_plan.yaml",
+    "commands": "/home/emotalk/mer2/configs/cv/generated/final_light_bica_gate/fold_04/seed_62/commands.sh"
+  }
+]

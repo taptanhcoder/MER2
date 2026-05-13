@@ -3,8 +3,15 @@ defaults:
   - configs/dataset/vnemos_text_train.yaml
   - configs/text/base/text_base.yaml
   - configs/text/models/phobert_base.yaml
-  - configs/text/losses/ldam_drw.yaml
+  - configs/text/losses/ce.yaml
   - configs/runtime/gpu_safe.yaml
 
 experiment:
-  name: text_vnemos_phobert_base_ldam_drw
+  name: text_phobert_base_ce_headtail128
+
+tokenizer:
+  max_length: 128
+  truncation_strategy: head_tail
+
+loss:
+  name: cross_entropy

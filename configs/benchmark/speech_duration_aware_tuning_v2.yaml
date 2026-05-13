@@ -1,0 +1,15 @@
+benchmark:
+  task: speech
+
+  experiments:
+    - configs/speech/experiments/hubert_base_attn_freeze_ce.yaml
+    - configs/speech/experiments/hubert_base_attn_freeze_ce_eval5.yaml
+    - configs/speech/experiments/hubert_base_attn_freeze_ce_crop10_eval5.yaml
+
+  seeds: [42, 52, 62, 72, 82]
+  device: cuda
+
+  output_root: outputs/runs/speech_duration_aware_tuning_v2
+  report_dir: outputs/reports/tuning/speech_duration_aware_v2
+
+  skip_existing: true

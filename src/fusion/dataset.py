@@ -23,11 +23,28 @@ class FusionArtifactDataset(Dataset):
 
     def __getitem__(self, idx: int) -> dict[str, Any]:
         metadata = self.artifact.get("metadata", {})
+
+        text_logits_raw = self.artifact["text_logits_raw"][idx].float()
+        speech_logits_raw = self.artifact["speech_logits_raw"][idx].float()
+
+        text_logits_cal = (
+            self.artifact["text_logits_cal"][idx].float()
+            if "text_logits_cal" in self.artifact
+            else text_logits_raw
+        )
+        speech_logits_cal = (
+            self.artifact["speech_logits_cal"][idx].float()
+            if "speech_logits_cal" in self.artifact
+            else speech_logits_raw
+        )
+
         return {
             "id": str(self.artifact["sample_id"][idx]),
             "label_id": int(self.artifact["label_id"][idx]),
-            "text_logits_raw": self.artifact["text_logits_raw"][idx].float(),
-            "speech_logits_raw": self.artifact["speech_logits_raw"][idx].float(),
+            "text_logits_raw": text_logits_raw,
+            "speech_logits_raw": speech_logits_raw,
+            "text_logits_cal": text_logits_cal,
+            "speech_logits_cal": speech_logits_cal,
             "text_probs_cal": self.artifact["text_probs_cal"][idx].float(),
             "speech_probs_cal": self.artifact["speech_probs_cal"][idx].float(),
             "text_embedding": self.artifact["text_embedding"][idx].float(),
@@ -55,6 +72,8 @@ class FusionCollator:
             "labels": labels,
             "text_logits_raw": torch.stack([row["text_logits_raw"] for row in batch], dim=0),
             "speech_logits_raw": torch.stack([row["speech_logits_raw"] for row in batch], dim=0),
+            "text_logits_cal": torch.stack([row["text_logits_cal"] for row in batch], dim=0),
+            "speech_logits_cal": torch.stack([row["speech_logits_cal"] for row in batch], dim=0),
             "text_probs_cal": torch.stack([row["text_probs_cal"] for row in batch], dim=0),
             "speech_probs_cal": torch.stack([row["speech_probs_cal"] for row in batch], dim=0),
             "text_embedding": torch.stack([row["text_embedding"] for row in batch], dim=0),

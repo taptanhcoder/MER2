@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import argparse
+import json
 import sys
 from pathlib import Path
 from typing import Any
@@ -26,11 +27,18 @@ from src.fusion.io import validate_expert_export_artifact
 from src.text.models.phobert import PhoBERTClassifier  # noqa: F401
 from src.text.tokenizers import build_text_tokenizer
 from src.text.trainer import build_text_dataloaders
+from src.text.truncation import normalize_truncation_strategy
 
 
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description="Export text expert features for fusion.")
-    parser.add_argument("--run-dir", type=Path, required=True, help="Text run directory.")
+
+    parser.add_argument(
+        "--run-dir",
+        type=Path,
+        required=True,
+        help="Text run directory.",
+    )
     parser.add_argument(
         "--config",
         type=Path,
@@ -49,7 +57,13 @@ def build_parser() -> argparse.ArgumentParser:
         default=16,
         help="Number of compact text tokens to export for fusion.",
     )
-    parser.add_argument("--device", type=str, default="cuda", help="cpu, cuda, auto")
+    parser.add_argument(
+        "--device",
+        type=str,
+        default="cuda",
+        help="cpu, cuda, or auto.",
+    )
+
     return parser
 
 
@@ -59,13 +73,7 @@ def build_model(config: dict[str, Any]) -> torch.nn.Module:
     return model_cls(config)
 
 
-def run_classifier_head(model, pooled: torch.Tensor) -> torch.Tensor:
-    """
-    Export-time classifier head call must match the current model contract.
-
-    Current PhoBERTClassifier already places dropout inside ClassificationHead,
-    so we must call the head directly on pooled features.
-    """
+def run_classifier_head(model: torch.nn.Module, pooled: torch.Tensor) -> torch.Tensor:
     if hasattr(model, "classifier"):
         return model.classifier(pooled)
     if hasattr(model, "head"):
@@ -73,12 +81,45 @@ def run_classifier_head(model, pooled: torch.Tensor) -> torch.Tensor:
     raise AttributeError("Text model must have either `classifier` or `head`.")
 
 
+def _expected_truncation_strategy(config: dict[str, Any]) -> str:
+    tokenizer_cfg = dict(config.get("tokenizer", {}))
+    return normalize_truncation_strategy(
+        tokenizer_cfg.get("truncation_strategy", "first")
+    )
+
+
+def _export_contract(config: dict[str, Any], run_dir: Path) -> dict[str, Any]:
+    tokenizer_cfg = dict(config.get("tokenizer", {}))
+    return {
+        "run_dir": str(run_dir),
+        "max_length": int(tokenizer_cfg.get("max_length", 128)),
+        "padding": tokenizer_cfg.get("padding", True),
+        "truncation": tokenizer_cfg.get("truncation", True),
+        "truncation_strategy": _expected_truncation_strategy(config),
+    }
+
+
+def _validate_batch_truncation_contract(
+    batch: dict[str, Any],
+    expected_strategy: str,
+) -> None:
+    actual_strategy = str(batch.get("truncation_strategy", "first"))
+
+    if actual_strategy != expected_strategy:
+        raise RuntimeError(
+            "Text export truncation strategy mismatch. "
+            f"Expected {expected_strategy!r}, got {actual_strategy!r}. "
+            "Ensure export_text_features.py and TextCollator use the same config."
+        )
+
+
 def export_split(
-    model,
+    model: torch.nn.Module,
     loader,
     device: torch.device,
     output_path: Path,
     compact_tokens: int,
+    export_metadata: dict[str, Any],
 ) -> None:
     sample_ids: list[str] = []
     label_ids: list[int] = []
@@ -88,32 +129,55 @@ def export_split(
     compact_token_rows: list[torch.Tensor] = []
     compact_mask_rows: list[torch.Tensor] = []
 
-    metadata = {
+    metadata: dict[str, list[Any]] = {
         "text": [],
         "raw_text": [],
         "audio_path": [],
         "group_id": [],
+        "token_len": [],
+        "was_truncated": [],
+        "truncation_strategy": [],
     }
+
+    expected_strategy = str(export_metadata["truncation_strategy"])
 
     model.eval()
     with torch.no_grad():
         for batch in loader:
+            _validate_batch_truncation_contract(
+                batch=batch,
+                expected_strategy=expected_strategy,
+            )
+
             input_ids = batch["input_ids"].to(device)
             attention_mask = batch.get("attention_mask")
             token_type_ids = batch.get("token_type_ids")
 
-            encoder_kwargs = {
+            if attention_mask is not None:
+                attention_mask = attention_mask.to(device)
+
+            if token_type_ids is not None:
+                token_type_ids = token_type_ids.to(device)
+
+            encoder_kwargs: dict[str, Any] = {
                 "input_ids": input_ids,
-                "attention_mask": attention_mask.to(device) if attention_mask is not None else None,
+                "attention_mask": attention_mask,
                 "return_dict": True,
             }
             if token_type_ids is not None:
-                encoder_kwargs["token_type_ids"] = token_type_ids.to(device)
+                encoder_kwargs["token_type_ids"] = token_type_ids
 
             outputs = model.encoder(**encoder_kwargs)
             hidden_states = outputs.last_hidden_state
-            attn_mask = encoder_kwargs["attention_mask"]
-            pooled = model._pool(hidden_states, attention_mask=attn_mask)
+
+            if attention_mask is None:
+                attention_mask = torch.ones(
+                    hidden_states.shape[:2],
+                    dtype=torch.long,
+                    device=hidden_states.device,
+                )
+
+            pooled = model._pool(hidden_states, attention_mask=attention_mask)
             logits = run_classifier_head(model, pooled)
             probs = torch.softmax(logits, dim=-1)
 
@@ -123,33 +187,48 @@ def export_split(
             batch_raw_texts = [str(x) for x in batch.get("raw_texts", [])]
             batch_audio_paths = [str(x) for x in batch.get("audio_paths", [])]
             batch_group_ids = [str(x) for x in batch.get("group_ids", [])]
-
-            if attn_mask is None:
-                attn_mask = torch.ones(
-                    hidden_states.shape[:2],
-                    dtype=torch.long,
-                    device=hidden_states.device,
-                )
+            batch_token_lengths = [int(x) for x in batch.get("token_lengths", [])]
+            batch_truncated_flags = [
+                bool(x) for x in batch.get("truncated_flags", [])
+            ]
 
             for i in range(hidden_states.shape[0]):
                 compact_tokens_i, compact_mask_i = compress_sequence_to_token_bank(
                     sequence=hidden_states[i],
-                    mask=attn_mask[i],
+                    mask=attention_mask[i],
                     target_len=compact_tokens,
                 )
 
                 sample_ids.append(batch_ids[i])
                 label_ids.append(int(batch_labels[i]))
+
                 logits_rows.append(logits[i].detach().cpu().float())
                 probs_rows.append(probs[i].detach().cpu().float())
                 pooled_rows.append(pooled[i].detach().cpu().float())
                 compact_token_rows.append(compact_tokens_i.detach().cpu().float())
                 compact_mask_rows.append(compact_mask_i.detach().cpu().long())
 
-                metadata["text"].append(batch_texts[i] if i < len(batch_texts) else "")
-                metadata["raw_text"].append(batch_raw_texts[i] if i < len(batch_raw_texts) else "")
-                metadata["audio_path"].append(batch_audio_paths[i] if i < len(batch_audio_paths) else "")
-                metadata["group_id"].append(batch_group_ids[i] if i < len(batch_group_ids) else "")
+                metadata["text"].append(
+                    batch_texts[i] if i < len(batch_texts) else ""
+                )
+                metadata["raw_text"].append(
+                    batch_raw_texts[i] if i < len(batch_raw_texts) else ""
+                )
+                metadata["audio_path"].append(
+                    batch_audio_paths[i] if i < len(batch_audio_paths) else ""
+                )
+                metadata["group_id"].append(
+                    batch_group_ids[i] if i < len(batch_group_ids) else ""
+                )
+                metadata["token_len"].append(
+                    batch_token_lengths[i] if i < len(batch_token_lengths) else 0
+                )
+                metadata["was_truncated"].append(
+                    batch_truncated_flags[i]
+                    if i < len(batch_truncated_flags)
+                    else False
+                )
+                metadata["truncation_strategy"].append(expected_strategy)
 
     artifact = {
         "sample_id": sample_ids,
@@ -160,7 +239,9 @@ def export_split(
         "compact_tokens": torch.stack(compact_token_rows, dim=0),
         "compact_token_masks": torch.stack(compact_mask_rows, dim=0),
         "metadata": metadata,
+        "export_metadata": export_metadata,
     }
+
     validate_expert_export_artifact(artifact, "text_export")
 
     output_path.parent.mkdir(parents=True, exist_ok=True)
@@ -171,6 +252,7 @@ def main() -> int:
     args = build_parser().parse_args()
 
     run_dir = args.run_dir.resolve()
+
     config = load_run_or_explicit_config(
         run_dir=run_dir,
         explicit_config_path=args.config,
@@ -184,7 +266,7 @@ def main() -> int:
     if model_patched:
         print("[INFO] Patched legacy text model registry key to current codebase naming.")
 
-    requested_device = args.device
+    requested_device = str(args.device)
     if requested_device == "auto":
         requested_device = "cuda" if torch.cuda.is_available() else "cpu"
     if requested_device.startswith("cuda") and not torch.cuda.is_available():
@@ -200,6 +282,10 @@ def main() -> int:
             model_config=config["model"],
         )
 
+    export_metadata = _export_contract(config=config, run_dir=run_dir)
+    print("[INFO] Text export contract:")
+    print(json.dumps(export_metadata, ensure_ascii=False, indent=2))
+
     train_loader, valid_loader, test_loader = build_text_dataloaders(
         config=config,
         tokenizer=tokenizer,
@@ -208,14 +294,37 @@ def main() -> int:
     model = build_model(config)
     ckpt_path = find_best_checkpoint(run_dir)
     ckpt = load_checkpoint(ckpt_path, map_location="cpu")
+
     notes = load_checkpoint_state_flexibly(model, ckpt)
     for note in notes:
         print(f"[INFO] Adapted legacy checkpoint key: {note}")
+
     model.to(device)
 
-    export_split(model, train_loader, device, args.output_dir / "train.pt", args.compact_tokens)
-    export_split(model, valid_loader, device, args.output_dir / "valid.pt", args.compact_tokens)
-    export_split(model, test_loader, device, args.output_dir / "test.pt", args.compact_tokens)
+    export_split(
+        model=model,
+        loader=train_loader,
+        device=device,
+        output_path=args.output_dir / "train.pt",
+        compact_tokens=int(args.compact_tokens),
+        export_metadata=export_metadata,
+    )
+    export_split(
+        model=model,
+        loader=valid_loader,
+        device=device,
+        output_path=args.output_dir / "valid.pt",
+        compact_tokens=int(args.compact_tokens),
+        export_metadata=export_metadata,
+    )
+    export_split(
+        model=model,
+        loader=test_loader,
+        device=device,
+        output_path=args.output_dir / "test.pt",
+        compact_tokens=int(args.compact_tokens),
+        export_metadata=export_metadata,
+    )
 
     print(f"[OK] Exported text features to: {args.output_dir}")
     return 0

@@ -1,0 +1,23 @@
+setting: MELD-ViText-OriginalAudio
+seed: 42
+dataset:
+  train_csv: /home/emotalk/mer2/data/splits/meld_train.csv
+  valid_csv: /home/emotalk/mer2/data/splits/meld_valid.csv
+  test_csv: /home/emotalk/mer2/data/splits/meld_test.csv
+outputs:
+  text_run_dir: /home/emotalk/mer2/outputs/meld/runs/text/text_phobert_base_ce_headtail128/seed_42
+  speech_run_dir: /home/emotalk/mer2/outputs/meld/runs/speech/speech_hubert_base_attn_freeze_ce/seed_42
+  text_export_dir: /home/emotalk/mer2/outputs/meld/fusion_exports/text_headtail128/seed_42
+  speech_export_dir: /home/emotalk/mer2/outputs/meld/fusion_exports/speech_hubert/seed_42
+  fusion_artifact_dir: /home/emotalk/mer2/outputs/meld/fusion_artifacts/light_bica_gate/seed_42
+  fusion_run_dir: /home/emotalk/mer2/outputs/meld/runs/fusion/fusion_light_bica_gate_text_headtail128_cal_gateprob_v1/seed_42
+configs:
+  text: /home/emotalk/mer2/configs/meld/generated/meld_light_bica_gate/seed_42/text_phobert_headtail128.yaml
+  speech: /home/emotalk/mer2/configs/meld/generated/meld_light_bica_gate/seed_42/speech_hubert.yaml
+  text_export: /home/emotalk/mer2/configs/meld/generated/meld_light_bica_gate/seed_42/export_text_headtail128.yaml
+  speech_export: /home/emotalk/mer2/configs/meld/generated/meld_light_bica_gate/seed_42/export_speech_hubert.yaml
+  prepare_fusion_artifacts: /home/emotalk/mer2/configs/meld/generated/meld_light_bica_gate/seed_42/prepare_fusion_artifacts.yaml
+  fusion: /home/emotalk/mer2/configs/meld/generated/meld_light_bica_gate/seed_42/fusion_light_bica_gate.yaml
+commands: /home/emotalk/mer2/configs/meld/generated/meld_light_bica_gate/seed_42/commands.sh
+note: All MELD outputs are isolated under outputs/meld and do not overwrite VNEMOS
+  baseline outputs.

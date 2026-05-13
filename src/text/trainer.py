@@ -15,6 +15,12 @@ from src.common.interfaces import ClassifierOutput, EpochResult
 from src.common.losses import balanced_class_weights_from_counts
 from src.data.label_space import label_to_id
 from src.text.preprocess import prepare_model_text
+from src.text.truncation import (
+    encode_text_with_strategy,
+    normalize_truncation_strategy,
+    pad_encoded_rows,
+    uses_custom_truncation,
+)
 from src.utils.paths import resolve_project_path
 
 
@@ -62,7 +68,7 @@ class TextClassificationDataset(Dataset):
             source_text_col = text_col
 
         required_cols = [id_col, source_text_col, raw_text_col, label_col]
-        missing_required = [c for c in required_cols if c not in self.frame.columns]
+        missing_required = [col for col in required_cols if col not in self.frame.columns]
         if missing_required:
             raise ValueError(
                 f"Missing required columns in {self.csv_path}: {missing_required}. "
@@ -75,22 +81,35 @@ class TextClassificationDataset(Dataset):
         for _, row in self.frame.iterrows():
             raw_text = str(row[raw_text_col])
             source_text = str(row[source_text_col])
+
             model_text = prepare_model_text(
                 text=source_text,
-                normalize_whitespace=bool(preprocessing_config.get("normalize_whitespace", True)),
+                normalize_whitespace=bool(
+                    preprocessing_config.get("normalize_whitespace", True)
+                ),
                 lowercase=bool(preprocessing_config.get("lowercase", False)),
                 word_segment=bool(preprocessing_config.get("word_segment", False)),
+                preserve_spoken_style=bool(
+                    preprocessing_config.get("preserve_spoken_style", True)
+                ),
             )
 
             label_name = str(row[label_col])
-
             if has_label_id and pd.notna(row[label_id_col]):
                 label_id = int(row[label_id_col])
             else:
                 label_id = int(label_to_id(label_name))
 
-            audio_path = str(row[audio_path_col]) if audio_path_col in self.frame.columns else ""
-            group_id = str(row[group_id_col]) if group_id_col in self.frame.columns else ""
+            audio_path = (
+                str(row[audio_path_col])
+                if audio_path_col in self.frame.columns
+                else ""
+            )
+            group_id = (
+                str(row[group_id_col])
+                if group_id_col in self.frame.columns
+                else ""
+            )
 
             self.samples.append(
                 TextSample(
@@ -132,9 +151,66 @@ class TextClassificationDataset(Dataset):
 
 
 class TextCollator:
-    def __init__(self, tokenizer, tokenizer_config: dict[str, Any]) -> None:
+    def __init__(
+        self,
+        tokenizer,
+        tokenizer_config: dict[str, Any],
+        training: bool = False,
+    ) -> None:
         self.tokenizer = tokenizer
         self.tokenizer_config = tokenizer_config
+        self.training = bool(training)
+
+    def _encode_with_default_tokenizer(self, texts: list[str]) -> dict[str, torch.Tensor]:
+        return self.tokenizer(
+            texts,
+            padding=self.tokenizer_config.get("padding", True),
+            truncation=self.tokenizer_config.get("truncation", True),
+            max_length=int(self.tokenizer_config.get("max_length", 128)),
+            return_tensors="pt",
+        )
+
+    def _encode_with_length_aware_strategy(
+        self,
+        texts: list[str],
+    ) -> tuple[dict[str, torch.Tensor], list[int], list[bool]]:
+        max_length = int(self.tokenizer_config.get("max_length", 128))
+        strategy = normalize_truncation_strategy(
+            self.tokenizer_config.get("truncation_strategy", "first")
+        )
+        padding = self.tokenizer_config.get("padding", True)
+
+        encoded_rows: list[dict[str, list[int]]] = []
+        token_lengths: list[int] = []
+        truncated_flags: list[bool] = []
+
+        for text in texts:
+            input_ids, attention_mask, original_token_len, was_truncated = (
+                encode_text_with_strategy(
+                    tokenizer=self.tokenizer,
+                    text=text,
+                    max_length=max_length,
+                    strategy=strategy,
+                    training=self.training,
+                )
+            )
+
+            encoded_rows.append(
+                {
+                    "input_ids": input_ids,
+                    "attention_mask": attention_mask,
+                }
+            )
+            token_lengths.append(int(original_token_len))
+            truncated_flags.append(bool(was_truncated))
+
+        padded = pad_encoded_rows(
+            tokenizer=self.tokenizer,
+            encoded_rows=encoded_rows,
+            padding=padding,
+            max_length=max_length,
+        )
+        return padded, token_lengths, truncated_flags
 
     def __call__(self, batch: list[dict[str, Any]]) -> dict[str, Any]:
         texts = [row["text"] for row in batch]
@@ -144,13 +220,22 @@ class TextCollator:
         group_ids = [row.get("group_id", "") for row in batch]
         labels = torch.tensor([row["label_id"] for row in batch], dtype=torch.long)
 
-        encoded = self.tokenizer(
-            texts,
-            padding=self.tokenizer_config.get("padding", True),
-            truncation=self.tokenizer_config.get("truncation", True),
-            max_length=int(self.tokenizer_config.get("max_length", 128)),
-            return_tensors="pt",
+        strategy = normalize_truncation_strategy(
+            self.tokenizer_config.get("truncation_strategy", "first")
         )
+
+        if uses_custom_truncation(self.tokenizer_config):
+            encoded, token_lengths, truncated_flags = (
+                self._encode_with_length_aware_strategy(texts)
+            )
+        else:
+            encoded = self._encode_with_default_tokenizer(texts)
+            attention_mask = encoded.get("attention_mask")
+            if attention_mask is not None:
+                token_lengths = [int(mask.sum().item()) for mask in attention_mask]
+            else:
+                token_lengths = [int(encoded["input_ids"].shape[1]) for _ in texts]
+            truncated_flags = [False for _ in texts]
 
         result = {
             "ids": ids,
@@ -161,6 +246,9 @@ class TextCollator:
             "labels": labels,
             "input_ids": encoded["input_ids"],
             "attention_mask": encoded.get("attention_mask"),
+            "token_lengths": token_lengths,
+            "truncated_flags": truncated_flags,
+            "truncation_strategy": strategy,
         }
 
         if "token_type_ids" in encoded:
@@ -205,14 +293,23 @@ def build_text_dataloaders(
         project_root=project_root,
     )
 
-    collator = TextCollator(tokenizer=tokenizer, tokenizer_config=tokenizer_config)
+    train_collator = TextCollator(
+        tokenizer=tokenizer,
+        tokenizer_config=tokenizer_config,
+        training=True,
+    )
+    eval_collator = TextCollator(
+        tokenizer=tokenizer,
+        tokenizer_config=tokenizer_config,
+        training=False,
+    )
 
     loader_kwargs: dict[str, Any] = {
         "batch_size": batch_size,
         "num_workers": num_workers,
         "pin_memory": pin_memory,
-        "collate_fn": collator,
     }
+
     if num_workers > 0:
         loader_kwargs["persistent_workers"] = persistent_workers
         if prefetch_factor is not None:
@@ -221,18 +318,22 @@ def build_text_dataloaders(
     train_loader = DataLoader(
         train_ds,
         shuffle=True,
+        collate_fn=train_collator,
         **loader_kwargs,
     )
     valid_loader = DataLoader(
         valid_ds,
         shuffle=False,
+        collate_fn=eval_collator,
         **loader_kwargs,
     )
     test_loader = DataLoader(
         test_ds,
         shuffle=False,
+        collate_fn=eval_collator,
         **loader_kwargs,
     )
+
     return train_loader, valid_loader, test_loader
 
 
@@ -247,12 +348,25 @@ class TextTrainer(BaseTrainer):
                 "raw_texts": [str(x) for x in batch.get("raw_texts", [])],
                 "audio_paths": [str(x) for x in batch.get("audio_paths", [])],
                 "group_ids": [str(x) for x in batch.get("group_ids", [])],
+                "token_lengths": [
+                    int(x) for x in batch.get("token_lengths", [])
+                ],
+                "truncated_flags": [
+                    bool(x) for x in batch.get("truncated_flags", [])
+                ],
+                "truncation_strategy": [
+                    str(batch.get("truncation_strategy", "first"))
+                    for _ in batch.get("ids", [])
+                ],
             },
         }
+
         if batch.get("attention_mask") is not None:
             prepared["attention_mask"] = batch["attention_mask"].to(self.device)
+
         if batch.get("token_type_ids") is not None:
             prepared["token_type_ids"] = batch["token_type_ids"].to(self.device)
+
         return prepared
 
     def forward_step(self, batch: dict[str, Any]) -> ClassifierOutput:
@@ -283,10 +397,14 @@ def epoch_result_to_dataframe(
     label_names: list[str] | None = None,
 ) -> pd.DataFrame:
     rows: list[dict[str, Any]] = []
+
     texts = result.predictions.metadata.get("texts", [])
     raw_texts = result.predictions.metadata.get("raw_texts", [])
     audio_paths = result.predictions.metadata.get("audio_paths", [])
     group_ids = result.predictions.metadata.get("group_ids", [])
+    token_lengths = result.predictions.metadata.get("token_lengths", [])
+    truncated_flags = result.predictions.metadata.get("truncated_flags", [])
+    truncation_strategy = result.predictions.metadata.get("truncation_strategy", [])
 
     for idx, (sample_id, label_id, pred_id, prob_row, logit_row) in enumerate(
         zip(
@@ -317,6 +435,12 @@ def epoch_result_to_dataframe(
             row["audio_path"] = audio_paths[idx]
         if idx < len(group_ids):
             row["group_id"] = group_ids[idx]
+        if idx < len(token_lengths):
+            row["token_len"] = int(token_lengths[idx])
+        if idx < len(truncated_flags):
+            row["was_truncated"] = bool(truncated_flags[idx])
+        if idx < len(truncation_strategy):
+            row["truncation_strategy"] = str(truncation_strategy[idx])
 
         if label_names is not None:
             row["label"] = label_names[int(label_id)]

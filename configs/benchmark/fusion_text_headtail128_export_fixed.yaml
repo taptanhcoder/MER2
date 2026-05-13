@@ -1,0 +1,13 @@
+benchmark:
+  task: fusion
+
+  experiments:
+    - configs/fusion/experiments/light_bica_gate_text_headtail128_cal_gateprob_v1.yaml
+
+  seeds: [42, 52, 62, 72, 82]
+  device: cuda
+
+  output_root: outputs/runs/fusion_text_headtail128_export_fixed
+  report_dir: outputs/reports/final/fusion_text_headtail128_export_fixed
+
+  skip_existing: true

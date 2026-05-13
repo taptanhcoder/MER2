@@ -1,0 +1,114 @@
+seeds: [42, 52, 62, 72, 82]
+
+output_dir: outputs/reports/extensions/xgboost/headtail128_export_fixed
+
+dataset:
+  fusion_artifacts:
+    train: outputs/fusion_artifacts_text_headtail128/train.pt
+    valid: outputs/fusion_artifacts_text_headtail128/valid.pt
+    test: outputs/fusion_artifacts_text_headtail128/test.pt
+
+methods:
+  - name: xgb_probs_logits
+    num_classes: 5
+    seeds: [42, 52, 62, 72, 82]
+    features:
+      prefer_calibrated: true
+      use_logits: true
+      use_probs: true
+      use_reliability: false
+      use_derived: false
+      use_agreement: true
+      use_pred_onehot: false
+    model:
+      n_estimators: 160
+      max_depth: 2
+      learning_rate: 0.05
+      subsample: 0.80
+      colsample_bytree: 0.80
+      min_child_weight: 2.0
+      reg_lambda: 2.0
+      reg_alpha: 0.0
+      gamma: 0.0
+      tree_method: hist
+      eval_metric: mlogloss
+      n_jobs: 4
+      verbosity: 0
+
+  - name: xgb_reliability_full
+    num_classes: 5
+    seeds: [42, 52, 62, 72, 82]
+    features:
+      prefer_calibrated: true
+      use_logits: true
+      use_probs: true
+      use_reliability: true
+      use_derived: true
+      use_agreement: true
+      use_pred_onehot: false
+    model:
+      n_estimators: 180
+      max_depth: 2
+      learning_rate: 0.05
+      subsample: 0.80
+      colsample_bytree: 0.80
+      min_child_weight: 2.0
+      reg_lambda: 2.0
+      reg_alpha: 0.0
+      gamma: 0.0
+      tree_method: hist
+      eval_metric: mlogloss
+      n_jobs: 4
+      verbosity: 0
+
+  - name: xgb_conservative
+    num_classes: 5
+    seeds: [42, 52, 62, 72, 82]
+    features:
+      prefer_calibrated: true
+      use_logits: true
+      use_probs: true
+      use_reliability: true
+      use_derived: true
+      use_agreement: true
+      use_pred_onehot: false
+    model:
+      n_estimators: 120
+      max_depth: 2
+      learning_rate: 0.04
+      subsample: 0.75
+      colsample_bytree: 0.75
+      min_child_weight: 4.0
+      reg_lambda: 5.0
+      reg_alpha: 0.5
+      gamma: 0.0
+      tree_method: hist
+      eval_metric: mlogloss
+      n_jobs: 4
+      verbosity: 0
+
+  - name: xgb_probs_reliability_no_logits
+    num_classes: 5
+    seeds: [42, 52, 62, 72, 82]
+    features:
+      prefer_calibrated: true
+      use_logits: false
+      use_probs: true
+      use_reliability: true
+      use_derived: true
+      use_agreement: true
+      use_pred_onehot: false
+    model:
+      n_estimators: 160
+      max_depth: 2
+      learning_rate: 0.05
+      subsample: 0.80
+      colsample_bytree: 0.80
+      min_child_weight: 3.0
+      reg_lambda: 3.0
+      reg_alpha: 0.0
+      gamma: 0.0
+      tree_method: hist
+      eval_metric: mlogloss
+      n_jobs: 4
+      verbosity: 0

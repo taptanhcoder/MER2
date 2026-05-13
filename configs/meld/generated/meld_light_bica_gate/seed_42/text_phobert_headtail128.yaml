@@ -1,0 +1,64 @@
+defaults:
+- configs/dataset/common_mer5.yaml
+- configs/dataset/vnemos_text_train.yaml
+- configs/text/base/text_base.yaml
+- configs/text/models/phobert_base.yaml
+- configs/text/losses/ce.yaml
+- configs/runtime/gpu_safe.yaml
+experiment:
+  name: text_phobert_base_ce_headtail128
+  seed: 42
+  root: /home/emotalk/mer2/outputs/meld/runs/text
+  output_root: /home/emotalk/mer2/outputs/meld/runs/text
+  output_dir: /home/emotalk/mer2/outputs/meld/runs/text/text_phobert_base_ce_headtail128/seed_42
+  run_dir: /home/emotalk/mer2/outputs/meld/runs/text/text_phobert_base_ce_headtail128/seed_42
+tokenizer:
+  max_length: 128
+  truncation_strategy: head_tail
+loss:
+  name: cross_entropy
+seed: 42
+training:
+  seed: 42
+  root: /home/emotalk/mer2/outputs/meld/runs/text
+  output_root: /home/emotalk/mer2/outputs/meld/runs/text
+  output_dir: /home/emotalk/mer2/outputs/meld/runs/text/text_phobert_base_ce_headtail128/seed_42
+  device: cuda
+  mixed_precision: fp16
+  use_amp: true
+  amp: true
+trainer:
+  seed: 42
+  root: /home/emotalk/mer2/outputs/meld/runs/text
+  output_root: /home/emotalk/mer2/outputs/meld/runs/text
+  output_dir: /home/emotalk/mer2/outputs/meld/runs/text/text_phobert_base_ce_headtail128/seed_42
+  device: cuda
+  mixed_precision: fp16
+  use_amp: true
+  amp: true
+run:
+  seed: 42
+  name: text_phobert_base_ce_headtail128
+  root: /home/emotalk/mer2/outputs/meld/runs/text
+  output_root: /home/emotalk/mer2/outputs/meld/runs/text
+  output_dir: /home/emotalk/mer2/outputs/meld/runs/text/text_phobert_base_ce_headtail128/seed_42
+  run_dir: /home/emotalk/mer2/outputs/meld/runs/text/text_phobert_base_ce_headtail128/seed_42
+  device: cuda
+  mixed_precision: fp16
+dataset:
+  train_csv: /home/emotalk/mer2/data/splits/meld_train.csv
+  valid_csv: /home/emotalk/mer2/data/splits/meld_valid.csv
+  test_csv: /home/emotalk/mer2/data/splits/meld_test.csv
+experiment_name: text_phobert_base_ce_headtail128
+output_dir: /home/emotalk/mer2/outputs/meld/runs/text/text_phobert_base_ce_headtail128/seed_42
+run_dir: /home/emotalk/mer2/outputs/meld/runs/text/text_phobert_base_ce_headtail128/seed_42
+output_root: /home/emotalk/mer2/outputs/meld/runs/text
+output:
+  root: /home/emotalk/mer2/outputs/meld/runs/text
+outputs:
+  root: /home/emotalk/mer2/outputs/meld/runs/text
+device: cuda
+mixed_precision: fp16
+runtime:
+  device: cuda
+  mixed_precision: fp16

@@ -32,6 +32,27 @@ def _confidence_from_probs_tensor(probs: torch.Tensor) -> list[float]:
     return probs.max(dim=-1).values.detach().cpu().tolist()
 
 
+def _smooth_and_clamp_prior(
+    prior: torch.Tensor,
+    smoothing: float = 0.0,
+    min_value: float | None = None,
+    max_value: float | None = None,
+) -> torch.Tensor:
+    result = prior.detach().float()
+
+    smoothing = float(smoothing)
+    if smoothing > 0:
+        neutral = torch.full_like(result, 0.5)
+        result = (1.0 - smoothing) * result + smoothing * neutral
+
+    if min_value is not None or max_value is not None:
+        lo = float(min_value) if min_value is not None else 0.0
+        hi = float(max_value) if max_value is not None else 1.0
+        result = result.clamp(min=lo, max=hi)
+
+    return result
+
+
 class FusionTrainer(BaseTrainer):
     def __init__(
         self,
@@ -41,6 +62,29 @@ class FusionTrainer(BaseTrainer):
         **kwargs,
     ) -> None:
         super().__init__(*args, **kwargs)
+
+        dominance_cfg = dict(self.config.get("dominance", {}))
+        smoothing = float(dominance_cfg.get("prior_smoothing", 0.0))
+        prior_min = dominance_cfg.get("prior_min", None)
+        prior_max = dominance_cfg.get("prior_max", None)
+
+        prior_text = _smooth_and_clamp_prior(
+            prior_text,
+            smoothing=smoothing,
+            min_value=prior_min,
+            max_value=prior_max,
+        )
+        prior_speech = _smooth_and_clamp_prior(
+            prior_speech,
+            smoothing=smoothing,
+            min_value=prior_min,
+            max_value=prior_max,
+        )
+
+        denom = (prior_text + prior_speech).clamp_min(1e-6)
+        prior_text = prior_text / denom
+        prior_speech = prior_speech / denom
+
         self.prior_text = prior_text.detach().float().to(self.device)
         self.prior_speech = prior_speech.detach().float().to(self.device)
         self._last_aux: dict[str, torch.Tensor] | None = None
@@ -55,13 +99,20 @@ class FusionTrainer(BaseTrainer):
             "speech_embedding",
             "text_logits_raw",
             "speech_logits_raw",
+            "text_logits_cal",
+            "speech_logits_cal",
             "text_probs_cal",
             "speech_probs_cal",
             "reliability",
         ]:
             tensor = batch[key]
             if not torch.isfinite(tensor).all():
-                bad_idx = (~torch.isfinite(tensor.view(tensor.shape[0], -1))).any(dim=1).nonzero(as_tuple=False).view(-1)
+                bad_idx = (
+                    (~torch.isfinite(tensor.view(tensor.shape[0], -1)))
+                    .any(dim=1)
+                    .nonzero(as_tuple=False)
+                    .view(-1)
+                )
                 examples = [ids[i] for i in bad_idx[:5].tolist()]
                 raise ValueError(f"Batch tensor {key} contains NaN/Inf. Example sample_ids: {examples}")
 
@@ -82,6 +133,8 @@ class FusionTrainer(BaseTrainer):
             "labels": batch["labels"].to(self.device),
             "text_logits_raw": batch["text_logits_raw"].to(self.device),
             "speech_logits_raw": batch["speech_logits_raw"].to(self.device),
+            "text_logits_cal": batch["text_logits_cal"].to(self.device),
+            "speech_logits_cal": batch["speech_logits_cal"].to(self.device),
             "text_probs_cal": batch["text_probs_cal"].to(self.device),
             "speech_probs_cal": batch["speech_probs_cal"].to(self.device),
             "text_embedding": batch["text_embedding"].to(self.device),
@@ -110,6 +163,8 @@ class FusionTrainer(BaseTrainer):
             speech_token_mask=batch["speech_token_mask"],
             text_logits_raw=batch["text_logits_raw"],
             speech_logits_raw=batch["speech_logits_raw"],
+            text_logits_cal=batch["text_logits_cal"],
+            speech_logits_cal=batch["speech_logits_cal"],
             text_probs_cal=batch["text_probs_cal"],
             speech_probs_cal=batch["speech_probs_cal"],
             reliability=batch["reliability"],
@@ -125,10 +180,14 @@ class FusionTrainer(BaseTrainer):
 
         prediction_metadata["text_pred_id"] = aux["text_preds_raw"].detach().cpu().tolist()
         prediction_metadata["speech_pred_id"] = aux["speech_preds_raw"].detach().cpu().tolist()
+        prediction_metadata["text_pred_fusion_id"] = aux["text_preds_evidence"].detach().cpu().tolist()
+        prediction_metadata["speech_pred_fusion_id"] = aux["speech_preds_evidence"].detach().cpu().tolist()
         prediction_metadata["interaction_pred_id"] = aux["interaction_preds"].detach().cpu().tolist()
 
         prediction_metadata["text_confidence"] = _confidence_from_probs_tensor(aux["text_probs_raw"])
         prediction_metadata["speech_confidence"] = _confidence_from_probs_tensor(aux["speech_probs_raw"])
+        prediction_metadata["text_confidence_fusion"] = _confidence_from_probs_tensor(aux["text_probs_evidence"])
+        prediction_metadata["speech_confidence_fusion"] = _confidence_from_probs_tensor(aux["speech_probs_evidence"])
         prediction_metadata["interaction_confidence"] = _confidence_from_probs_tensor(aux["interaction_probs"])
 
         return output
@@ -169,10 +228,14 @@ def epoch_result_to_dataframe(
 
     text_pred_id = result.predictions.metadata.get("text_pred_id", [])
     speech_pred_id = result.predictions.metadata.get("speech_pred_id", [])
+    text_pred_fusion_id = result.predictions.metadata.get("text_pred_fusion_id", [])
+    speech_pred_fusion_id = result.predictions.metadata.get("speech_pred_fusion_id", [])
     interaction_pred_id = result.predictions.metadata.get("interaction_pred_id", [])
 
     text_confidence = result.predictions.metadata.get("text_confidence", [])
     speech_confidence = result.predictions.metadata.get("speech_confidence", [])
+    text_confidence_fusion = result.predictions.metadata.get("text_confidence_fusion", [])
+    speech_confidence_fusion = result.predictions.metadata.get("speech_confidence_fusion", [])
     interaction_confidence = result.predictions.metadata.get("interaction_confidence", [])
 
     for idx, (sample_id, label_id, pred_id, prob_row, logit_row) in enumerate(
@@ -218,6 +281,10 @@ def epoch_result_to_dataframe(
             row["text_pred_id"] = int(text_pred_id[idx])
         if idx < len(speech_pred_id):
             row["speech_pred_id"] = int(speech_pred_id[idx])
+        if idx < len(text_pred_fusion_id):
+            row["text_pred_fusion_id"] = int(text_pred_fusion_id[idx])
+        if idx < len(speech_pred_fusion_id):
+            row["speech_pred_fusion_id"] = int(speech_pred_fusion_id[idx])
         if idx < len(interaction_pred_id):
             row["interaction_pred_id"] = int(interaction_pred_id[idx])
 
@@ -225,19 +292,16 @@ def epoch_result_to_dataframe(
             row["text_confidence"] = float(text_confidence[idx])
         if idx < len(speech_confidence):
             row["speech_confidence"] = float(speech_confidence[idx])
+        if idx < len(text_confidence_fusion):
+            row["text_confidence_fusion"] = float(text_confidence_fusion[idx])
+        if idx < len(speech_confidence_fusion):
+            row["speech_confidence_fusion"] = float(speech_confidence_fusion[idx])
         if idx < len(interaction_confidence):
             row["interaction_confidence"] = float(interaction_confidence[idx])
 
-        if label_names is not None:
+        if label_names:
             row["label"] = label_names[int(label_id)]
             row["pred"] = label_names[int(pred_id)]
-
-            if "text_pred_id" in row:
-                row["text_pred"] = label_names[int(row["text_pred_id"])]
-            if "speech_pred_id" in row:
-                row["speech_pred"] = label_names[int(row["speech_pred_id"])]
-            if "interaction_pred_id" in row:
-                row["interaction_pred"] = label_names[int(row["interaction_pred_id"])]
 
         rows.append(row)
 
@@ -246,18 +310,10 @@ def epoch_result_to_dataframe(
 
 def save_epoch_predictions(
     result: EpochResult,
-    output_path: str | Path,
+    path: str | Path,
     label_names: list[str] | None = None,
 ) -> None:
     df = epoch_result_to_dataframe(result, label_names=label_names)
-    file_path = Path(output_path)
-    file_path.parent.mkdir(parents=True, exist_ok=True)
-    df.to_csv(file_path, index=False)
-
-
-__all__ = [
-    "FusionTrainer",
-    "build_fusion_dataloaders",
-    "epoch_result_to_dataframe",
-    "save_epoch_predictions",
-]
+    output_path = Path(path)
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    df.to_csv(output_path, index=False)

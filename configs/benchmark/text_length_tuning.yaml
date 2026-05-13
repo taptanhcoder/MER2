@@ -1,0 +1,16 @@
+benchmark:
+  task: text
+
+  experiments:
+    - configs/text/experiments/phobert_base_ce.yaml
+    - configs/text/experiments/phobert_base_ce_len192.yaml
+    - configs/text/experiments/phobert_base_ce_len192_ls005.yaml
+    - configs/text/experiments/phobert_base_ce_conservative_v1.yaml
+
+  seeds: [42, 52, 62, 72, 82]
+  device: cuda
+
+  output_root: outputs/runs/text_length_tuning
+  report_dir: outputs/reports/tuning/text_length
+
+  skip_existing: true

@@ -1,0 +1,24 @@
+output_dir: outputs/reports/extensions/bayes_net/interaction_from_fusion_predictions_seed42
+
+methods:
+  - name: bayes_interaction_reliability_alpha1
+    source: prediction_csv
+    variant: interaction_reliability
+    alpha: 1.0
+    num_bins: 3
+    num_classes: 5
+    save_features: true
+    train_csv: outputs/runs/fusion_text_headtail128_export_fixed/fusion_light_bica_gate_text_headtail128_cal_gateprob_v1/seed_42/train_predictions.csv
+    valid_csv: outputs/runs/fusion_text_headtail128_export_fixed/fusion_light_bica_gate_text_headtail128_cal_gateprob_v1/seed_42/valid_predictions.csv
+    test_csv: outputs/runs/fusion_text_headtail128_export_fixed/fusion_light_bica_gate_text_headtail128_cal_gateprob_v1/seed_42/test_predictions.csv
+
+  - name: bayes_interaction_reliability_alpha2
+    source: prediction_csv
+    variant: interaction_reliability
+    alpha: 2.0
+    num_bins: 3
+    num_classes: 5
+    save_features: true
+    train_csv: outputs/runs/fusion_text_headtail128_export_fixed/fusion_light_bica_gate_text_headtail128_cal_gateprob_v1/seed_42/train_predictions.csv
+    valid_csv: outputs/runs/fusion_text_headtail128_export_fixed/fusion_light_bica_gate_text_headtail128_cal_gateprob_v1/seed_42/valid_predictions.csv
+    test_csv: outputs/runs/fusion_text_headtail128_export_fixed/fusion_light_bica_gate_text_headtail128_cal_gateprob_v1/seed_42/test_predictions.csv

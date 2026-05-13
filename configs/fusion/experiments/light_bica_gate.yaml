@@ -16,8 +16,8 @@ dataset:
     test: outputs/fusion_artifacts/test.pt
 
   calibration:
-    text: outputs/runs/text/text_phobert_base_ce/seed_42/calibration/temperature_scaling.json
-    speech: outputs/runs/speech/speech_hubert_base_attn_freeze_ce/seed_42/calibration/temperature_scaling.json
+    text: outputs/runs/text/text_phobert_base_ce/seed_42/temperature.json
+    speech: outputs/runs/speech/speech_hubert_base_attn_freeze_ce/seed_42/temperature.json
 
 train:
   batch_size: 16

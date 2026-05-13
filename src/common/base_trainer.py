@@ -18,7 +18,7 @@ from src.evaluation.metrics import compute_classification_metrics
 
 
 class BaseTrainer(ABC):
-    """Reusable training loop for both text and speech branches."""
+    """Reusable training loop for text, speech, and fusion-style classifiers."""
 
     def __init__(
         self,
@@ -69,6 +69,7 @@ class BaseTrainer(ABC):
         )
 
         self.criterion = build_loss(loss_cfg)
+        self.criterion.to(self.device)
         self.model.to(self.device)
 
         self.optimizer = None

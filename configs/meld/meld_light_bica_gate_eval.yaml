@@ -1,0 +1,49 @@
+experiment_name: meld_light_bica_gate
+setting_name: MELD-ViText-OriginalAudio
+
+description: >
+  External translated-text benchmark evaluation using Vietnamese-translated
+  MELD transcripts and original English MELD audio. This config is add-only
+  and does not overwrite VNEMOS fixed-split or baseline outputs.
+
+seeds:
+  - 42
+
+dataset:
+  train_csv: data/splits/meld_train.csv
+  valid_csv: data/splits/meld_valid.csv
+  test_csv: data/splits/meld_test.csv
+  label_space:
+    - anger
+    - fear
+    - happiness
+    - sadness
+    - neutral
+
+base_configs:
+  text_train: configs/text/experiments/phobert_base_ce_headtail128.yaml
+  speech_train: configs/speech/experiments/hubert_base_attn_freeze_ce.yaml
+  text_export: configs/cv/generated/final_light_bica_gate/fold_00/seed_42/prepare_fusion_artifacts.yaml
+  speech_export: configs/cv/generated/final_light_bica_gate/fold_00/seed_42/prepare_fusion_artifacts.yaml
+  prepare_fusion_artifacts: configs/cv/generated/final_light_bica_gate/fold_00/seed_42/prepare_fusion_artifacts.yaml
+  fusion_train: configs/fusion/experiments/light_bica_gate_text_headtail128_cal_gateprob_v1.yaml
+
+generated_config_root: configs/meld/generated/meld_light_bica_gate
+
+outputs:
+  root: outputs/meld
+  text_run_root: outputs/meld/runs/text
+  speech_run_root: outputs/meld/runs/speech
+  text_export_root: outputs/meld/fusion_exports/text_headtail128
+  speech_export_root: outputs/meld/fusion_exports/speech_hubert
+  fusion_artifact_root: outputs/meld/fusion_artifacts/light_bica_gate
+  fusion_run_root: outputs/meld/runs/fusion
+  report_root: outputs/meld/reports
+
+names:
+  text_run_name: text_phobert_base_ce_headtail128
+  speech_run_name: speech_hubert_base_attn_freeze_ce
+  fusion_run_name: fusion_light_bica_gate_text_headtail128_cal_gateprob_v1
+
+commands:
+  python: python

@@ -1,0 +1,34 @@
+role: prepare_fusion_artifacts
+output_dir: /home/emotalk/mer2/outputs/meld/fusion_artifacts/light_bica_gate/seed_42
+artifact_dir: /home/emotalk/mer2/outputs/meld/fusion_artifacts/light_bica_gate/seed_42
+fusion_artifact_dir: /home/emotalk/mer2/outputs/meld/fusion_artifacts/light_bica_gate/seed_42
+dataset:
+  text_export_dir: /home/emotalk/mer2/outputs/meld/fusion_exports/text_headtail128/seed_42
+  speech_export_dir: /home/emotalk/mer2/outputs/meld/fusion_exports/speech_hubert/seed_42
+  output_dir: /home/emotalk/mer2/outputs/meld/fusion_artifacts/light_bica_gate/seed_42
+  calibration:
+    required: true
+    text: /home/emotalk/mer2/outputs/meld/runs/text/text_phobert_base_ce_headtail128/seed_42/temperature.json
+    speech: /home/emotalk/mer2/outputs/meld/runs/speech/speech_hubert_base_attn_freeze_ce/seed_42/temperature.json
+  fusion_artifacts:
+    train: /home/emotalk/mer2/outputs/meld/fusion_artifacts/light_bica_gate/seed_42/train.pt
+    valid: /home/emotalk/mer2/outputs/meld/fusion_artifacts/light_bica_gate/seed_42/valid.pt
+    test: /home/emotalk/mer2/outputs/meld/fusion_artifacts/light_bica_gate/seed_42/test.pt
+  train: /home/emotalk/mer2/outputs/meld/fusion_artifacts/light_bica_gate/seed_42/train.pt
+  valid: /home/emotalk/mer2/outputs/meld/fusion_artifacts/light_bica_gate/seed_42/valid.pt
+  test: /home/emotalk/mer2/outputs/meld/fusion_artifacts/light_bica_gate/seed_42/test.pt
+  train_artifact: /home/emotalk/mer2/outputs/meld/fusion_artifacts/light_bica_gate/seed_42/train.pt
+  valid_artifact: /home/emotalk/mer2/outputs/meld/fusion_artifacts/light_bica_gate/seed_42/valid.pt
+  test_artifact: /home/emotalk/mer2/outputs/meld/fusion_artifacts/light_bica_gate/seed_42/test.pt
+calibration:
+  required: true
+  text: /home/emotalk/mer2/outputs/meld/runs/text/text_phobert_base_ce_headtail128/seed_42/temperature.json
+  speech: /home/emotalk/mer2/outputs/meld/runs/speech/speech_hubert_base_attn_freeze_ce/seed_42/temperature.json
+fusion_artifacts:
+  output_dir: /home/emotalk/mer2/outputs/meld/fusion_artifacts/light_bica_gate/seed_42
+  train: /home/emotalk/mer2/outputs/meld/fusion_artifacts/light_bica_gate/seed_42/train.pt
+  valid: /home/emotalk/mer2/outputs/meld/fusion_artifacts/light_bica_gate/seed_42/valid.pt
+  test: /home/emotalk/mer2/outputs/meld/fusion_artifacts/light_bica_gate/seed_42/test.pt
+  train_artifact: /home/emotalk/mer2/outputs/meld/fusion_artifacts/light_bica_gate/seed_42/train.pt
+  valid_artifact: /home/emotalk/mer2/outputs/meld/fusion_artifacts/light_bica_gate/seed_42/valid.pt
+  test_artifact: /home/emotalk/mer2/outputs/meld/fusion_artifacts/light_bica_gate/seed_42/test.pt

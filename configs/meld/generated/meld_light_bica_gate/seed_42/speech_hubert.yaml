@@ -1,0 +1,59 @@
+experiment:
+  name: speech_hubert_base_attn_freeze_ce
+  seed: 42
+  root: /home/emotalk/mer2/outputs/meld/runs/speech
+  output_root: /home/emotalk/mer2/outputs/meld/runs/speech
+  output_dir: /home/emotalk/mer2/outputs/meld/runs/speech/speech_hubert_base_attn_freeze_ce/seed_42
+  run_dir: /home/emotalk/mer2/outputs/meld/runs/speech/speech_hubert_base_attn_freeze_ce/seed_42
+defaults:
+- configs/dataset/common_mer5.yaml
+- configs/dataset/vnemos_speech_train.yaml
+- configs/speech/base/speech_base.yaml
+- configs/speech/models/hubert_base_attn_freeze.yaml
+loss:
+  name: cross_entropy
+seed: 42
+training:
+  seed: 42
+  root: /home/emotalk/mer2/outputs/meld/runs/speech
+  output_root: /home/emotalk/mer2/outputs/meld/runs/speech
+  output_dir: /home/emotalk/mer2/outputs/meld/runs/speech/speech_hubert_base_attn_freeze_ce/seed_42
+  device: cuda
+  mixed_precision: none
+  use_amp: false
+  amp: false
+trainer:
+  seed: 42
+  root: /home/emotalk/mer2/outputs/meld/runs/speech
+  output_root: /home/emotalk/mer2/outputs/meld/runs/speech
+  output_dir: /home/emotalk/mer2/outputs/meld/runs/speech/speech_hubert_base_attn_freeze_ce/seed_42
+  device: cuda
+  mixed_precision: none
+  use_amp: false
+  amp: false
+run:
+  seed: 42
+  name: speech_hubert_base_attn_freeze_ce
+  root: /home/emotalk/mer2/outputs/meld/runs/speech
+  output_root: /home/emotalk/mer2/outputs/meld/runs/speech
+  output_dir: /home/emotalk/mer2/outputs/meld/runs/speech/speech_hubert_base_attn_freeze_ce/seed_42
+  run_dir: /home/emotalk/mer2/outputs/meld/runs/speech/speech_hubert_base_attn_freeze_ce/seed_42
+  device: cuda
+  mixed_precision: none
+dataset:
+  train_csv: /home/emotalk/mer2/data/splits/meld_train.csv
+  valid_csv: /home/emotalk/mer2/data/splits/meld_valid.csv
+  test_csv: /home/emotalk/mer2/data/splits/meld_test.csv
+experiment_name: speech_hubert_base_attn_freeze_ce
+output_dir: /home/emotalk/mer2/outputs/meld/runs/speech/speech_hubert_base_attn_freeze_ce/seed_42
+run_dir: /home/emotalk/mer2/outputs/meld/runs/speech/speech_hubert_base_attn_freeze_ce/seed_42
+output_root: /home/emotalk/mer2/outputs/meld/runs/speech
+output:
+  root: /home/emotalk/mer2/outputs/meld/runs/speech
+outputs:
+  root: /home/emotalk/mer2/outputs/meld/runs/speech
+device: cuda
+mixed_precision: none
+runtime:
+  device: cuda
+  mixed_precision: none

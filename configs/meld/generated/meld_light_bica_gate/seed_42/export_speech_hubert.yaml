@@ -1,0 +1,9 @@
+role: export_speech_features
+note: Metadata-only config. The command uses --run-dir and --output-dir directly.
+run_dir: /home/emotalk/mer2/outputs/meld/runs/speech/speech_hubert_base_attn_freeze_ce/seed_42
+export_dir: /home/emotalk/mer2/outputs/meld/fusion_exports/speech_hubert/seed_42
+output_dir: /home/emotalk/mer2/outputs/meld/fusion_exports/speech_hubert/seed_42
+dataset:
+  train_csv: /home/emotalk/mer2/data/splits/meld_train.csv
+  valid_csv: /home/emotalk/mer2/data/splits/meld_valid.csv
+  test_csv: /home/emotalk/mer2/data/splits/meld_test.csv

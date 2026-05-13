@@ -1,0 +1,17 @@
+benchmark:
+  task: text
+
+  experiments:
+    - configs/text/experiments/phobert_base_ce.yaml
+    - configs/text/experiments/phobert_base_ce_dropout020.yaml
+    - configs/text/experiments/phobert_base_ce_headtail128.yaml
+    - configs/text/experiments/phobert_base_ce_headtail128_dropout020.yaml
+    - configs/text/experiments/phobert_base_ce_randomspan128_dropout020.yaml
+
+  seeds: [42, 52, 62, 72, 82]
+  device: cuda
+
+  output_root: outputs/runs/text_length_aware_tuning
+  report_dir: outputs/reports/tuning/text_length_aware
+
+  skip_existing: true

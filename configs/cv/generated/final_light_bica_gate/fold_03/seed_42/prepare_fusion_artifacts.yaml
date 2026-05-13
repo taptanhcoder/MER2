@@ -1,0 +1,120 @@
+experiment:
+  name: fusion_light_bica_gate_text_headtail128_cal_gateprob_v1
+defaults:
+- configs/dataset/common_mer5.yaml
+- configs/fusion/base/fusion_base.yaml
+- configs/fusion/model/light_bica_gate.yaml
+dataset:
+  speech_export_dir: /home/emotalk/mer2/outputs/cv/fusion_exports/speech_hubert_ce/fold_03/seed_42
+  calibration:
+    required: true
+    text: outputs/runs/text/text_phobert_base_ce_headtail128_fold_03_seed_42/seed_42/temperature.json
+    speech: outputs/runs/speech/speech_hubert_base_attn_freeze_ce_fold_03_seed_42/seed_42/temperature.json
+  text_export_dir: /home/emotalk/mer2/outputs/cv/fusion_exports/text_headtail128/fold_03/seed_42
+  output_dir: /home/emotalk/mer2/outputs/cv/fusion_artifacts/final_light_bica_gate/fold_03/seed_42
+  fusion_artifacts:
+    train: /home/emotalk/mer2/outputs/cv/fusion_artifacts/final_light_bica_gate/fold_03/seed_42/train.pt
+    valid: /home/emotalk/mer2/outputs/cv/fusion_artifacts/final_light_bica_gate/fold_03/seed_42/valid.pt
+    test: /home/emotalk/mer2/outputs/cv/fusion_artifacts/final_light_bica_gate/fold_03/seed_42/test.pt
+  train_artifact: /home/emotalk/mer2/outputs/cv/fusion_artifacts/final_light_bica_gate/fold_03/seed_42/train.pt
+  valid_artifact: /home/emotalk/mer2/outputs/cv/fusion_artifacts/final_light_bica_gate/fold_03/seed_42/valid.pt
+  test_artifact: /home/emotalk/mer2/outputs/cv/fusion_artifacts/final_light_bica_gate/fold_03/seed_42/test.pt
+  train: /home/emotalk/mer2/outputs/cv/fusion_artifacts/final_light_bica_gate/fold_03/seed_42/train.pt
+  valid: /home/emotalk/mer2/outputs/cv/fusion_artifacts/final_light_bica_gate/fold_03/seed_42/valid.pt
+  test: /home/emotalk/mer2/outputs/cv/fusion_artifacts/final_light_bica_gate/fold_03/seed_42/test.pt
+model:
+  use_calibrated_expert_logits: true
+  gate_interaction_input: probs
+train:
+  batch_size: 16
+  epochs: 40
+  grad_clip_norm: 1.0
+  grad_accum_steps: 1
+optimizer:
+  name: adamw
+  lr: 0.0002
+  weight_decay: 0.01
+scheduler:
+  name: linear_warmup
+  warmup_ratio: 0.1
+early_stopping:
+  enabled: true
+  patience: 6
+  min_delta: 0.0
+  monitor: macro_f1
+  mode: max
+checkpoint:
+  monitor: macro_f1
+  mode: max
+evaluation:
+  primary_metric: macro_f1
+dominance:
+  use_modality_dropout: true
+  text_dropout_prob: 0.1
+  speech_dropout_prob: 0.05
+  use_dominance_regularizer: true
+  lambda_text: 0.1
+  lambda_speech: 0.1
+output:
+  save_confusion_matrix: true
+  save_classification_report: true
+output_dir: /home/emotalk/mer2/outputs/cv/fusion_artifacts/final_light_bica_gate/fold_03/seed_42
+artifact_dir: /home/emotalk/mer2/outputs/cv/fusion_artifacts/final_light_bica_gate/fold_03/seed_42
+fusion_artifact_dir: /home/emotalk/mer2/outputs/cv/fusion_artifacts/final_light_bica_gate/fold_03/seed_42
+artifacts:
+  output_dir: /home/emotalk/mer2/outputs/cv/fusion_artifacts/final_light_bica_gate/fold_03/seed_42
+  train: /home/emotalk/mer2/outputs/cv/fusion_artifacts/final_light_bica_gate/fold_03/seed_42/train.pt
+  valid: /home/emotalk/mer2/outputs/cv/fusion_artifacts/final_light_bica_gate/fold_03/seed_42/valid.pt
+  test: /home/emotalk/mer2/outputs/cv/fusion_artifacts/final_light_bica_gate/fold_03/seed_42/test.pt
+  train_artifact: /home/emotalk/mer2/outputs/cv/fusion_artifacts/final_light_bica_gate/fold_03/seed_42/train.pt
+  valid_artifact: /home/emotalk/mer2/outputs/cv/fusion_artifacts/final_light_bica_gate/fold_03/seed_42/valid.pt
+  test_artifact: /home/emotalk/mer2/outputs/cv/fusion_artifacts/final_light_bica_gate/fold_03/seed_42/test.pt
+fusion_artifacts:
+  output_dir: /home/emotalk/mer2/outputs/cv/fusion_artifacts/final_light_bica_gate/fold_03/seed_42
+  train: /home/emotalk/mer2/outputs/cv/fusion_artifacts/final_light_bica_gate/fold_03/seed_42/train.pt
+  valid: /home/emotalk/mer2/outputs/cv/fusion_artifacts/final_light_bica_gate/fold_03/seed_42/valid.pt
+  test: /home/emotalk/mer2/outputs/cv/fusion_artifacts/final_light_bica_gate/fold_03/seed_42/test.pt
+  train_artifact: /home/emotalk/mer2/outputs/cv/fusion_artifacts/final_light_bica_gate/fold_03/seed_42/train.pt
+  valid_artifact: /home/emotalk/mer2/outputs/cv/fusion_artifacts/final_light_bica_gate/fold_03/seed_42/valid.pt
+  test_artifact: /home/emotalk/mer2/outputs/cv/fusion_artifacts/final_light_bica_gate/fold_03/seed_42/test.pt
+calibration:
+  text: outputs/runs/text/text_phobert_base_ce_headtail128_fold_03_seed_42/seed_42/temperature.json
+  speech: outputs/runs/speech/speech_hubert_base_attn_freeze_ce_fold_03_seed_42/seed_42/temperature.json
+text:
+  run_dir: outputs/runs/text/text_phobert_base_ce_headtail128_fold_03_seed_42/seed_42
+  export_dir: /home/emotalk/mer2/outputs/cv/fusion_exports/text_headtail128/fold_03/seed_42
+  calibration_path: outputs/runs/text/text_phobert_base_ce_headtail128_fold_03_seed_42/seed_42/temperature.json
+experts:
+  text:
+    run_dir: outputs/runs/text/text_phobert_base_ce_headtail128_fold_03_seed_42/seed_42
+    export_dir: /home/emotalk/mer2/outputs/cv/fusion_exports/text_headtail128/fold_03/seed_42
+    calibration_path: outputs/runs/text/text_phobert_base_ce_headtail128_fold_03_seed_42/seed_42/temperature.json
+  speech:
+    run_dir: outputs/runs/speech/speech_hubert_base_attn_freeze_ce_fold_03_seed_42/seed_42
+    export_dir: /home/emotalk/mer2/outputs/cv/fusion_exports/speech_hubert_ce/fold_03/seed_42
+    calibration_path: outputs/runs/speech/speech_hubert_base_attn_freeze_ce_fold_03_seed_42/seed_42/temperature.json
+text_expert:
+  run_dir: outputs/runs/text/text_phobert_base_ce_headtail128_fold_03_seed_42/seed_42
+  export_dir: /home/emotalk/mer2/outputs/cv/fusion_exports/text_headtail128/fold_03/seed_42
+  calibration_path: outputs/runs/text/text_phobert_base_ce_headtail128_fold_03_seed_42/seed_42/temperature.json
+speech:
+  run_dir: outputs/runs/speech/speech_hubert_base_attn_freeze_ce_fold_03_seed_42/seed_42
+  export_dir: /home/emotalk/mer2/outputs/cv/fusion_exports/speech_hubert_ce/fold_03/seed_42
+  calibration_path: outputs/runs/speech/speech_hubert_base_attn_freeze_ce_fold_03_seed_42/seed_42/temperature.json
+speech_expert:
+  run_dir: outputs/runs/speech/speech_hubert_base_attn_freeze_ce_fold_03_seed_42/seed_42
+  export_dir: /home/emotalk/mer2/outputs/cv/fusion_exports/speech_hubert_ce/fold_03/seed_42
+  calibration_path: outputs/runs/speech/speech_hubert_base_attn_freeze_ce_fold_03_seed_42/seed_42/temperature.json
+paths:
+  train_artifact: /home/emotalk/mer2/outputs/cv/fusion_artifacts/final_light_bica_gate/fold_03/seed_42/train.pt
+  valid_artifact: /home/emotalk/mer2/outputs/cv/fusion_artifacts/final_light_bica_gate/fold_03/seed_42/valid.pt
+  test_artifact: /home/emotalk/mer2/outputs/cv/fusion_artifacts/final_light_bica_gate/fold_03/seed_42/test.pt
+  train: /home/emotalk/mer2/outputs/cv/fusion_artifacts/final_light_bica_gate/fold_03/seed_42/train.pt
+  valid: /home/emotalk/mer2/outputs/cv/fusion_artifacts/final_light_bica_gate/fold_03/seed_42/valid.pt
+  test: /home/emotalk/mer2/outputs/cv/fusion_artifacts/final_light_bica_gate/fold_03/seed_42/test.pt
+cv:
+  enabled: true
+  fold: fold_03
+  seed: 42
+  role: prepare_fusion_artifacts
+  source_config_name: light_bica_gate_text_headtail128_cal_gateprob_v1.yaml

@@ -210,11 +210,22 @@ def validate_fusion_ready_artifact(artifact: dict[str, Any]) -> None:
         "speech_token_masks",
         "reliability",
     ]
+
+    optional_tensor_keys = [
+        "text_logits_cal",
+        "speech_logits_cal",
+    ]
+
     for key in tensor_keys:
         _validate_tensor_first_dim(artifact[key], expected_n, key, "fusion_ready")
 
+    for key in optional_tensor_keys:
+        if key in artifact:
+            _validate_tensor_first_dim(artifact[key], expected_n, key, "fusion_ready")
+
     if artifact["label_id"].dim() != 1:
         raise ValueError("fusion_ready.label_id must be 1D")
+
     for key in [
         "text_logits_raw",
         "speech_logits_raw",
@@ -225,6 +236,10 @@ def validate_fusion_ready_artifact(artifact: dict[str, Any]) -> None:
         "reliability",
     ]:
         if artifact[key].dim() != 2:
+            raise ValueError(f"fusion_ready.{key} must be 2D, got {tuple(artifact[key].shape)}")
+
+    for key in optional_tensor_keys:
+        if key in artifact and artifact[key].dim() != 2:
             raise ValueError(f"fusion_ready.{key} must be 2D, got {tuple(artifact[key].shape)}")
 
     for key in ["text_tokens", "speech_tokens"]:
@@ -252,6 +267,10 @@ def validate_fusion_ready_artifact(artifact: dict[str, Any]) -> None:
         "reliability",
     ]:
         _assert_finite(artifact[key], key, "fusion_ready")
+
+    for key in optional_tensor_keys:
+        if key in artifact:
+            _assert_finite(artifact[key], key, "fusion_ready")
 
     _assert_binary_mask(artifact["text_token_masks"], "text_token_masks", "fusion_ready")
     _assert_binary_mask(artifact["speech_token_masks"], "speech_token_masks", "fusion_ready")
@@ -292,6 +311,8 @@ def prepare_joined_fusion_artifact(
 
     text_logits_raw: list[torch.Tensor] = []
     speech_logits_raw: list[torch.Tensor] = []
+    text_logits_cal: list[torch.Tensor] = []
+    speech_logits_cal: list[torch.Tensor] = []
     text_probs_cal: list[torch.Tensor] = []
     speech_probs_cal: list[torch.Tensor] = []
 
@@ -345,6 +366,8 @@ def prepare_joined_fusion_artifact(
 
         text_logits_raw.append(z_t_raw)
         speech_logits_raw.append(z_s_raw)
+        text_logits_cal.append(z_t_cal)
+        speech_logits_cal.append(z_s_cal)
         text_probs_cal.append(p_t_cal)
         speech_probs_cal.append(p_s_cal)
 
@@ -388,6 +411,8 @@ def prepare_joined_fusion_artifact(
         "label_id": torch.tensor(label_ids, dtype=torch.long),
         "text_logits_raw": torch.stack(text_logits_raw, dim=0),
         "speech_logits_raw": torch.stack(speech_logits_raw, dim=0),
+        "text_logits_cal": torch.stack(text_logits_cal, dim=0),
+        "speech_logits_cal": torch.stack(speech_logits_cal, dim=0),
         "text_probs_cal": text_probs_tensor,
         "speech_probs_cal": speech_probs_tensor,
         "text_embedding": torch.stack(text_embeddings, dim=0),

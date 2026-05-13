@@ -1,0 +1,22 @@
+fold: fold_00
+seed: 52
+status: generated_only
+note: Run commands.sh after reviewing generated configs. Text/speech CV runs use fold/seed-specific
+  experiment names. Fusion outputs are under outputs/cv/.
+paths:
+  generated_dir: /home/emotalk/mer2/configs/cv/generated/final_light_bica_gate/fold_00/seed_52
+  text_config: /home/emotalk/mer2/configs/cv/generated/final_light_bica_gate/fold_00/seed_52/text_headtail128.yaml
+  speech_config: /home/emotalk/mer2/configs/cv/generated/final_light_bica_gate/fold_00/seed_52/speech_hubert_ce.yaml
+  prepare_fusion_artifacts_config: /home/emotalk/mer2/configs/cv/generated/final_light_bica_gate/fold_00/seed_52/prepare_fusion_artifacts.yaml
+  fusion_config: /home/emotalk/mer2/configs/cv/generated/final_light_bica_gate/fold_00/seed_52/fusion_final_light_bica_gate.yaml
+  commands: /home/emotalk/mer2/configs/cv/generated/final_light_bica_gate/fold_00/seed_52/commands.sh
+  text_run_dir: outputs/runs/text/text_phobert_base_ce_headtail128_fold_00_seed_52/seed_52
+  speech_run_dir: outputs/runs/speech/speech_hubert_base_attn_freeze_ce_fold_00_seed_52/seed_52
+  fusion_run_dir: /home/emotalk/mer2/outputs/cv/runs/fusion/fusion_light_bica_gate_text_headtail128_cal_gateprob_v1/fold_00/seed_52
+  text_export_dir: /home/emotalk/mer2/outputs/cv/fusion_exports/text_headtail128/fold_00/seed_52
+  speech_export_dir: /home/emotalk/mer2/outputs/cv/fusion_exports/speech_hubert_ce/fold_00/seed_52
+  fusion_artifact_dir: /home/emotalk/mer2/outputs/cv/fusion_artifacts/final_light_bica_gate/fold_00/seed_52
+  split_paths:
+    train: /home/emotalk/mer2/data/processed/vnemos/kfold_mer5/fold_00/train.csv
+    valid: /home/emotalk/mer2/data/processed/vnemos/kfold_mer5/fold_00/valid.csv
+    test: /home/emotalk/mer2/data/processed/vnemos/kfold_mer5/fold_00/test.csv

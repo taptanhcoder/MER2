@@ -1,0 +1,19 @@
+defaults:
+  - configs/dataset/common_mer5.yaml
+  - configs/dataset/vnemos_text_train.yaml
+  - configs/text/base/text_base.yaml
+  - configs/text/models/phobert_base.yaml
+  - configs/text/losses/ce.yaml
+  - configs/runtime/gpu_safe.yaml
+
+experiment:
+  name: text_phobert_base_ce_dropout020
+
+tokenizer:
+  max_length: 128
+
+model:
+  classifier_dropout: 0.20
+
+loss:
+  name: cross_entropy

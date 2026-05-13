@@ -1,10 +1,21 @@
+
 defaults:
   - configs/dataset/common_mer5.yaml
   - configs/dataset/vnemos_text_train.yaml
   - configs/text/base/text_base.yaml
   - configs/text/models/phobert_base.yaml
-  - configs/text/losses/focal.yaml
+  - configs/text/losses/ce.yaml
   - configs/runtime/gpu_safe.yaml
 
 experiment:
-  name: text_phobert_base_focal
+  name: text_phobert_base_ce_headtail128_dropout020
+
+tokenizer:
+  max_length: 128
+  truncation_strategy: head_tail
+
+model:
+  classifier_dropout: 0.20
+
+loss:
+  name: cross_entropy

@@ -1,0 +1,40 @@
+output_dir: outputs/reports/extensions/bayes_net/headtail128_export_fixed
+
+dataset:
+  fusion_artifacts:
+    train: outputs/fusion_artifacts_text_headtail128/train.pt
+    valid: outputs/fusion_artifacts_text_headtail128/valid.pt
+    test: outputs/fusion_artifacts_text_headtail128/test.pt
+
+methods:
+  - name: bayes_pred_only_alpha1
+    source: fusion_artifact
+    variant: pred_only
+    alpha: 1.0
+    num_bins: 3
+    num_classes: 5
+    save_features: true
+
+  - name: bayes_reliability_alpha1
+    source: fusion_artifact
+    variant: reliability
+    alpha: 1.0
+    num_bins: 3
+    num_classes: 5
+    save_features: true
+
+  - name: bayes_reliability_alpha05
+    source: fusion_artifact
+    variant: reliability
+    alpha: 0.5
+    num_bins: 3
+    num_classes: 5
+    save_features: true
+
+  - name: bayes_reliability_alpha2
+    source: fusion_artifact
+    variant: reliability
+    alpha: 2.0
+    num_bins: 3
+    num_classes: 5
+    save_features: true

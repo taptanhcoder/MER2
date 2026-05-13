@@ -1,0 +1,67 @@
+# CV config generator for the final Light-BiCA-Gate pipeline.
+#
+# This file does not run training by itself.
+# It tells scripts/generate_cv_fold_configs.py how to create fold/seed-specific
+# configs and commands for CV evaluation.
+#
+# Important:
+# - Fixed-split baseline/final configs are read-only references.
+# - Generated configs are written under configs/cv/generated/.
+# - Fusion CV exports/artifacts/runs are written under outputs/cv/.
+# - Text/speech CV runs may be written by train_text.py/train_speech.py under
+#   outputs/runs/text or outputs/runs/speech, but they use fold/seed-specific
+#   experiment names and do not overwrite the fixed-split baseline.
+
+cv:
+  name: final_light_bica_gate_cv
+  folds_dir: data/processed/vnemos/kfold_mer5
+  folds: [fold_00, fold_01, fold_02, fold_03, fold_04]
+  seeds: [42]
+
+  generated_config_dir: configs/cv/generated/final_light_bica_gate
+  output_root: outputs/cv
+
+  id_col: sample_id
+  label_col: label
+  label_id_col: label_id
+  text_col: text
+  audio_path_col: audio_path
+  group_id_col: group_id
+
+source_configs:
+  # Stable text config template.
+  # Read-only reference.
+  text: outputs/runs/text_length_aware_tuning/text_phobert_base_ce_headtail128/seed_42/resolved_config.yaml
+
+  # Stable speech config template.
+  # Read-only reference.
+  speech: outputs/runs/speech/speech_hubert_base_attn_freeze_ce/seed_42/resolved_config.yaml
+
+  # Final fusion experiment config.
+  # Read-only reference.
+  fusion: configs/fusion/experiments/light_bica_gate_text_headtail128_cal_gateprob_v1.yaml
+
+names:
+  text_experiment: text_phobert_base_ce_headtail128
+  speech_experiment: speech_hubert_base_attn_freeze_ce
+  fusion_experiment: fusion_light_bica_gate_text_headtail128_cal_gateprob_v1
+
+export:
+  text_compact_tokens: 16
+  speech_compact_tokens: 16
+
+safety:
+  # Fixed-split artifacts/exports/calibration references must not appear
+  # in generated CV fusion configs.
+  #
+  # Do not forbid the whole "outputs/runs" prefix, because train_text.py and
+  # train_speech.py may still write fold-specific CV runs there using unique
+  # experiment names such as:
+  #   text_phobert_base_ce_headtail128_fold_00_seed_42
+  #
+  # These substrings are removed/asserted from generated CV configs.
+  forbid_value_substrings:
+    - outputs/fusion_artifacts_text_headtail128
+    - outputs/fusion_exports/text_headtail128
+    - outputs/runs/text_length_aware_tuning/text_phobert_base_ce_headtail128/seed_42/temperature.json
+    - outputs/runs/speech/speech_hubert_base_attn_freeze_ce/seed_42/temperature.json
